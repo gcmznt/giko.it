@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <div class="span9" id="mainContent">
+        {% block post %}
+            <div class="row">
+                <div class="span8 offset1">
+                    <h1><a href="/">Scheggia impazzita Giko</a> <small>un blog su <a href="/blog/web/" class="web">web</a> e <a href="/blog/tchouk/" class="tchouk">tchoukball</a></small></h1>
+                </div>
+            </div>
+            {% for post in posts %}
+            <div class="row{% for cat in post.categories %} {{ cat.slug }}{% endfor %}">
+                <div class="span1" id="smallbar">
+                    <p class="date">{{ post.date }}</p>
+                </div>
+                <div class="span8">
+                    <h2>
+                        {{ post.title|raw }}
+                    </h2>
+                    {% if post.tags %}
+                    <p class="tags">
+                        {% for tag in post.tags %}
+                            <a href="/tag/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}">{{ tag.name }}</span></a>
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                    <p>
+                        {{ post.abstract|raw }}
+                        <a href="/article/{{ post.name }}/">continua a leggere</a>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endblock %}
+    </div>
+    <div class="span3" id="sidebar">
+        {% if category %}
+        <p>
+            <img src="{{ STATIC_URL }}img/{{ category }}_c.png" class="" />
+        </p>
+        {% elseif tag %}
+        <div class="fumettoContainer"><div class="fumetto">{{ tag }}</div></div>
+        <p>
+            <img src="{{ STATIC_URL }}img/profile.png" class="" />
+        </p>
+        {% else %}
+        <div class="fumettoContainer"></div>
+        <p>
+            <img src="{{ STATIC_URL }}img/profile.png" class="" />
+        </p>
+        {% endif %}
+    </div>
+{% endblock %}

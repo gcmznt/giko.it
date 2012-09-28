@@ -1,0 +1,6 @@
+[submodule "docroot/wordpress"]
+	path = docroot/wordpress
+	url = git://github.com/WordPress/WordPress.git
+[submodule "docroot/_libs/twig"]
+	path = docroot/_libs/twig
+	url = https://github.com/fabpot/Twig.git

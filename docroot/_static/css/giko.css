@@ -1,0 +1,119 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background-image: url(../img/bg.png);
+}
+
+@media (max-width: 979px) {
+    body {
+        padding-bottom: 0;
+    }
+}
+
+a {
+    color: #333;
+}
+a:hover {
+    text-decoration: none;
+}
+
+
+
+#sidebar {
+    text-align: center;
+}
+#sidebar h1 {
+    color: #ccc;
+    font-style: italic;
+}
+.nav {
+    margin-top: 50px;
+}
+.navbar img {
+    height: 20px;
+}
+.date {
+    font-size: 22px;
+    color: #ccc;
+    padding: 0 10px;
+    margin-top: 6px;
+    border-right: 5px solid #333;
+    text-align: right;
+}
+#mainContent h2 {
+    margin: 2px 0;
+}
+.tags {
+    margin-bottom: 20px;
+}
+.navigator {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.fumettoContainer {
+    height: 100px;
+    position: relative;
+}
+.fumetto {
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    background: url(../img/fumetto.png) center bottom no-repeat;
+    position: absolute;
+    right: -40px;
+    line-height: 80px;
+    font-size: 28px;
+    color: #333;
+    font-style: italic;
+}
+
+
+
+.web a,
+a.web {
+    color: #03f;
+}
+.web a:hover,
+a.web:hover {
+    color: #00f;
+}
+.web .date {
+    border-color: #03f;
+}
+.label.label-web {
+    background-color: #03f;
+}
+.web *::selection {
+    background: #f30;
+    color: #fff;
+}
+
+
+.tchouk a,
+a.tchouk {
+    color: #f30;
+}
+.tchouk a:hover,
+a.tchouk:hover {
+    color: #f00;
+}
+.tchouk .date {
+    border-color: #f30;
+}
+.label.label-tchouk {
+    background-color: #f30;
+}
+.tchouk *::selection {
+    background: #03f;
+    color: #fff;
+}
+
+
+
+#mainContent .row {
+    margin-bottom: 40px;
+}
+
+
