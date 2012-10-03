@@ -9,7 +9,7 @@ function get_context_post($conf = array()) {
         while (have_posts()):
             the_post();
             $post = array();
-            $post['date'] = get_the_time('Y m d');
+            $post['date'] = get_the_time('y m d');
             $post['name'] = sanitize_title(get_the_title());
             $post['title'] = get_the_title();
             $post['abstract'] = substr(strip_tags(get_the_content()), 0, 450);

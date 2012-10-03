@@ -21,7 +21,6 @@ a:hover {
 
 
 #sidebar {
-    text-align: center;
 }
 #sidebar h1 {
     color: #ccc;
@@ -43,6 +42,10 @@ a:hover {
 }
 #mainContent h2 {
     margin: 2px 0;
+}
+.blogpost h1 {
+    font-size: 30px;
+    line-height: 40px;
 }
 .tags {
     margin-bottom: 20px;
