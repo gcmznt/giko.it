@@ -6,6 +6,16 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="{% block description %}Un blog su web e tchoukball{% endblock %}" />
+    <meta name="keywords" content="{% block keywords %}scheggia impazzita, giacomo zinetti, giko, blog, web, tchoukball{% endblock %}" />
+    <meta name="author" content="Giacomo Giko Zinetti">
+    {% if category == 'web' %}
+    <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/{{ category }}.png" />
+    {% endif %}
+
+    <!-- <link rel="shortcut icon" href="{{ STATIC_URL }}img/icon.png" type="image/png" /> -->
+    <!-- <link rel="icon" href="{{ STATIC_URL }}img/icon.png" type="image/png" /> -->
+
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css" type="text/css" />

@@ -1,6 +1,6 @@
 {% extends 'blog.html' %}
 
-{% block title %}{{ post.title }} &bull; Scheggia impazzita Giko{% endblock %}
+{% block title %}{{ post.title|raw }} &bull; Scheggia impazzita Giko{% endblock %}
 
 {% block post %}
     <div class="row {{ category }} blogpost">
