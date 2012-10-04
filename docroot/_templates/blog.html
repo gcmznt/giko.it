@@ -2,10 +2,12 @@
 
 {% block title %}#{{ category }} &bull; Scheggia impazzita Giko{% endblock %}
 
+{% if category %}
 {% block extra_head %}
     <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/{{ category }}.png" />
     <meta property="og:title" content="Scheggia impazzita Giko {{ category }} blog" />
 {% endblock %}
+{% endif %}
 
 {% block container %}
     <div class="span9" id="mainContent">
