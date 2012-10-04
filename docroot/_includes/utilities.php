@@ -14,8 +14,8 @@ function get_context_post($conf = array()) {
             $post['title'] = get_the_title();
             $post['abstract'] = substr(strip_tags(get_the_content()), 0, 450);
             if (strlen($post['abstract']) >= 450) $post['abstract'] .= '...';
-            $post['short_abstract'] = substr(strip_tags(get_the_content()), 0, 50);
-            if (strlen($post['short_abstract']) >= 50) $post['short_abstract'] .= '...';
+            $post['short_abstract'] = substr(strip_tags(get_the_content()), 0, 100);
+            if (strlen($post['short_abstract']) >= 100) $post['short_abstract'] .= '...';
             $post['categories'] = get_the_category();
             $post['tags'] = get_the_tags();
             $post['content'] = apply_filters('the_content', get_the_content());

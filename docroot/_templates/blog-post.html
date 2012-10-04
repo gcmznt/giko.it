@@ -4,7 +4,7 @@
 
 {% block extra_head %}
     <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/{{ category }}.png" />
-    <!-- <meta property="og:url" content="http://www.giko.it/archive/{{ post.name }}/" /> -->
+    <meta property="og:url" content="http://www.giko.it/archive/{{ post.name }}/" />
     <meta property="og:title" content="{{ post.title|raw }}" />
     <meta property="og:description" content="{{ post.short_abstract }}" />
 {% endblock %}
