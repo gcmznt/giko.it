@@ -19,7 +19,10 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css" type="text/css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/giko.css" type="text/css" />
 
-    {% block extra_head %}{% endblock %}
+    {% block extra_head %}
+    <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/profile.png" />
+    <meta property="og:title" content="Scheggia impazzita Giko Blog" />
+    {% endblock %}
 </head>
 <body>
 
