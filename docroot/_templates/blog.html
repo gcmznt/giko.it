@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}#{{ category }} &bull; Scheggia impazzita Giko{% endblock %}
+{% block title %}
+    {% if category %}
+        #{{ category }} &bull; Scheggia impazzita Giko
+    {% else %}
+        Scheggia impazzita Giko
+    {% endif %}
+{% endblock %}
 
 {% block extra_head %}
     {% if category %}
