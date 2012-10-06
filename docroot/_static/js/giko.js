@@ -9,7 +9,7 @@
 
         $("#mainContent a[href^='http']").not("a[href^='http://www.giko.it']").each(function() {
             var domain = parseUri($(this).attr('href'));
-            $(this).after(' [<i class="icon-share-alt"></i>&nbsp;<small>' + domain.host + '</small>]');
+            $(this).after(' <span class="explainlink">[<i class="icon-share-alt"></i> <small>' + domain.host + '</small>]</span>');
         });
 
         $('.twitter').each(function(){
