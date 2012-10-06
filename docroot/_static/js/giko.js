@@ -8,10 +8,8 @@
         });
 
         $("#mainContent a[href^='http']").not("a[href^='http://www.giko.it']").each(function() {
-            $(this).css({
-                'background': "url(http://g.etfv.co/" + this.href + ") right center no-repeat",
-                "padding-right": "20px"
-            });
+            var domain = parseUri($(this).attr('href'));
+            $(this).after(' [<i class="icon-share-alt"></i> <small>' + domain.host + '</small>]');
         });
 
         $('.twitter').each(function(){
@@ -47,17 +45,41 @@ if ($('#disqus_thread').length > 0) {
     })();
 }
 
-function parseTwitterDate($stamp)
-{       
-// convert to local string and remove seconds and year //       
-    // var date = new Date(Date.parse($stamp)).toLocaleString().substr(0, 16);
-// get the two digit hour //
-    // var hour = date.substr(-5, 2);
-// convert to AM or PM //
-    // var ampm = hour<12 ? ' AM' : ' PM';
-    // if (hour>12) hour-= 12;
-    // if (hour==0) hour = 12;
-// return the formatted string //
-    return new Date(Date.parse($stamp)).toLocaleString();
-    // return date.substr(0, 11)+' • ' + hour + date.substr(13);
+function parseTwitterDate(stamp) {       
+    return new Date(Date.parse(stamp)).toLocaleString();
 }
+
+
+
+// parseUri 1.2.2
+// (c) Steven Levithan <stevenlevithan.com>
+// MIT License
+function parseUri (str) {
+    var o   = parseUri.options,
+        m   = o.parser[o.strictMode ? "strict" : "loose"].exec(str),
+        uri = {},
+        i   = 14;
+
+    while (i--) uri[o.key[i]] = m[i] || "";
+
+    uri[o.q.name] = {};
+    uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+        if ($1) uri[o.q.name][$1] = $2;
+    });
+
+    return uri;
+};
+
+parseUri.options = {
+    strictMode: false,
+    key: ["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],
+    q:   {
+        name:   "queryKey",
+        parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+    },
+    parser: {
+        strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+        loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+    }
+};
+
