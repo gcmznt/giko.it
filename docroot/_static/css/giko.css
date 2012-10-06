@@ -11,22 +11,99 @@ body {
     }
 }
 
+#mainContent h2 a,
 a {
-    color: #333;
+    color: #000;
 }
 a:hover {
     text-decoration: none;
 }
 
+.site-title {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.site-title small {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1;
+    color: #999;
+}
+
 .alignleft {
     float: left;
+    margin: 0 10px 10px 0;
 }
 .alignright {
     float: right;
+    margin: 0 0 10px 10px;
 }
 
+.twitter {
+    background: url(../img/twitter.png) center top no-repeat;
+    margin-top: 40px;
+    color: #999;
+}
+.twitter date {
+    display: block;
+    color: #ccc;
+}
+.twitter p:before {
+    content: '“';
+}
+.twitter p:after {
+    content: '”';
+}
+.twitter date:before {
+    content: '[';
+}
+.twitter date:after {
+    content: ']';
+}
+.twitter p {
+    padding: 60px 0 10px;
+    font-size: 160%;
+    line-height: 120%;
+    font-style: italic;
+}
+.twitter a {
+    color: #999;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    box-shadow: inset 0 0 6px #bdbdbd;
+    padding: 15px 0;
+}
+@media (max-width: 767px) {
+    .header {
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 15px 20px;
+    }
+}
+.header a,
+.header a:hover,
+.header a:focus {
+    text-shadow: none;
+    -webkit-transition: 200ms linear 0s;
+    -moz-transition: 200ms linear 0s;
+    -o-transition: 200ms linear 0s;
+    transition: 200ms linear 0s;
+    outline: 0 none;
+    color: #333;
+}
+.header a:hover,
+.header a:focus {
+    color: #333;
+    text-shadow: -1px 1px 2px #bbb;
+}
 
 #sidebar {
+    text-align: center;
 }
 #sidebar h1 {
     color: #ccc;
@@ -83,16 +160,19 @@ a:hover {
 
 
 .web a,
-a.web {
-    color: #03f;
-}
+a.web,
 .web a:hover,
 a.web:hover {
+    color: #03f;
+}
+#mainContent .web a:hover,
+#mainContent a.web:hover {
     color: #00f;
 }
 .web .date {
     border-color: #03f;
 }
+.web .label-active,
 .label.label-web {
     background-color: #03f;
 }
@@ -103,16 +183,19 @@ a.web:hover {
 
 
 .tchouk a,
-a.tchouk {
-    color: #f30;
-}
+a.tchouk,
 .tchouk a:hover,
 a.tchouk:hover {
+    color: #f30;
+}
+#mainContent .tchouk a:hover,
+#mainContent a.tchouk:hover {
     color: #f00;
 }
 .tchouk .date {
     border-color: #f30;
 }
+.tchouk .label-active,
 .label.label-tchouk {
     background-color: #f30;
 }

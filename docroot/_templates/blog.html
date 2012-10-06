@@ -1,31 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    {% if category %}
-        #{{ category }} &bull; Scheggia impazzita Giko
-    {% else %}
-        Scheggia impazzita Giko
-    {% endif %}
-{% endblock %}
-
-{% block extra_head %}
-    {% if category %}
-        <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/{{ category }}.png" />
-        <meta property="og:title" content="Scheggia impazzita Giko {{ category }} blog" />
-    {% else %}
-        <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/profile.png" />
-        <meta property="og:title" content="Scheggia impazzita Giko Blog" />
-    {% endif %}
-{% endblock %}
 
 {% block container %}
     <div class="span9" id="mainContent">
         {% block post %}
-            <div class="row">
-                <div class="span8 offset1">
-                    <h1><a href="/">Scheggia impazzita Giko</a> <small>un blog su <a href="/blog/web/" class="web">web</a> e <a href="/blog/tchouk/" class="tchouk">tchoukball</a></small></h1>
-                </div>
-            </div>
             {% for post in posts %}
             <div class="row{% for cat in post.categories %} {{ cat.slug }}{% endfor %}">
                 <div class="span1" id="smallbar">
@@ -33,12 +11,12 @@
                 </div>
                 <div class="span8">
                     <h2>
-                        {{ post.title|raw }}
+                        <a href="/article/{{ post.name }}/">{{ post.title|raw }}</a>
                     </h2>
                     {% if post.tags %}
                     <p class="tags">
                         {% for tag in post.tags %}
-                            <a href="/tag/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}">{{ tag.name }}</span></a>
+                            <a href="/blog/t/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}{% if filtertag == tag.slug %} label-active{% endif %}">{{ tag.name }}</span></a>
                         {% endfor %}
                     </p>
                     {% endif %}
@@ -52,20 +30,9 @@
         {% endblock %}
     </div>
     <div class="span3" id="sidebar">
-        {% if category %}
         <p>
-            <img src="{{ STATIC_URL }}img/{{ category }}.png" class="" />
+            <img src="{{ STATIC_URL }}img/{{ mainimg }}.png" class="" />
         </p>
-        {% elseif tag %}
-        <div class="fumettoContainer"><div class="fumetto">{{ tag }}</div></div>
-        <p>
-            <img src="{{ STATIC_URL }}img/profile.png" class="" />
-        </p>
-        {% else %}
-        <div class="fumettoContainer"></div>
-        <p>
-            <img src="{{ STATIC_URL }}img/profile.png" class="" />
-        </p>
-        {% endif %}
+        <div class="twitter" data-tag="{{ category }}"></div>
     </div>
 {% endblock %}

@@ -18,11 +18,11 @@
 
 
     // FRONTSITE
-    $silex->get("/", $home);
+    $silex->get("/blog/t/{tag}/", $blog);
+    $silex->get("/blog/{category}/", $blog);
     $silex->get("/blog/", $blog);
-    $silex->get("/blog/{name}/", $blog);
     $silex->get("/article/{name}/", $blogpost);
-    $silex->get("/tag/{name}/", $blogtag);
+    $silex->get("/", $home);
 
 
     $silex->run();

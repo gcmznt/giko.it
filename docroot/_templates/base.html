@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Scheggia impazzita Giko{% endblock %}</title>
+    <title>{% block title %}{% if pretitle %}{{ pretitle|raw }} &bull; {% endif %}Scheggia impazzita Giko{% endblock %}</title>
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="{% block description %}Un blog su web e tchoukball{% endblock %}" />
-    <meta name="keywords" content="{% block keywords %}scheggia impazzita, giacomo zinetti, giko, blog, web, tchoukball{% endblock %}" />
+    <meta name="keywords" content="scheggia impazzita, giacomo zinetti, giko, blog, web, tchoukball{% block extrakeywords %}{% endblock %}" />
     <meta name="author" content="Giacomo Giko Zinetti">
     <meta property="og:site_name" content="Scheggia impazzita Giko" />
+    <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/{{ mainimg }}.png" />
+    <meta property="og:title" content="{% block ogtitle %}{% if pretitle %}{{ pretitle|raw }} &bull; {% endif %}Scheggia impazzita Giko{% endblock %}" />
+    <meta property="og:description" content="{% block ogdescription %}Un blog su web e tchoukball{% endblock %}" />
 
     <!-- <link rel="shortcut icon" href="{{ STATIC_URL }}img/icon.png" type="image/png" /> -->
     <!-- <link rel="icon" href="{{ STATIC_URL }}img/icon.png" type="image/png" /> -->
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/giko.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/giko.css" />
 
     {% block extra_head %}
     {% endblock %}
 </head>
 <body>
+
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="span8 offset1">
+                    {% block header %}
+                    <h1><a href="/">Scheggia impazzita Giko</a> <small>un blog su <a href="/blog/web/" class="web">web</a> e <a href="/blog/tchouk/" class="tchouk">tchoukball</a></small></h1>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
