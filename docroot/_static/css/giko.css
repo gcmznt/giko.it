@@ -93,24 +93,6 @@ a:hover {
     margin-bottom: 40px;
     text-align: center;
 }
-.fumettoContainer {
-    height: 100px;
-    position: relative;
-}
-.fumetto {
-    text-align: center;
-    width: 240px;
-    height: 85px;
-    background: url(../img/fumetto.png) center bottom no-repeat;
-    position: absolute;
-    right: -60px;
-    top: 5px;
-    line-height: 25px;
-    font-size: 28px;
-    color: #333;
-    font-style: italic;
-}
-
 
 
 h1 .web,
