@@ -4,9 +4,6 @@
 {% block ogdescription %}{{ post.short_abstract|raw }}{% endblock %}
 {% block extrakeywords %}{% for tag in post.tags %}, {{ tag.name }}{% endfor %}{% endblock %}
 
-{% block header %}
-    <div class="site-title"><a href="/">Scheggia impazzita Giko</a> <small>un blog su <a href="/blog/web/" class="web">web</a> e <a href="/blog/tchouk/" class="tchouk">tchoukball</a></small></div>
-{% endblock %}
 
 {% block post %}
     <div class="row {{ category }} blogpost">

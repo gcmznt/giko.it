@@ -23,18 +23,6 @@ a:hover {
     text-decoration: none;
 }
 
-.site-title {
-    font-size: 36px;
-    line-height: 40px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-.site-title small {
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 1;
-    color: #999;
-}
 
 .alignleft {
     float: left;
@@ -76,35 +64,6 @@ a:hover {
     color: #999;
 }
 
-.header {
-    background: rgba(255, 255, 255, 0.8);
-    margin-bottom: 50px;
-    box-shadow: inset 0 0 6px #bdbdbd;
-    padding: 15px 0;
-}
-@media (max-width: 767px) {
-    .header {
-        margin-right: -20px;
-        margin-left: -20px;
-        padding: 15px 20px;
-    }
-}
-.header a,
-.header a:hover,
-.header a:focus {
-    text-shadow: none;
-    -webkit-transition: 200ms linear 0s;
-    -moz-transition: 200ms linear 0s;
-    -o-transition: 200ms linear 0s;
-    transition: 200ms linear 0s;
-    outline: 0 none;
-    color: #333;
-}
-.header a:hover,
-.header a:focus {
-    color: #333;
-    text-shadow: -1px 1px 2px #bbb;
-}
 .explainlink {
     white-space: nowrap;
 }
@@ -122,17 +81,9 @@ a:hover {
     font-size: 22px;
     color: #ccc;
     padding: 0 10px;
-    margin-top: 6px;
+    margin-top: 18px;
     border-right: 5px solid #333;
     text-align: right;
-}
-#mainContent h2 {
-    margin: 2px 0;
-}
-.blogpost h1 {
-    margin: 2px 0;
-    font-size: 30px;
-    line-height: 40px;
 }
 .tags {
     margin-bottom: 20px;
@@ -162,6 +113,7 @@ a:hover {
 
 
 
+h1 .web,
 .web a,
 a.web,
 .web a:hover,
@@ -185,6 +137,7 @@ a.web:hover {
 }
 
 
+h1 .tchouk,
 .tchouk a,
 a.tchouk,
 .tchouk a:hover,

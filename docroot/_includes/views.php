@@ -23,6 +23,7 @@
                 'orderby' => 'post_date',
                 'cat' => get_category_by_slug($category)->term_id,
             );
+            $context['pretitle'] = '#' . $category . ' blog';
             $context['category'] = $category;
             $context['mainimg'] = $category;
         } else if ($tag != '') {

@@ -4,6 +4,13 @@
 {% block container %}
     <div class="span9" id="mainContent">
         {% block post %}
+            {% if category %}
+            <div class="row">
+                <div class="span8 offset1">
+                    <h1>#<span class="{{ category }}">{{ category }}</span> blog</h1>
+                </div>
+            </div>
+            {% endif %}
             {% for post in posts %}
             <div class="row{% for cat in post.categories %} {{ cat.slug }}{% endfor %}">
                 <div class="span1" id="smallbar">
@@ -31,7 +38,7 @@
     </div>
     <div class="span3" id="sidebar">
         <p>
-            <img src="{{ STATIC_URL }}img/{{ mainimg }}.png" class="" />
+            <a href="/blog/{{ category }}/"><img src="{{ STATIC_URL }}img/{{ mainimg }}.png" class="" /></a>
         </p>
         <div class="twitter" data-tag="{{ category }}"></div>
     </div>
