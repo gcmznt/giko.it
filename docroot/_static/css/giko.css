@@ -11,6 +11,10 @@ body {
     }
 }
 
+.home {
+    text-align: center;
+}
+
 #mainContent h2 a,
 a {
     color: #000;
@@ -107,10 +111,6 @@ a:hover {
 
 #sidebar {
     text-align: center;
-}
-#sidebar h1 {
-    color: #ccc;
-    font-style: italic;
 }
 .nav {
     margin-top: 50px;

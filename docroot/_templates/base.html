@@ -13,8 +13,8 @@
     <meta property="og:title" content="{% block ogtitle %}{% if pretitle %}{{ pretitle|raw }} &bull; {% endif %}Scheggia impazzita Giko{% endblock %}" />
     <meta property="og:description" content="{% block ogdescription %}Un blog su web e tchoukball{% endblock %}" />
 
-    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png" type="image/png" />
-    <link rel="icon" href="{{ STATIC_URL }}img/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon-profilo.jpg" type="image/png" />
+    <link rel="icon" href="{{ STATIC_URL }}img/favicon-profilo.jpg" type="image/png" />
 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
@@ -26,10 +26,11 @@
 </head>
 <body>
 
+    {% block maincontainer %}
     <div class="header">
         <div class="container">
             <div class="row">
-                <div class="span8 offset1">
+                <div class="span11 offset1">
                     {% block header %}
                     <h1><a href="/">Scheggia impazzita Giko</a> <small>un blog su <a href="/blog/web/" class="web">web</a> e <a href="/blog/tchouk/" class="tchouk">tchoukball</a></small></h1>
                     {% endblock %}
@@ -44,6 +45,7 @@
             {% endblock %}
         </div>
     </div>
+    {% endblock %}
 
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="navbar-inner">

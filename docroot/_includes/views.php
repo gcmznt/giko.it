@@ -5,8 +5,9 @@
 
 
 
-    $home = function () use ($silex) {
-        return $silex->redirect('/blog/');
+    $home = function () use ($silex, $twig, $context) {
+        $page = $twig->render("home.html", $context);
+        return new Response($page, 200);
     };
 
 
@@ -31,6 +32,7 @@
                 'orderby' => 'post_date',
                 'tag' => $tag,
             );
+            $context['pretitle'] = $tag;
             $context['filtertag'] = $tag;
         }
 

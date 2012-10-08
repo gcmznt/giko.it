@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block maincontainer %}
+    <div class="container home">
+        <div class="row">
+            <div class="span12">
+                <h1>Scheggia impazzita Giko</h1>
+                <h3>Cosa vuoi leggere oggi?</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 offset2 tchouk">
+                <a href="/blog/tchouk/">
+                    <img src="{{ STATIC_URL }}img/tchouk.png" class="" />
+                    <h2>TchoukBall</h2>
+                </a>
+                <p>
+                    Appunti piuttosto tecnici su uno sport alquanto sconosciuto ma che merita di essere diffuso in lungo e in largo.
+                </p>
+            </div>
+            <div class="span4 web">
+                <a href="/blog/web/">
+                    <img src="{{ STATIC_URL }}img/web.png" class="" />
+                    <h2>Web</h2>
+                </a>
+                <p>
+                    Un blocco note per tener traccia dei lavori che faccio e delle cose utili che trovo in giro per il web.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
