@@ -13,7 +13,7 @@
             {% endif %}
             {% for post in posts %}
             <div class="row{% for cat in post.categories %} {{ cat.slug }}{% endfor %}">
-                <div class="span1" id="smallbar">
+                <div class="span1">
                     <p class="date">{{ post.date }}</p>
                 </div>
                 <div class="span8">
