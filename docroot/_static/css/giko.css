@@ -15,6 +15,7 @@ body {
     text-align: center;
 }
 
+#mainContent h1 a,
 #mainContent h2 a,
 a {
     color: #000;
@@ -70,9 +71,6 @@ a:hover {
 
 #sidebar {
     text-align: center;
-}
-.nav {
-    margin-top: 50px;
 }
 .navbar img {
     height: 20px;
