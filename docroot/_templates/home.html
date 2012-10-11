@@ -18,6 +18,11 @@
                 <p>
                     Appunti piuttosto tecnici su uno sport alquanto sconosciuto ma che merita di essere diffuso in lungo e in largo.
                 </p>
+                <div class="tagCloud">
+                    {% for tag in tags.tchouk %}
+                    <a href="/blog/tchouk/t/{{ tag.tag_slug }}/"><span class="label">{{ tag.tag_name }}</span></a>
+                    {% endfor %}
+                </div>
             </div>
             <div class="span4 web">
                 <a href="/blog/web/">
@@ -27,6 +32,11 @@
                 <p>
                     Un blocco note per tener traccia dei lavori che faccio e delle cose utili che trovo in giro per il web.
                 </p>
+                <div class="tagCloud">
+                    {% for tag in tags.web %}
+                    <a href="/blog/web/t/{{ tag.tag_slug }}/"><span class="label">{{ tag.tag_name }}</span></a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

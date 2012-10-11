@@ -7,8 +7,16 @@
             $(this).tooltip({'placement': pos});
         });
 
-        $("#mainContent a[href^='http']").not("a[href^='http://www.giko.it']").each(function() {
+        $("#mainContent a[href^='http']").not("a[href^='http://" + location.hostname + "']").each(function() {
             $(this).after(' <span class="explainlink">[<i class="icon-share-alt"></i> <small>' + this.hostname + '</small>]</span>');
+        });
+
+        $('.form-search').submit(function() {
+            var search = $(this).find('input.search-query').val();
+            if (search != '') {
+                location.href = $(this).attr('action') + encodeURIComponent(search) + "/";
+            }
+            return false;
         });
 
         $('.twitter').each(function(){

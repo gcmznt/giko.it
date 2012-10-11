@@ -36,7 +36,7 @@ a:hover {
 
 .twitter {
     background: url(../img/twitter.png) center top no-repeat;
-    margin-top: 40px;
+    margin: 40px auto;
     color: #999;
 }
 .twitter date {
@@ -67,6 +67,13 @@ a:hover {
 
 .explainlink {
     white-space: nowrap;
+}
+
+.page {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 3px gray;
+    border-radius: 5px;
 }
 
 #sidebar {

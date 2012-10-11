@@ -10,23 +10,25 @@
         <div class="span1">
             <p class="date">{{ post.date }}</p>
         </div>
-        <div class="span8" id="mainContent">
-            <h1>{{ post.title|raw }}</h1>
-            {% if post.tags %}
-            <p class="tags">
-                {% for tag in post.tags %}
-                    <a href="/blog/t/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}">{{ tag.name }}</span></a>
-                {% endfor %}
-            </p>
-            {% endif %}
-            {{ post.content|raw }}
+        <div class="span8">
+            <div class="page">
+                <h1>{{ post.title|raw }}</h1>
+                {% if post.tags %}
+                <p class="tags">
+                    {% for tag in post.tags %}
+                        <a href="/blog/{{ category }}/t/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}">{{ tag.name }}</span></a>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                {{ post.content|raw }}
+            </div>
             <div class="navigator">
                 {% if post.prev %}<a class="btn btn-small" href="/article/{{ post.prev.post_name }}" rel="tooltip" title="{{ post.prev.post_title }}" data-placement="left"><i class="icon-chevron-left"></i></a>{% endif %}
                 <a class="btn btn-small" href="/blog/{% if category %}{{ category }}/{% endif %}" rel="tooltip" title="blog home" data-placement="bottom"><i class="icon-home"></i></a>
                 {% if post.next %}<a class="btn btn-small" href="/article/{{ post.next.post_name }}" rel="tooltip" title="{{ post.next.post_title }}" data-placement="right"><i class="icon-chevron-right"></i></a>{% endif %}
             </div>
             <div id="disqus_thread"></div>
-        
+            
         </div>
     </div>
 {% endblock %}

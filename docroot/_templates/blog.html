@@ -10,30 +10,56 @@
                     <h1 class="{{ category }}"><a href="/">Giko</a>'s #<span class="{{ category }}">{{ category }}</span> blog</h1>
                 </div>
             </div>
-            {% endif %}
-            {% for post in posts %}
-            <div class="row{% for cat in post.categories %} {{ cat.slug }}{% endfor %}">
-                <div class="span1">
-                    <p class="date">{{ post.date }}</p>
-                </div>
-                <div class="span8">
-                    <h2>
-                        <a href="/article/{{ post.name }}/">{{ post.title|raw }}</a>
-                    </h2>
-                    {% if post.tags %}
-                    <p class="tags">
-                        {% for tag in post.tags %}
-                            <a href="/blog/t/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}{% if filtertag == tag.slug %} label-active{% endif %}">{{ tag.name }}</span></a>
-                        {% endfor %}
-                    </p>
-                    {% endif %}
-                    <p>
-                        {{ post.abstract|raw }}
-                        <a href="/article/{{ post.name }}/">continua a leggere</a>
-                    </p>
+            {% elseif search %}
+            <div class="row">
+                <div class="span8 offset1">
+                    <h1><small>Hai cercato</small> <em>{{ search }}</em></h1>
                 </div>
             </div>
-            {% endfor %}
+            {% endif %}
+            {% if posts %}
+                {% for post in posts %}
+                <div class="row{% for cat in post.categories %} {{ cat.slug }}{% endfor %}">
+                    <div class="span1">
+                        <p class="date">{{ post.date }}</p>
+                    </div>
+                    <div class="span8">
+                        <div class="page">
+                            <h2>
+                                <a href="/article/{{ post.name }}/">{{ post.title|raw }}</a>
+                            </h2>
+                            {% if post.tags %}
+                            <p class="tags">
+                                {% for tag in post.tags %}
+                                    <a href="/blog/{{ category }}/t/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}{% if filtertag == tag.slug %} label-active{% endif %}">{{ tag.name }}</span></a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+                            <p>
+                                {{ post.abstract|raw }}
+                                <a href="/article/{{ post.name }}/">continua a leggere</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="row">
+                    <div class="span8 offset1">
+                        <p>
+                            <strong>OPS!</strong> Nessun post trovato. Prova di nuovo
+                        </p>
+                        <p>
+                            <form class="form-search" action="/blog/{{ category }}/s/">
+                                <div class="input-append">
+                                    <input class="span5 search-query" type="text" placeholder="Cerca"{% if search %} value="{{ search }}"{% endif %} />
+                                    <button class="btn" type="submit"><i class="icon-search"></i></button>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
         {% endblock %}
     </div>
     <div class="span3" id="sidebar">
@@ -41,5 +67,18 @@
             <a href="/blog/{{ category }}/"><img src="{{ STATIC_URL }}img/{{ mainimg }}.png" class="" /></a>
         </p>
         <div class="twitter" data-tag="{{ category }}"></div>
+        <div class="search">
+            <form class="form-search" action="/blog/{{ category }}/s/">
+                <div class="input-append">
+                    <input class="span2 search-query" type="text" placeholder="Cerca"{% if search %} value="{{ search }}"{% endif %} />
+                    <button class="btn" type="submit"><i class="icon-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="tagCloud {{ category }}">
+            {% for tag in tags %}
+            <a href="/blog/{{ category }}/t/{{ tag.tag_slug }}/"><span class="label label-{{ tag.tag_slug }}{% if filtertag == tag.tag_slug %} label-active{% endif %}">{{ tag.tag_name }}</span></a>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
