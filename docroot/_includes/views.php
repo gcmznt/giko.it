@@ -73,8 +73,9 @@
             'name' => $name,
         ));
 
-        $context['post'] = $context['posts'][0];
         $context['category'] = $context['post']['categories'][0]->name;
+        $context['tags'] = get_category_tags(get_category_by_slug($context['category'])->term_id);
+        $context['post'] = $context['posts'][0];
         $context['pretitle'] = html_entity_decode($context['post']['title']);
         $context['mainimg'] = $context['category'];
 
