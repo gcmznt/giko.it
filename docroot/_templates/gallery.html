@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+    <div class="span9" id="mainContent">
+        {% block post %}
+            <div class="row">
+                <div class="span8 offset1">
+                    <h1 class="{{ category }}"><a href="/">Giko</a>'s <span class="{{ category }}">{{ pagetitle }}</span></h1>
+                </div>
+            </div>
+            {% if items %}
+                <div class="row {{ category }}">
+                    <div class="span8 offset1">
+                        <div class="row-fluid">
+                            <ul id="da-thumbs" class="da-thumbs thumbnails">
+                                {% for item in items %}
+                                <li class="span6">
+                                    <a{% if item.link %} href="{{ item.link }}"{% endif %} class="thumbnail">
+                                        <img class="lazy" src="{{ STATIC_URL }}img/grey.gif" data-original="{{ item.image }}"  width="750" heigh="500" alt="{{ item.text|raw }} {{ item.anno }}" />
+                                        <noscript><img src="{{ item.image }}" width="750" heigh="500" alt="{{ item.text }} {{ item.anno }}" /></noscript>
+                                        <div>
+                                            <span>{{ item.text|raw }}</span>
+                                        </div>
+                                        <date>{{ item.anno }}</date>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+    <div class="span3" id="sidebar">
+        <p>
+            <a href="/{{ category }}/blog/"><img src="{{ STATIC_URL }}img/{{ mainimg }}.png" class="" /></a>
+        </p>
+        <div class="twitter" data-tag="{{ category }}"></div>
+    </div>
+{% endblock %}

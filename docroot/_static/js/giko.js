@@ -8,7 +8,9 @@
         });
 
         $("#mainContent a[href^='http']").not("a[href^='http://" + location.hostname + "']").each(function() {
-            $(this).after(' <span class="explainlink">[<i class="icon-share-alt"></i> <small>' + this.hostname + '</small>]</span>');
+            if ($(this).find('img').length == 0) {
+                $(this).after(' <span class="explainlink">[<i class="icon-share-alt"></i> <small>' + this.hostname + '</small>]</span>');
+            }
         });
 
         $('.form-search').submit(function() {
@@ -17,6 +19,12 @@
                 location.href = $(this).attr('action') + encodeURIComponent(search) + "/";
             }
             return false;
+        });
+
+        $('#da-thumbs > li').hoverdir();
+
+        $("img.lazy").show().lazyload({ 
+            effect: "fadeIn"
         });
 
         $('.twitter').each(function(){

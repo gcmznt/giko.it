@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="span4 offset2 tchouk">
-                <a href="/blog/tchouk/">
+                <a href="/tchouk/blog/">
                     <img src="{{ STATIC_URL }}img/tchouk.png" alt="tchoukball" />
                     <h2>TchoukBall</h2>
                 </a>
@@ -20,12 +20,12 @@
                 </p>
                 <div class="tagCloud">
                     {% for tag in tags.tchouk %}
-                    <a href="/blog/tchouk/t/{{ tag.tag_slug }}/"><span class="label">{{ tag.tag_name }}</span></a>
+                    <a href="/tchouk/blog/t/{{ tag.tag_slug }}/"><span class="label">{{ tag.tag_name }}</span></a>
                     {% endfor %}
                 </div>
             </div>
             <div class="span4 web">
-                <a href="/blog/web/">
+                <a href="/web/blog/">
                     <img src="{{ STATIC_URL }}img/web.png" alt="web" />
                     <h2>Web</h2>
                 </a>
@@ -34,7 +34,7 @@
                 </p>
                 <div class="tagCloud">
                     {% for tag in tags.web %}
-                    <a href="/blog/web/t/{{ tag.tag_slug }}/"><span class="label">{{ tag.tag_name }}</span></a>
+                    <a href="/web/blog/t/{{ tag.tag_slug }}/"><span class="label">{{ tag.tag_name }}</span></a>
                     {% endfor %}
                 </div>
             </div>

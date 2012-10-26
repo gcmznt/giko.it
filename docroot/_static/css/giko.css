@@ -15,6 +15,7 @@ body {
     text-align: center;
 }
 
+
 #mainContent h1 a,
 #mainContent h2 a,
 a {
@@ -148,9 +149,32 @@ a.tchouk:hover {
 }
 
 
+.thumbnail {
+    background-color: white;
+}
+
 
 #mainContent .row {
     margin-bottom: 40px;
 }
 
+
+.web .da-thumbs li a div span {
+    border-bottom: 3px solid #03f;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 -10px 0 #03f;
+}
+.tchouk .da-thumbs li a div span {
+    border-bottom: 3px solid #f30;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 -10px 0 #f30;
+}
+.web a.thumbnail:hover {
+    border-color: #03f;
+}
+.tchouk a.thumbnail:hover {
+    border-color: #f30;
+}
+
+.lazy {
+    display: none;
+}
 
