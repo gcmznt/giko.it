@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/gallery.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/giko.css" />
 
+    {% if ga_account %}{% include 'inc/ga.html' %}{% endif %}
+
     {% block extra_head %}
     {% endblock %}
 </head>
@@ -74,8 +76,6 @@
     <script src="{{ STATIC_URL }}js/bootstrap.min.js" type="text/javascript"></script>
     <script src="{{ STATIC_URL }}js/giko.js" type="text/javascript"></script>
 
-
-    {% if ga_account %}{% include 'inc/ga.html' %}{% endif %}
 
     {% block extra_body %}{% endblock %}
 </body>
