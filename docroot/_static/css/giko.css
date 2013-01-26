@@ -10,6 +10,11 @@ body {
 * {
     -webkit-transition: all 0.2s ease-in-out;
 }
+*::selection {
+    background: #CC0033;
+    color: #fff;
+}
+
 
 @media (max-width: 979px) {
     body {
@@ -51,6 +56,7 @@ h1 {
 h2 {
     font-size: 1.6em;
     margin: 1.7em 0 1.1em;
+    line-height: 1.4em;
     font-weight: normal;
 }
 h3 {
@@ -201,6 +207,27 @@ ul.tags li {
         float: right;
         margin: 188px 0 20px 30px;
         box-shadow: 0 2px 5px #333;
+    }
+}
+
+@media (max-width: 679px) {
+    header,
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container {
+        box-shadow: none;
+        padding-top: 2px;
+    }
+    .header {
+        position: static;
+    }
+    .header header {
+        border-color: #4B5B6E;
+    }
+    .social {
+        display: none;
     }
 }
 
