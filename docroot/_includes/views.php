@@ -46,13 +46,13 @@
                 'order' => 'DESC',
                 'orderby' => 'post_date',
                 'tag' => $tag,
-                'cat' => 'web',
+                'cat' => get_category_by_slug('web')->term_id,
             );
             $context['title'] = "<small>Posts about</small> " . $tag;
             $context['tag'] = $tag;
         } else if ($search != '') {
             $query = array(
-                'cat' => 'web',
+                'cat' => get_category_by_slug('web')->term_id,
                 's' => $search,
             );
             $context['title'] = "<small>Search results for</small> " . $search;
@@ -61,12 +61,12 @@
             $query = array(
                 'order' => 'DESC',
                 'orderby' => 'post_date',
-                'cat' => 'web',
+                'cat' => get_category_by_slug('web')->term_id,
             );
             $context['title'] = "G's Blog";
         }
 
-        $context['tags'] = get_category_tags(get_category_by_slug($category)->term_id);
+        $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
         $context['category'] = $category;
         $context['posts'] = get_context_post($query);
         $context['section'] = 'blog';
