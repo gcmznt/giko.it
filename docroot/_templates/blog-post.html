@@ -6,29 +6,21 @@
 
 
 {% block post %}
-    <div class="row {{ category }} blogpost">
-        <div class="span1">
-            <p class="date">{{ post.date }}</p>
+    <article>
+        {{ post.content|raw }}
+
+        {% if post.tags %}
+        <div class="tags">
+            <small>
+                posted in
+                {% for tag in post.tags %}
+                    <a href="/blog/t/{{ tag.slug }}/"><span class="label">{{ tag.name }}</span></a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                on <date>{{ post.date }}</date>
+            </small>
         </div>
-        <div class="span8">
-            <div class="page">
-                <h1>{{ post.title|raw }}</h1>
-                {% if post.tags %}
-                <p class="tags">
-                    {% for tag in post.tags %}
-                        <a href="/{{ category }}/blog/t/{{ tag.slug }}/"><span class="label label-{{ tag.slug }}">{{ tag.name }}</span></a>
-                    {% endfor %}
-                </p>
-                {% endif %}
-                {{ post.content|raw }}
-            </div>
-            <div class="navigator">
-                {% if post.prev %}<a class="btn btn-small" href="/article/{{ post.prev.post_name }}" rel="tooltip" title="{{ post.prev.post_title }}" data-placement="left"><i class="icon-chevron-left"></i></a>{% endif %}
-                <a class="btn btn-small" href="/{% if category %}{{ category }}/{% endif %}blog/" rel="tooltip" title="blog home" data-placement="bottom"><i class="icon-home"></i></a>
-                {% if post.next %}<a class="btn btn-small" href="/article/{{ post.next.post_name }}" rel="tooltip" title="{{ post.next.post_title }}" data-placement="right"><i class="icon-chevron-right"></i></a>{% endif %}
-            </div>
-            <div id="disqus_thread"></div>
-            
-        </div>
-    </div>
+        {% endif %}
+
+    </article>
+    <div id="disqus_thread"></div>
 {% endblock %}

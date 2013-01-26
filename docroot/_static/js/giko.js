@@ -2,36 +2,36 @@
 
     $(document).ready(function(){
 
-        $('[rel=tooltip]').each(function() {
-            var pos = $(this).attr('data-placement');
-            $(this).tooltip({'placement': pos});
-        });
+        // $('[rel=tooltip]').each(function() {
+        //     var pos = $(this).attr('data-placement');
+        //     $(this).tooltip({'placement': pos});
+        // });
 
         $("#mainContent a[href^='http']").not("a[href^='http://" + location.hostname + "']").each(function() {
-            if ($(this).find('img').length == 0) {
+            if ($(this).find('img').length === 0) {
                 $(this).after(' <span class="explainlink">[<i class="icon-share-alt"></i> <small>' + this.hostname + '</small>]</span>');
             }
         });
 
         $('.form-search').submit(function() {
             var search = $(this).find('input.search-query').val();
-            if (search != '') {
+            if (search !== '') {
                 location.href = $(this).attr('action') + encodeURIComponent(search) + "/";
             }
             return false;
         });
 
-        $('#da-thumbs > li').hoverdir();
+        // $('#da-thumbs > li').hoverdir();
 
-        $("img.lazy").show().lazyload({ 
-            effect: "fadeIn"
-        });
+        // $("img.lazy").show().lazyload({
+        //     effect: "fadeIn"
+        // });
 
         $('.twitter').each(function(){
             var tag = $(this).attr('data-tag');
             var el = $(this);
             var url = 'http://search.twitter.com/search.json?q=from%3Agiko15';
-            if (tag != '') {
+            if (tag !== '') {
                 url = 'http://search.twitter.com/search.json?q=%23' + tag + '+from%3Agiko15';
             }
             $.ajax({

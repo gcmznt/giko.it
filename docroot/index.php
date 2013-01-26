@@ -16,12 +16,12 @@
 
 
     // FRONTSITE
-    $silex->get("/{category}/blog/s/{search}/", $blog);
-    $silex->get("/{category}/blog/t/{tag}/", $blog);
-    $silex->get("/{category}/blog/", $blog);
+    $silex->get("/blog/c/{category}/", $blog);
+    $silex->get("/blog/s/{search}/", $blog);
+    $silex->get("/blog/t/{tag}/", $blog);
     $silex->get("/blog/", $blog);
-    $silex->get("/web/portfolio/", $portfolio);
-    $silex->get("/tchouk/eventi/", $eventi);
+    $silex->get("/portfolio/", $portfolio);
+    $silex->get("/curriculum/", $curriculum);
     $silex->get("/article/{name}/", $blogpost);
     $silex->get("/", $home);
 
