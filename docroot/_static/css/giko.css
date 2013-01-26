@@ -158,6 +158,12 @@ ul.tags li {
 .contacts {
     text-align: right;
 }
+.profile {
+    width: 160px;
+    float: left;
+    margin: 20px 30px 20px 0;
+    box-shadow: 0 2px 5px #333;
+}
 
 @media not print {
     .print {
@@ -189,6 +195,12 @@ ul.tags li {
     a[href]:after {
         content: " [" attr(href) "]";
         font-size: 80%;
+    }
+    .profile {
+        width: 120px;
+        float: right;
+        margin: 188px 0 20px 30px;
+        box-shadow: 0 2px 5px #333;
     }
 }
 
