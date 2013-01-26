@@ -41,38 +41,33 @@
     $blog = function ($category='', $tag='', $search='') use ($silex, $twig, $context) {
         require_once(__DIR__ . '/../wordpress/wp-load.php');
 
-        $context['mainimg'] = 'profile';
-
         if ($tag != '') {
             $query = array(
-                'numberposts' => 10,
                 'order' => 'DESC',
                 'orderby' => 'post_date',
                 'tag' => $tag,
-                'cat' => get_category_by_slug($category)->term_id,
+                'cat' => 'web',
             );
             $context['title'] = "<small>Posts about</small> " . $tag;
             $context['tag'] = $tag;
         } else if ($search != '') {
             $query = array(
-                'cat' => get_category_by_slug($category)->term_id,
+                'cat' => 'web',
                 's' => $search,
             );
             $context['title'] = "<small>Search results for</small> " . $search;
             $context['search'] = $search;
         } else {
             $query = array(
-                'numberposts' => 10,
                 'order' => 'DESC',
                 'orderby' => 'post_date',
-                'cat' => get_category_by_slug($category)->term_id,
+                'cat' => 'web',
             );
             $context['title'] = "G's Blog";
         }
 
         $context['tags'] = get_category_tags(get_category_by_slug($category)->term_id);
         $context['category'] = $category;
-        $context['mainimg'] = $category;
         $context['posts'] = get_context_post($query);
         $context['section'] = 'blog';
 
