@@ -1,7 +1,7 @@
 body {
     font-family: 'Tenor Sans', sans-serif;
     /*background-image: url(../img/bg.png);*/
-    background: #4B5B6E;
+    background: #4B5B6E url(../img/gecko.png) 10% bottom no-repeat;
     margin: 0;
     color: #4B5B6E;
     line-height: 150%;
