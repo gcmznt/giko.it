@@ -182,6 +182,11 @@ ul.tags li {
     margin: 4px;
 }
 
+dt {
+    font-size: 120%;
+    margin: 0.8em 0 0.3em;
+}
+
 .download-cv, 
 .contacts {
     text-align: right;
@@ -227,7 +232,7 @@ ul.tags li {
     .profile {
         width: 120px;
         float: right;
-        margin: 178px 0 20px 30px;
+        margin: 198px 0 20px 30px;
         box-shadow: 0 2px 5px #333;
     }
 }

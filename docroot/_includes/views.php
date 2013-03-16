@@ -18,7 +18,7 @@
         $context['category'] = 'web';
         $context['mainimg'] = 'web';
         $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
-        $context['title'] = "G's Portfolio";
+        $context['title'] = "Portfolio";
         $context['section'] = 'portfolio';
         $page = $twig->render("portfolio.html", $context);
         return new Response($page, 200);
@@ -31,7 +31,7 @@
         $context['category'] = 'web';
         $context['mainimg'] = 'web';
         $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
-        $context['title'] = "<span class=\"noprint\">G's Curriculum Vitae</span>";
+        $context['title'] = "<span class=\"noprint\">Curriculum Vitae</span>";
         $context['section'] = 'curriculum';
         $page = $twig->render("curriculum.html", $context);
         return new Response($page, 200);
@@ -63,7 +63,7 @@
                 'orderby' => 'post_date',
                 'cat' => get_category_by_slug('web')->term_id,
             );
-            $context['title'] = "G's Blog";
+            $context['title'] = "Blog";
         }
 
         $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
