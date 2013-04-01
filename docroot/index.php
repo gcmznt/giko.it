@@ -21,7 +21,7 @@
     $silex->get("/blog/t/{tag}/", $blog);
     $silex->get("/blog/", $blog);
     $silex->get("/portfolio/", $portfolio);
-    $silex->get("/curriculum/", $curriculum);
+    $silex->get("/giacomozinetti/", $curriculum);
     $silex->get("/article/{name}/", $blogpost);
     $silex->get("/", $home);
 
