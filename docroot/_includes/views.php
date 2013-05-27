@@ -7,7 +7,7 @@
 
     $home = function () use ($silex, $twig, $context) {
 
-        return $silex->redirect("/blog/");
+        return $silex->redirect("/giacomozinetti/");
     };
 
 
