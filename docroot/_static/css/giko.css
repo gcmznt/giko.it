@@ -37,6 +37,12 @@ a {
 a:hover {
     color: #CC0033;
 }
+.container a {
+    text-decoration: underline;
+}
+.container a:hover {
+    text-decoration: none;
+}
 
 small {
     color: #818C99;
