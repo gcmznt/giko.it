@@ -234,14 +234,10 @@ dt {
         padding-right: 20px;
     }
     .container {
-        box-shadow: none;
         padding-top: 2px;
     }
     .header {
         position: static;
-    }
-    .header header {
-        border-color: #4B5B6E;
     }
     .social {
         display: none;
