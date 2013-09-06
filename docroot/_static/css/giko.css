@@ -142,7 +142,7 @@ nav a {
     background: #fff;
 }
 .social a:hover img {
-    vertical-align: baseline;
+    margin-bottom: 20px;
 }
 
 article {
