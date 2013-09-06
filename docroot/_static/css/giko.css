@@ -125,12 +125,20 @@ nav a {
 }
 
 .social {
-    float: right;
-    margin-top: -3px;
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+.social a {
+    height: 82px;
+    line-height: 82px;
+    display: inline-block;
+    background: #1e5799;
 }
 .social img {
     height: 40px;
-    vertical-align: bottom;
+    vertical-align: middle;
+    background: #fff;
 }
 
 article {
