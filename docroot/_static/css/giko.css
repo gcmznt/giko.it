@@ -49,10 +49,10 @@ header,
 }
 
 .container {
-    box-shadow: 0 0 350px rgba(0,0,0,0.8);
     padding-top: 100px;
     z-index: 10;
     position: relative;
+    margin-bottom: 12px;
 }
 
 .geko {
@@ -102,6 +102,7 @@ header {
     padding-top: 25px;
     padding-bottom: 15px;
     border-bottom: 12px solid #1e5799;
+    border-top: 12px solid #1e5799;
 }
 header .title {
     display: inline-block;
@@ -125,11 +126,10 @@ nav a {
 
 .social {
     float: right;
-    padding-top: 7px;
+    margin-top: -3px;
 }
 .social img {
-    height: 20px;
-    margin-right: 10px;
+    height: 40px;
     vertical-align: bottom;
 }
 
