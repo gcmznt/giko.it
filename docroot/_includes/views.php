@@ -32,7 +32,7 @@
         $context['mainimg'] = 'web';
         $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
         $context['title'] = "<span class=\"noprint\">Curriculum Vitae</span>";
-        $context['section'] = 'curriculum';
+        $context['section'] = 'giacomozinetti';
         $page = $twig->render("curriculum.html", $context);
         return new Response($page, 200);
     };
