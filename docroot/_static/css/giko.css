@@ -103,6 +103,7 @@ header {
     padding-bottom: 15px;
     border-bottom: 12px solid #1e5799;
     border-top: 12px solid #1e5799;
+    position: relative;
 }
 header .title {
     display: inline-block;
@@ -139,6 +140,9 @@ nav a {
     height: 40px;
     vertical-align: middle;
     background: #fff;
+}
+.social a:hover img {
+    vertical-align: baseline;
 }
 
 article {
