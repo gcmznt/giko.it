@@ -225,6 +225,9 @@ dt {
         margin: 198px 0 20px 30px;
         box-shadow: 0 2px 5px #333;
     }
+    .rank span {
+        box-shadow: 0 0 1px 1px #1e5799;
+    }
 }
 
 @media (max-width: 679px) {
@@ -247,6 +250,11 @@ dt {
 .tech th {
     text-align: right;
     font-weight: normal;
+    padding-bottom: 10px;
+}
+.tech td {
+    padding-bottom: 10px;
+    line-height: 16px;
 }
 
 .rank {
@@ -267,7 +275,6 @@ dt {
     padding: 0;
     border-radius: 50%;
     text-indent: -1000em;
-    box-shadow: 0 0 1px 1px #1e5799;
 }
 
 .rank span:nth-child(2) {
