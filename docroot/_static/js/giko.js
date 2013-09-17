@@ -2,10 +2,13 @@
 
     $(document).ready(function(){
 
-        // $('[rel=tooltip]').each(function() {
-        //     var pos = $(this).attr('data-placement');
-        //     $(this).tooltip({'placement': pos});
-        // });
+        $('.rank').each(function() {
+            var val = parseInt($(this).text(), 10);
+            $(this).text('');
+            for (var i = val; i > 0; i--) {
+                $(this).prepend('<span>' + i + '</span>');
+            };
+        });
 
         $("#mainContent a[href^='http']").not("a[href^='http://" + location.hostname + "']").each(function() {
             if ($(this).find('img').length === 0) {

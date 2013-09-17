@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <p class="noprint download-cv">
+        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf">scarica PDF &darr;</a>
+    </p>
+
+    <img class="profile" src="{{ STATIC_URL }}img/profilo.jpg" alt="Giacomo Zinetti Foto">
+    <h2>Giacomo Zinetti <small class="noprint"><a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
+    <p>
+        Hello world! Sono uno sviluppatore web nato il 15 giugno 1984.<br>
+        La mia passione è lo sviluppo del web, costruendo ogni giorno siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le più recenti tecnologie. Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.<br>
+    </p>
+
+    <h3 class="print contacts">I miei contatti</h3>
+    <p class="print contacts">
+        Abito a Lomazzo (Como), Italia<br>
+        Il mio numero di celluare è +39 348 7649164<br>
+        Potete contattarmi scrivendo a <a>giacomo.zinetti@giko.it</a><br>
+        O leggendo qualcosa sul mio blog <a>www.giko.it</a>
+    </p>
+
+    <h2>Esperienze lavorative</h2>
+    <dl>
+        <dt>Frontend developer <small>in <a href="http://www.sowre.com/">Sowre sa</a> da Aprile 2013</small></dt>
+        <dd>Sviluppatore di temi (HTML, CSS e JS) su IBM WebSphere Portal per clienti come <a href="http://www.armani.it/">Giorgio Armani spa</a>, <a href="http://www.venturatravel.it/">Ventura spa</a> e <a href="http://www.membrane.it/">Membrane srl</a>. Sviluppo dei template HTML per il sito mobile di <a href="http://www.moby.it/">Moby</a>.</dd>
+        <dt>Web developer <small>in <a href="http://www.prodigys.it/">Prodigys Group srl</a> da Marzo 2010 ad Aprile 2013</small></dt>
+        <dd>Frontend di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/">Allianz</a> (sito mobile). Diversi tool amministrativi sviluppati in PHP e Python. Ho lavorato in team con <a href="http://riccardo.forina.me">Riccardo Forina</a> e <a href="http://www.tommasobagassi.com/">Tommaso Bagassi</a>.</dd>
+        <dt>Tirocinio <small>in <a href="http://www.consoft.it/">Consoft Sistemi spa</a> da Maggio a Luglio 2008</small></dt>
+        <dd>Sviluppatore J2EE.</dd>
+    </dl>
+
+    <h2>Formazione</h2>
+    <dl>
+        <dt>Ingegneria informatica <small>al <a href="http://www.polimi.it/">Politecnico di Milano</a> dal 2004 al 2009</small></dt>
+        <dd>studi interrotti per motivi di lavoro</dd>
+        <dt>Certificazione TOEFL <small>ottenuta il 5 Maggio 2007</small></dt>
+        <dt>Scuola superiore <small>al <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> di Saronno dal 1998 al 2003</small></dt>
+    </dl>
+
+    <h2>I miei progetti da tempo libero</h2>
+    <dl>
+        <dt><a href="http://www.tchoukball.it/">Federazione TchoukBall Italia</a> <small>dal 2002</small></dt>
+        <dd>IT Manager (sito federale, tool gestionali, facebook, community) della federazione nazionale di questo sport innovativo.</dd>
+        <dt><a href="http://www.saronnocomets.it/">Saronno TchoukBall Club</a> <small>dal 2006</small></dt>
+        <dd>Il club nel quale gioco, il primo club italiano di TchoukBall.</dd>
+        <dt><a href="http://www.youtchouk.com">YouTchouk</a> <small>dal 2012</small></dt>
+        <dd>Portale per video di tchoukball.</dd>
+        <dt><a href="http://giacomozinetti.github.com/site-by-site/">Site-by-Site</a> <small>dal 2013</small></dt>
+        <dd>Piccolo script per confrontare graficamente due siti web, utile in caso di ottimizzazione CSS.</dd>
+        <dt><a href="http://www.tchouk.in/">Tchouk IN...</a> <small>dal 2013</small></dt>
+        <dd>Social World Map di &quot;TchoukPoints&quot;.</dd>
+    </dl>
+
+    <p>
+        Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/">mia pagina Github</a>.
+    </p>
+
+    <h2>Competenze</h2>
+    <table class="tech">
+        <tr>
+            <th>HTML</th>
+            <td><span class="rank">5</span></td>
+            <td><small>HTML4 e 5, XHTML 1.1</small></td>
+        </tr>
+        <tr>
+            <th>CSS</th>
+            <td><span class="rank">5</span></td>
+            <td><small>CSS3, Cross Browsing, Media Queries, Responsive, Mobile First, Twitter Bootstrap</small></td>
+        </tr>
+        <tr>
+            <th>JavaScript</th>
+            <td><span class="rank">5</span></td>
+            <td><small>jQuery, Backbone, Underscore, Twitter Bootstrap</small></td>
+        </tr>
+        <tr>
+            <th>PHP</th>
+            <td><span class="rank">4</span></td>
+            <td><small>Wordpress, Silex, Twig</small></td>
+        </tr>
+        <tr>
+            <th>Python</th>
+            <td><span class="rank">3</span></td>
+            <td><small>Django, Flask</small></td>
+        </tr>
+        <tr>
+            <th>MySql</th>
+            <td><span class="rank">4</span></td>
+            <td><small></small></td>
+        </tr>
+        <tr>
+            <th>Other</th>
+            <td></td>
+            <td><small>User Experience, API (Google Maps, Twitter, Instagram), Git, SVN, Apache, Amazon Web Services, Sublime Text, Windows, Mac OS X, Unix, Photoshop, Illustrator</small></td>
+        </tr>
+    </table>
+
+    <h2>Altro su di me</h2>
+    <p>
+        Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.<br />
+        Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.org">TchoukBall</a>.
+    </p>
+{% endblock %}

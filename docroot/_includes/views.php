@@ -4,39 +4,30 @@
     use Symfony\Component\HttpFoundation\Response;
 
 
-
     $home = function () use ($silex, $twig, $context) {
-
-        return $silex->redirect("/giacomozinetti/");
+        return $silex->redirect("/giacomozinetti/en/");
     };
 
+    $curriculum = function ($lang='') use ($silex, $twig, $context) {
 
-    $portfolio = function () use ($silex, $twig, $context) {
-        require_once(__DIR__ . '/../wordpress/wp-load.php');
-
-        $context['pagetitle'] = 'Portfolio';
-        $context['category'] = 'web';
-        $context['mainimg'] = 'web';
-        $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
-        $context['title'] = "Portfolio";
-        $context['section'] = 'portfolio';
-        $page = $twig->render("portfolio.html", $context);
-        return new Response($page, 200);
-    };
-
-    $curriculum = function () use ($silex, $twig, $context) {
-        require_once(__DIR__ . '/../wordpress/wp-load.php');
+        if ($lang == '') {
+            $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+            switch ($lang){
+                case "it":
+                    return $silex->redirect("/giacomozinetti/it/");
+                case "en":
+                    return $silex->redirect("/giacomozinetti/en/");
+                default:
+                    return $silex->redirect("/giacomozinetti/it/");
+            }
+        }
 
         $context['pagetitle'] = 'Curriculum Vitae';
-        $context['category'] = 'web';
-        $context['mainimg'] = 'web';
-        $context['tags'] = get_category_tags(get_category_by_slug('web')->term_id);
         $context['title'] = "<span class=\"noprint\">Curriculum Vitae</span>";
         $context['section'] = 'giacomozinetti';
-        $page = $twig->render("curriculum.html", $context);
+        $page = $twig->render("curriculum_" . $lang . ".html", $context);
         return new Response($page, 200);
     };
-
 
     $blog = function ($category='', $tag='', $search='') use ($silex, $twig, $context) {
         require_once(__DIR__ . '/../wordpress/wp-load.php');
@@ -91,5 +82,3 @@
         $page = $twig->render("blog-post.html", $context);
         return new Response($page, 200);
     };
-
-
