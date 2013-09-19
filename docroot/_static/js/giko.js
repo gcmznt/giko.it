@@ -11,6 +11,24 @@
             };
         });
 
+        $(window).scroll(function() {
+            var sel = 0;
+            $('.container h2').each(function(){
+                if ($(this).offset().top < ($(window).scrollTop() + 107)) {
+                    $(this).css('visibility', 'hidden');
+                    sel = $(this);
+                } else {
+                    $(this).css('visibility', 'visible');
+                }
+            });
+            if (sel == 0) {
+                $('.livetitle').hide();
+            } else {
+                $('.livetitle').show();
+                $('.livetitle h2').html(sel.html());
+            }
+        });
+
         $('.printme').click(function(e) {
             e.preventDefault();
             window.print();

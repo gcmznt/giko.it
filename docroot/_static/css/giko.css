@@ -72,9 +72,12 @@ h2 {
     margin: 1.7em -80px 1.1em;
     padding: 10px 80px;
     position: relative;
+    z-index: 200;
 }
 h2 a {
     color: white;
+}
+h2 small {
     float: right;
     display: inline-block;
 }
@@ -156,6 +159,7 @@ nav a {
     top: 95px;
     width: 100%;
     z-index: 150;
+    display: none;
 }
 .livetitle h2 {
     max-width: 800px;
