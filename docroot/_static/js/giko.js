@@ -1,13 +1,20 @@
 (function($) {
 
-    $(document).ready(function(){
+    $(document).ready(function() {
 
         $('.rank').each(function() {
             var val = parseInt($(this).text(), 10);
             $(this).text('');
-            for (var i = val; i > 0; i--) {
-                $(this).prepend('<span>' + i + '</span>');
+            for (var i = 0; i < 5; i++) {
+                var c = (i < val) ? 'on' : 'off';
+                $(this).append('<span class="' + c + '">' + i + '</span>');
             };
+        });
+
+        $('.printme').click(function(e) {
+            e.preventDefault();
+            window.print();
+            return false;
         });
 
         $("#mainContent a[href^='http']").not("a[href^='http://" + location.hostname + "']").each(function() {

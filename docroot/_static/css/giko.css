@@ -6,19 +6,9 @@ body {
     line-height: 150%;
 }
 
-* {
-    -webkit-transition: all 0.2s ease-in-out;
-}
 *::selection {
-    background: #CC0033;
+    background: #ff6600;
     color: #fff;
-}
-
-
-@media (max-width: 979px) {
-    body {
-        padding-bottom: 0;
-    }
 }
 
 a {
@@ -50,7 +40,6 @@ header,
 
 .container {
     padding-top: 100px;
-    z-index: 10;
     position: relative;
     margin-bottom: 12px;
 }
@@ -63,24 +52,34 @@ header,
     position: fixed;
     bottom: 0;
     left: 50%;
-    margin-left: -690px;
+    margin-left: 490px;
     z-index: 1;
 }
 
 h1 {
     margin: 1.4em 0 1.1em;
-    font-size: 2.5em;
+    font-size: 218%;
     line-height: 1.2em;
     font-weight: normal;
 }
 h2 {
-    font-size: 1.6em;
+    font-size: 164%;
     margin: 1.7em 0 1.1em;
     line-height: 1.4em;
     font-weight: normal;
+    background: #1e5799;
+    color: white;
+    margin: 1.7em -80px 1.1em;
+    padding: 10px 80px;
+    position: relative;
+}
+h2 a {
+    color: white;
+    float: right;
+    display: inline-block;
 }
 h3 {
-    font-size: 1.3em;
+    font-size: 145%;
     margin: 1.7em 0 1.1em;
     font-weight: normal;
 }
@@ -96,7 +95,7 @@ pre {
 .header {
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 300;
 }
 header {
     padding-top: 25px;
@@ -110,7 +109,7 @@ header .title {
     margin: 0;
     margin-right: 20px;
     line-height: 40px;
-    font-size: 2em;
+    font-size: 218%;
 }
 nav {
     line-height: 34px;
@@ -128,11 +127,13 @@ nav a {
 .social {
     position: absolute;
     top: 0;
-    right: 40px;
+    right: 80px;
 }
 .social a {
-    height: 82px;
-    line-height: 82px;
+    height: 83px;
+    width: 50px;
+    text-align: center;
+    line-height: 83px;
     display: inline-block;
     background: #1e5799;
 }
@@ -140,9 +141,25 @@ nav a {
     height: 40px;
     vertical-align: middle;
     background: #fff;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .social a:hover img {
     margin-bottom: 20px;
+}
+
+.livetitle {
+    position: fixed;
+    top: 95px;
+    width: 100%;
+    z-index: 150;
+}
+.livetitle h2 {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 article {
@@ -177,18 +194,54 @@ dt {
     margin: 0.8em 0 0.3em;
 }
 
-.download-cv, 
 .contacts {
     text-align: right;
+}
+.container h1 .btn {
+    float: right;
+    font-size: 50%;
+    background: #1e5799;
+    width: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.container h1 .btn:hover {
+    width: 130px;
+}
+.container .btn {
+    background: #1e5799;
+    color: white;
+    border: 0 none;
+    line-height: 2.5em;
+    padding: 0 15px;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.actions .btn:hover {
+    -webkit-transform: scale(1.3,1.3);
+    -moz-transform: scale(1.3,1.3);
+    -ms-transform: scale(1.3,1.3);
+    -o-transform: scale(1.3,1.3);
+    transform: scale(1.3,1.3);
+}
+.actions {
+    text-align: center;
+    margin: 60px 0 40px;
 }
 .profile {
     width: 160px;
     float: left;
-    margin: 25px 30px 20px 0;
+    margin: 0 20px 20px 0;
     box-shadow: 0 2px 5px #333;
 }
 
 @media not print {
+    .contacts,
     .print {
         display: none;
     }
@@ -201,8 +254,13 @@ dt {
     h3 small {
         font-size: 70%;
     }
+    h1 .btn,
+    h2 small,
+    .actions,
+    .header,
     .noprint {
         display: none;
+        visibility: hidden;
     }
     .container {
         padding: 0 60px;
@@ -222,11 +280,16 @@ dt {
     .profile {
         width: 120px;
         float: right;
-        margin: 198px 0 20px 30px;
-        box-shadow: 0 2px 5px #333;
+        margin: 0 0 20px 20px;
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        transform: scaleX(-1);
+        -ms-filter: fliph;
+        filter: fliph;
     }
-    .rank span {
-        box-shadow: 0 0 1px 1px #1e5799;
+    .rank span.off {
+        border-color: white;
     }
 }
 
@@ -265,7 +328,7 @@ dt {
     line-height: 40px;
 }
 .rank span {
-    background: #1e5799;
+    background: white;
     display: inline-block;
     vertical-align: middle;
     list-style: none;
@@ -275,6 +338,12 @@ dt {
     padding: 0;
     border-radius: 50%;
     text-indent: -1000em;
+    border: 1px solid #1e5799;
+    opacity: .3;
+    background: #1e5799;
+}
+.rank span.on {
+    opacity: 1;
 }
 
 .rank span:nth-child(2) {

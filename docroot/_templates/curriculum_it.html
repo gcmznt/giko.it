@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 
-{% block container %}
-    <p class="noprint download-cv">
-        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf">scarica PDF &darr;</a>
-    </p>
+{% block extratitle %}
+    <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf" class="btn">&nbsp;&darr; &nbsp;&nbsp; scarica PDF </a>
+{% endblock %}
 
+{% block container %}
+    <h2>Giacomo Zinetti <small><a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
     <img class="profile" src="{{ STATIC_URL }}img/profilo.jpg" alt="Giacomo Zinetti Foto">
-    <h2>Giacomo Zinetti <small class="noprint"><a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
     <p>
         Hello world! Sono uno sviluppatore web nato il 15 giugno 1984.<br>
-        La mia passione &egrave; lo sviluppo del web, costruendo ogni giorno siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le pi&ugrave; recenti tecnologie. Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.<br>
+        La mia passione &egrave; lo sviluppo del web, costruendo ogni giorno siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le pi&ugrave; recenti tecnologie.<br>
+        Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.<br>
     </p>
 
-    <h3 class="print contacts">I miei contatti</h3>
-    <p class="print contacts">
+    <h3 class="contacts">I miei contatti</h3>
+    <p class="contacts">
         Abito a Lomazzo (Como), Italia<br>
         Il mio numero di celluare &egrave; +39 348 7649164<br>
         Potete contattarmi scrivendo a <a>giacomo.zinetti@giko.it</a><br>
@@ -25,17 +26,9 @@
         <dt>Frontend developer <small>in <a href="http://www.sowre.com/">Sowre sa</a> da Aprile 2013</small></dt>
         <dd>Sviluppatore di temi (HTML, CSS e JS) su IBM WebSphere Portal per clienti come <a href="http://www.armani.it/">Giorgio Armani spa</a>, <a href="http://www.venturatravel.it/">Ventura spa</a> e <a href="http://www.membrane.it/">Membrane srl</a>. Sviluppo dei template HTML per il sito mobile di <a href="http://www.moby.it/">Moby</a>.</dd>
         <dt>Web developer <small>in <a href="http://www.prodigys.it/">Prodigys Group srl</a> da Marzo 2010 ad Aprile 2013</small></dt>
-        <dd>Frontend di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/">Allianz</a> (sito mobile). Diversi tool amministrativi sviluppati in PHP e Python. Ho lavorato in team con <a href="http://riccardo.forina.me">Riccardo Forina</a> e <a href="http://www.tommasobagassi.com/">Tommaso Bagassi</a>.</dd>
+        <dd>Frontend di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/">Allianz</a> (sito mobile). Siti ottimizzati per sopportare grossi carichi di visite (<a href="http://offerte-adsl.vodafone.it/promozione/">Landing offerte ADSL Vodafone</a>). Diversi tool amministrativi sviluppati in PHP e Python. Ho lavorato in team con <a href="http://riccardo.forina.me">Riccardo Forina</a> e <a href="http://www.tommasobagassi.com/">Tommaso Bagassi</a>.</dd>
         <dt>Tirocinio <small>in <a href="http://www.consoft.it/">Consoft Sistemi spa</a> da Maggio a Luglio 2008</small></dt>
         <dd>Sviluppatore J2EE.</dd>
-    </dl>
-
-    <h2>Formazione</h2>
-    <dl>
-        <dt>Ingegneria informatica <small>al <a href="http://www.polimi.it/">Politecnico di Milano</a> dal 2004 al 2009</small></dt>
-        <dd>studi interrotti per motivi di lavoro</dd>
-        <dt>Certificazione TOEFL <small>ottenuta il 5 Maggio 2007</small></dt>
-        <dt>Scuola superiore <small>al <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> di Saronno dal 1998 al 2003</small></dt>
     </dl>
 
     <h2>Competenze</h2>
@@ -56,19 +49,9 @@
             <td><small>jQuery, jQuery UI, jQuery tools, Backbone, Underscore, Twitter Bootstrap e molte altre librerie</small></td>
         </tr>
         <tr>
-            <th>PHP</th>
-            <td><span class="rank">4</span></td>
-            <td><small>Wordpress, Silex, Twig</small></td>
-        </tr>
-        <tr>
-            <th>Python</th>
-            <td><span class="rank">3</span></td>
-            <td><small>Django, Flask</small></td>
-        </tr>
-        <tr>
-            <th>MySql</th>
-            <td><span class="rank">4</span></td>
-            <td><small></small></td>
+            <th>Performance</th>
+            <td><span class="rank">5</span></td>
+            <td><small>Ottimizziazione risorse, algoritimi di compressione immagini, protocollo HTTP</small></td>
         </tr>
         <tr>
             <th>UX</th>
@@ -76,14 +59,33 @@
             <td><small></small></td>
         </tr>
         <tr>
-            <th>Performance</th>
-            <td><span class="rank">5</span></td>
-            <td><small>Ottimizziazione siti web</small></td>
+            <th>PHP</th>
+            <td><span class="rank">4</span></td>
+            <td><small>Wordpress, Silex, Twig</small></td>
+        </tr>
+        <tr>
+            <th>MySql</th>
+            <td><span class="rank">4</span></td>
+            <td><small></small></td>
+        </tr>
+        <tr>
+            <th>Python</th>
+            <td><span class="rank">3</span></td>
+            <td><small>Django, Flask</small></td>
         </tr>
     </table>
+    <h3>Altre competenze</h3>
     <p>
-        Altre: API (Google Maps, Twitter, Instagram), Git, SVN, Apache, Amazon Web Services, Sublime Text, Windows, Mac OS X, Unix, Photoshop, Illustrator
+        API (Google Maps, Twitter, Instagram, Facebook), Git, SVN, Apache, Amazon Web Services, Sublime Text, Windows, Mac OS X, Unix, Photoshop, Illustrator, servizi REST
     </p>
+
+    <h2>Formazione</h2>
+    <dl>
+        <dt>Ingegneria informatica <small>al <a href="http://www.polimi.it/">Politecnico di Milano</a> dal 2004 al 2009</small></dt>
+        <dd>Studi interrotti per motivi di lavoro. Tra gli esami superati Informatica 1, 2 e 3, Applicazioni ipermediali, Basi di dati, Statistica, Fondamenti di ricerda operativa, Analisi 1 e 2</dd>
+        <dt>Certificazione TOEFL <small>ottenuta il 5 Maggio 2007</small></dt>
+        <dt>Scuola superiore <small>al <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> di Saronno dal 1998 al 2003</small></dt>
+    </dl>
 
     <h2>Side-projects</h2>
     <dl>
@@ -107,5 +109,9 @@
     <p>
         Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.<br />
         Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.org">TchoukBall</a>.
+    </p>
+
+    <p class="actions">
+        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf" class="btn">Scarica la versione PDF</a> oppure <a href="#" class="btn printme">Stampa il CV</a>
     </p>
 {% endblock %}
