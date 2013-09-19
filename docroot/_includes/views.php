@@ -5,7 +5,15 @@
 
 
     $home = function () use ($silex, $twig, $context) {
-        return $silex->redirect("/giacomozinetti/en/");
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        switch ($lang){
+            case "it":
+                return $silex->redirect("/giacomozinetti/it/");
+            case "en":
+                return $silex->redirect("/giacomozinetti/en/");
+            default:
+                return $silex->redirect("/giacomozinetti/it/");
+        }
     };
 
     $curriculum = function ($lang='') use ($silex, $twig, $context) {
@@ -23,7 +31,7 @@
         }
 
         $context['pagetitle'] = 'Curriculum Vitae';
-        $context['title'] = "<span class=\"noprint\">Curriculum Vitae</span>";
+        $context['title'] = "Curriculum Vitae";
         $context['section'] = 'giacomozinetti';
         $page = $twig->render("curriculum_" . $lang . ".html", $context);
         return new Response($page, 200);

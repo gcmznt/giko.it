@@ -7,7 +7,7 @@ body {
 }
 
 *::selection {
-    background: #ff6600;
+    background: #f60;
     color: #fff;
 }
 
@@ -16,7 +16,7 @@ a {
     color: #1e5799;
 }
 a:hover {
-    color: #ff6600;
+    color: #f60;
 }
 .container a {
     border-bottom: 1px dotted #1e5799;
@@ -64,16 +64,17 @@ h1 {
 }
 h2 {
     font-size: 164%;
-    margin: 1.7em 0 1.1em;
     line-height: 1.4em;
     font-weight: normal;
     background: #1e5799;
     color: white;
-    margin: 1.7em -80px 1.1em;
+    margin: 1.5em -80px;
     padding: 10px 80px;
     position: relative;
     z-index: 200;
-    overflow: hidden;
+    overflow: hidden;/*
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;*/
 }
 h2 a {
     color: white;
@@ -106,6 +107,8 @@ header {
     padding-bottom: 15px;
     border-bottom: 12px solid #1e5799;
     border-top: 12px solid #1e5799;
+    background: #1e5799;
+    color: white;
     position: relative;
 }
 header .title {
@@ -126,6 +129,7 @@ nav a {
     margin: 0 5px;
     position: relative;
     font-size: 140%;
+    color: white;
 }
 
 .social {
@@ -153,6 +157,7 @@ nav a {
 }
 .social a:hover img {
     margin-bottom: 20px;
+    background: #f60;
 }
 
 .livetitle {
@@ -172,26 +177,9 @@ article {
     border-bottom: 1px dotted #f6f6f6;
     box-shadow: 0 4px 20px -15px #333;
 }
-.tags {
-    text-align: right;
-}
 
 #disqus_thread {
     margin-top: 60px;
-}
-
-ul.tags {
-    text-align: center;
-    padding: 0;
-}
-ul.tags li {
-    list-style: none;
-    display: inline-block;
-    background: #1e5799;
-    color: white;
-    padding: 2px 15px;
-    border-radius: 14px;
-    margin: 4px;
 }
 
 dt {
@@ -202,21 +190,10 @@ dt {
 .contacts {
     text-align: right;
 }
-.container h1 .btn {
-    float: right;
-    font-size: 50%;
-    background: #1e5799;
-    width: 20px;
-    margin: 0;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.container h1 .btn:hover {
-    width: 130px;
-}
+
 .container .btn {
-    background: #1e5799;
-    color: white;
+    background: #f60;
+    color: #fff;
     border: 0 none;
     line-height: 2.5em;
     padding: 0 15px;
@@ -228,6 +205,18 @@ dt {
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+}
+.container h1 .btn {
+    float: right;
+    font-size: 50%;
+    width: 20px;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.container h1 .btn[download]:hover {
+    width: 150px;
 }
 .actions .btn:hover {
     -webkit-transform: scale(1.3,1.3);
@@ -269,16 +258,21 @@ dt {
         display: none;
         visibility: hidden;
     }
+    h1 {
+        display: none;
+    }
+    h2 {
+        color: #333;
+        visibility: visible !important;
+    }
+    .livetitle {
+        display: none !important;
+    }
     .container {
         padding: 0 60px;
     }
-    ul.tags li {
-        list-style: none;
-        display: inline-block;
-        background: transparent;
-        color: #4B5B6E;
-        box-shadow: none;
-        margin: 4px;
+    .container a {
+        border-bottom: 0 none;
     }
     a[href]:after {
         content: " [" attr(href) "]";
@@ -294,7 +288,7 @@ dt {
     }
 }
 
-@media (max-width: 679px) {
+@media only screen and (max-width: 679px) {
     header,
     .container {
         padding-left: 20px;
@@ -311,11 +305,18 @@ dt {
     h2 {
         text-align: center;
     }
-    .container h1 .btn,
+    .container h1 .btn {
+        position: absolute;
+        right: 20px;
+    }
+    .container h1 .btn[download],
     h2 small,
     .printme,
     .social {
         display: none;
+    }
+    h2 {
+        margin: 1.7em -20px 1.1em;
     }
     .livetitle {
         top: 0;
@@ -365,9 +366,9 @@ dt {
     padding: 0;
     border-radius: 50%;
     text-indent: -1000em;
-    border: 1px solid #1e5799;
+    border: 1px solid #f60;
     opacity: .3;
-    background: #1e5799;
+    background: #f60;
 }
 .rank span.on {
     opacity: 1;

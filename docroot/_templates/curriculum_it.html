@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
 {% block extratitle %}
-    <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf" class="btn">&nbsp;&darr; &nbsp;&nbsp; scarica PDF </a>
+    <a href="../en/" class="btn">en</a>
+    <a href="{{ STATIC_URL }}docs/20130919-zinetti-giacomo-cv-it.pdf" download="zinetti-giacomo-cv.pdf" class="btn">&nbsp;&darr; &nbsp;&nbsp; scarica il CV </a>
 {% endblock %}
 
 {% block container %}
     <h2>Giacomo Zinetti<small> <a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
     <img class="profile" src="{{ STATIC_URL }}img/profilo2.jpg" alt="Giacomo Zinetti Foto">
     <p>
-        Hello world! Sono uno sviluppatore web nato il 15 giugno 1984.<br>
-        La mia passione &egrave; lo sviluppo del web, costruendo ogni giorno siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le pi&ugrave; recenti tecnologie.<br>
+        Hello world! Sono uno sviluppatore nato il 15 giugno 1984.<br>
+        La mia passione &egrave; il web e la coltivo ogni giorno costruendo siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le pi&ugrave; recenti tecnologie.<br>
         Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.<br>
     </p>
 
@@ -51,7 +52,7 @@
         <tr>
             <th>Performance</th>
             <td><span class="rank">5</span></td>
-            <td><small>Ottimizziazione risorse, algoritimi di compressione immagini, protocollo HTTP</small></td>
+            <td><small>Ottimizzazione risorse, algoritimi di compressione immagini, protocollo HTTP</small></td>
         </tr>
         <tr>
             <th>UX</th>
@@ -76,21 +77,21 @@
     </table>
     <h3>Altre competenze</h3>
     <p>
-        API (Google Maps, Twitter, Instagram, Facebook), Git, SVN, Apache, Amazon Web Services, Sublime Text, Windows, Mac OS X, Unix, Photoshop, Illustrator, servizi REST
+        API (Google Maps, Twitter, Instagram, Facebook), Git, SVN, Apache, Amazon Web Services, Sublime Text, Windows, Mac OS X, Unix, Photoshop, Illustrator, servizi REST.
     </p>
 
     <h2>Formazione</h2>
     <dl>
         <dt>Ingegneria informatica <small>al <a href="http://www.polimi.it/">Politecnico di Milano</a> dal 2004 al 2009</small></dt>
         <dd>Studi interrotti per motivi di lavoro. Tra gli esami superati Informatica 1, 2 e 3, Applicazioni ipermediali, Basi di dati, Statistica, Fondamenti di ricerda operativa, Analisi 1 e 2</dd>
-        <dt>Certificazione TOEFL <small>ottenuta il 5 Maggio 2007</small></dt>
-        <dt>Scuola superiore <small>al <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> di Saronno dal 1998 al 2003</small></dt>
+        <dt>Certificazione TOEFL <small>ottenuta il 5 Maggio 2007</small></dt><dd></dd>
+        <dt>Scuola superiore <small>al <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> di Saronno dal 1998 al 2003</small></dt><dd></dd>
     </dl>
 
     <h2>Side-projects</h2>
     <dl>
         <dt><a href="http://www.tchoukball.it/">Federazione TchoukBall Italia</a> <small>dal 2002</small></dt>
-        <dd>IT Manager (sito federale, tool gestionali, facebook, community) della federazione nazionale di questo sport innovativo.</dd>
+        <dd>IT manager (sito federale, tool gestionali, facebook, community) della federazione nazionale di questo sport innovativo.</dd>
         <dt><a href="http://www.saronnocomets.it/">Saronno TchoukBall Club</a> <small>dal 2006</small></dt>
         <dd>Il club nel quale gioco, il primo club italiano di TchoukBall.</dd>
         <dt><a href="http://www.youtchouk.com">YouTchouk</a> <small>dal 2012</small></dt>
@@ -112,8 +113,8 @@
     </p>
 
     <p class="actions">
-        <a href="mailto:giacomo.zinetti@giko.it" class="btn">Contattami</a>
-        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf" class="btn">Scarica la versione PDF</a>
-        <span class="printme">oppure <a href="#" class="btn">Stampa il CV</a></span>
+        <a href="mailto:giacomo.zinetti@giko.it" class="btn">Contattami</a>,
+        <a href="{{ STATIC_URL }}docs/20130919-zinetti-giacomo-cv-it.pdf" download="zinetti-giacomo-cv.pdf" class="btn">Scarica il CV</a>
+        <span class="printme">oppure <a href="#" class="btn">Stampalo</a></span>
     </p>
 {% endblock %}

@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 
+{% block extratitle %}
+    <a href="../it/" class="btn">it</a>
+    <a href="{{ STATIC_URL }}docs/20130919-zinetti-giacomo-cv-en.pdf" download="zinetti-giacomo-cv.pdf" class="btn">&nbsp;&darr; &nbsp;&nbsp; download CV </a>
+{% endblock %}
+
 {% block container %}
-    <p class="noprint download-cv">
-        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf">download as PDF &darr;</a>
-    </p>
-
-    <img class="profile" src="{{ STATIC_URL }}img/profilo.jpg" alt="Giacomo Zinetti Foto">
-    <h2>Giacomo Zinetti <small class="noprint"><a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
+    <h2>Giacomo Zinetti<small> <a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
+    <img class="profile" src="{{ STATIC_URL }}img/profilo2.jpg" alt="Giacomo Zinetti Picture">
     <p>
-        Hello world! I'm a web developer born June 15, 1984.<br>
-        My passion is web developing, building every day better websites with innovative user experience, cool graphic interface and using the latest technologies. I love working with a team of web enthusiasts with whom to share our experiences.<br>
+        Hello world! I'm a developer born June 15, 1984.<br>
+        My passion is web developing, building every day better websites and applications with innovative user experience, cool graphic interface and using the latest technologies.<br>
+        I love working with a team of web enthusiasts with whom to share our experiences.<br>
     </p>
 
-    <h3 class="print contacts">My contacts</h3>
-    <p class="print contacts">
+    <h3 class="contacts">My contacts</h3>
+    <p class="contacts">
         I live in Lomazzo (Como), Italy<br>
         My mobile is +39 348 7649164<br>
         You can contact me writing at <a>giacomo.zinetti@giko.it</a><br>
@@ -23,25 +25,73 @@
     <h2>Working experience</h2>
     <dl>
         <dt>Frontend developer <small>at <a href="http://www.sowre.com/">Sowre sa</a> from April 2013</small></dt>
-        <dd>Developer of IBM WebSphere Portal's themes and javascript for clients like <a href="http://www.armani.it/">Giorgio Armani spa</a>, <a href="http://www.venturatravel.it/">Ventura spa</a> and <a href="http://www.membrane.it/">Membrane srl</a>. Developed HTML templates of <a href="http://www.moby.it/">Moby</a>'s mobile website.</dd>
+        <dd>Developer of IBM WebSphere Portal's themes (HTML, CSS and JS) for clients like <a href="http://www.armani.it/">Giorgio Armani spa</a>, <a href="http://www.venturatravel.it/">Ventura spa</a> and <a href="http://www.membrane.it/">Membrane srl</a>. Developed HTML templates of <a href="http://www.moby.it/">Moby</a>'s mobile website.</dd>
         <dt>Web developer <small>at <a href="http://www.prodigys.it/">Prodigys Group srl</a> from March 2010 to April 2013</small></dt>
-        <dd>Frontend of many websites with particular attention to crossbrowsing (ie6+) pixel perfect and responsive web design for clients like <a href="http://www.vodafone.it/">Vodafone Italia</a> (2011 Home-page and 2012 SERP) and <a href="http://www.allianz.it/">Allianz</a> (mobile website). Lots of administrative tools developed in PHP and Python. Worked in team with <a href="http://riccardo.forina.me">Riccardo Forina</a> and <a href="http://www.tommasobagassi.com/">Tommaso Bagassi</a>.</dd>
+        <dd>Frontend of many websites with particular attention to crossbrowsing (ie6+) pixel perfect and responsive web design for clients like <a href="http://www.vodafone.it/">Vodafone Italia</a> (2011 Home-page and 2012 SERP) and <a href="http://www.allianz.it/">Allianz</a> (mobile website). Optimization of websites with high traffic (<a href="http://offerte-adsl.vodafone.it/promozione/">Landing offerte ADSL Vodafone</a>). Lots of administrative tools developed in PHP and Python. I've worked in team with <a href="http://riccardo.forina.me">Riccardo Forina</a> and <a href="http://www.tommasobagassi.com/">Tommaso Bagassi</a>.</dd>
         <dt>Apprenticeship <small>at <a href="http://www.consoft.it/">Consoft Sistemi spa</a> from May to July 2008</small></dt>
-        <dd>Developer for a big J2EE Application.</dd>
+        <dd>J2EE developer.</dd>
     </dl>
+
+    <h2>Skills</h2>
+    <table class="tech">
+        <tr>
+            <th>HTML</th>
+            <td><span class="rank">5</span></td>
+            <td><small>HTML4 e 5, XHTML 1.1, W3C validation, semantic markup</small></td>
+        </tr>
+        <tr>
+            <th>CSS</th>
+            <td><span class="rank">5</span></td>
+            <td><small>CSS3, LESS, SASS, cross browsing pixel perfect, media queries, responsive design, mobile first, Twitter Bootstrap</small></td>
+        </tr>
+        <tr>
+            <th>JavaScript</th>
+            <td><span class="rank">5</span></td>
+            <td><small>jQuery, jQuery UI, jQuery tools, Backbone, Underscore, Twitter Bootstrap e many other frameworks</small></td>
+        </tr>
+        <tr>
+            <th>Performance</th>
+            <td><span class="rank">5</span></td>
+            <td><small>Resources optimization, image compression algorithms, HTTP protocol</small></td>
+        </tr>
+        <tr>
+            <th>UX</th>
+            <td><span class="rank">4</span></td>
+            <td><small></small></td>
+        </tr>
+        <tr>
+            <th>PHP</th>
+            <td><span class="rank">4</span></td>
+            <td><small>Wordpress, Silex, Twig</small></td>
+        </tr>
+        <tr>
+            <th>MySql</th>
+            <td><span class="rank">4</span></td>
+            <td><small></small></td>
+        </tr>
+        <tr>
+            <th>Python</th>
+            <td><span class="rank">3</span></td>
+            <td><small>Django, Flask</small></td>
+        </tr>
+    </table>
+    <h3>Other skills</h3>
+    <p>
+        API (Google Maps, Twitter, Instagram, Facebook), Git, SVN, Apache, Amazon Web Services, Sublime Text, Windows, Mac OS X, Unix, Photoshop, Illustrator, REST serivces.
+    </p>
 
     <h2>Education</h2>
     <dl>
         <dt>Computer Engineering <small>at <a href="http://www.polimi.it/">Politecnico di Milano</a> from 2004 to 2009</small></dt>
-        <dd>not completed for career opportunities</dd>
-        <dt>TOEFL certification <small>obtained on 5th May 2007</small></dt>
-        <dt>High school <small>at <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> in Saronno from 1998 to 2003</small></dt>
+        <dd>Not completed for career opportunities.</dd>
+        <dt>TOEFL certification <small>obtained on 5th May 2007</small></dt><dd></dd>
+        <dt>High school <small>at <a href="http://www.gbgrassi.it/">Liceo Scientifico G. B. Grassi</a> in Saronno from 1998 to 2003</small></dt><dd></dd>
     </dl>
 
     <h2>Side-projects</h2>
     <dl>
         <dt><a href="http://www.tchoukball.it/">Federazione TchoukBall Italia</a> <small>since 2002</small></dt>
-        <dd>Responsible of the web parts (frontsite, administrative tools, facebook, community) of the national tchoukball federation of this innovative sport.</dd>
+        <dd>IT manager (frontsite, administrative tools, facebook, community) of the national tchoukball federation of this innovative sport.</dd>
         <dt><a href="http://www.saronnocomets.it/">Saronno TchoukBall Club</a> <small>since 2006</small></dt>
         <dd>The club where I play, the first italian tchoukball club.</dd>
         <dt><a href="http://www.youtchouk.com">YouTchouk</a> <small>since 2012</small></dt>
@@ -56,47 +106,15 @@
         Other projects on my <a href="https://github.com/giacomozinetti/">Github page</a>.
     </p>
 
-    <h2>Tech Tags</h2>
-    <ul class="tags">
-        <li>HTML</li>
-        <li>XHTML</li>
-        <li>CSS</li>
-        <li>CSS3</li>
-        <li>Cross Browsing</li>
-        <li>Media Queries</li>
-        <li>Responsive</li>
-        <li>Mobile first</li>
-        <li>Javascript</li>
-        <li>jQuery</li>
-        <li>Backbone.js</li>
-        <li>Underscore.js</li>
-        <li>Twitter Bootstrap</li>
-        <li>Python</li>
-        <li>Django</li>
-        <li>Flask</li>
-        <li>PHP</li>
-        <li>Silex</li>
-        <li>Twig</li>
-        <li>Wordpress</li>
-        <li>MySql</li>
-        <li>Apache</li>
-        <li>Git</li>
-        <li>Amazon Web Services</li>
-        <li>Google Maps API</li>
-        <li>Twitter API</li>
-        <li>Instagram API</li>
-        <li>User Experience</li>
-        <li>Windows</li>
-        <li>Mac OS X</li>
-        <li>Unix</li>
-        <li>Sublime Text</li>
-        <li>Photoshop</li>
-        <li>Illustrator</li>
-    </ul>
-
     <h2>About me</h2>
     <p>
         I love to live our world not only through a monitor but also travelling, taking pictures, juggling, driving (especially motorcycles), snowboarding, playing boardgames and staying with friends.<br />
         I also play a new strange sport called <a href="http://www.tchoukball.org">TchoukBall</a>.
+    </p>
+
+    <p class="actions">
+        <a href="mailto:giacomo.zinetti@giko.it" class="btn">Write me</a>,
+        <a href="{{ STATIC_URL }}docs/20130919-zinetti-giacomo-cv-it.pdf" download="zinetti-giacomo-cv.pdf" class="btn">Download CV</a>
+        <span class="printme">or <a href="#" class="btn">Print it</a></span>
     </p>
 {% endblock %}
