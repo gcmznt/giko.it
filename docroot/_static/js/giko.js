@@ -14,7 +14,7 @@
         $(window).scroll(function() {
             var sel = 0;
             $('.container h2').each(function(){
-                if ($(this).offset().top < ($(window).scrollTop() + 107)) {
+                if ($(this).offset().top < ($(window).scrollTop() + 95)) {
                     $(this).css('visibility', 'hidden');
                     sel = $(this);
                 } else {
