@@ -73,6 +73,7 @@ h2 {
     padding: 10px 80px;
     position: relative;
     z-index: 200;
+    overflow: hidden;
 }
 h2 a {
     color: white;
@@ -206,6 +207,7 @@ dt {
     font-size: 50%;
     background: #1e5799;
     width: 20px;
+    margin: 0;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -218,6 +220,7 @@ dt {
     border: 0 none;
     line-height: 2.5em;
     padding: 0 15px;
+    margin: 5px;
     text-align: center;
     display: inline-block;
     -webkit-transition: all 0.2s ease-in-out;
@@ -303,11 +306,37 @@ dt {
     .header {
         position: static;
     }
+    .header,
+    h1,
+    h2 {
+        text-align: center;
+    }
+    .container h1 .btn,
+    h2 small,
+    .printme,
     .social {
+        display: none;
+    }
+    .livetitle {
+        top: 0;
+    }
+    .livetitle h2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .profile {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+    .tech td:nth-child(3) {
         display: none;
     }
 }
 
+.tech {
+    margin: auto;
+}
 .tech th {
     text-align: right;
     font-weight: normal;

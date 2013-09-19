@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block container %}
-    <h2>Giacomo Zinetti <small><a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
+    <h2>Giacomo Zinetti<small> <a href="mailto:giacomo.zinetti@giko.it">giacomo.zinetti@giko.it</a></small></h2>
     <img class="profile" src="{{ STATIC_URL }}img/profilo2.jpg" alt="Giacomo Zinetti Foto">
     <p>
         Hello world! Sono uno sviluppatore web nato il 15 giugno 1984.<br>
@@ -112,6 +112,8 @@
     </p>
 
     <p class="actions">
-        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf" class="btn">Scarica la versione PDF</a> oppure <a href="#" class="btn printme">Stampa il CV</a>
+        <a href="mailto:giacomo.zinetti@giko.it" class="btn">Contattami</a>
+        <a href="{{ STATIC_URL }}docs/20130527-zinetti-giacomo-cv.pdf" download="zinetti-giacomo-cv.pdf" class="btn">Scarica la versione PDF</a>
+        <span class="printme">oppure <a href="#" class="btn">Stampa il CV</a></span>
     </p>
 {% endblock %}
