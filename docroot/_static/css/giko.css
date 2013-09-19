@@ -131,6 +131,9 @@ nav a {
     font-size: 140%;
     color: white;
 }
+nav .active {
+    border-bottom: 4px solid white;
+}
 
 .social {
     position: absolute;
