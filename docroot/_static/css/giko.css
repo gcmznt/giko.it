@@ -306,7 +306,8 @@ dt {
     }
     .container h1 .btn {
         position: absolute;
-        right: 20px;
+        right: 10px;
+        top: -10px;
     }
     .container h1 .btn[download],
     h2 small,
