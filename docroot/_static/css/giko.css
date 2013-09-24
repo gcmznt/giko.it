@@ -1,6 +1,6 @@
 body {
     font-family: 'Tenor Sans', sans-serif;
-    background: #1e5799;
+    background: #00A9B2;
     margin: 0;
     color: #333;
     line-height: 150%;
@@ -13,13 +13,13 @@ body {
 
 a {
     text-decoration: none;
-    color: #1e5799;
+    color: #00A9B2;
 }
 a:hover {
     color: #f60;
 }
 .container a {
-    border-bottom: 1px dotted #1e5799;
+    border-bottom: 1px dotted #00A9B2;
     padding-bottom: 1px;
 }
 .container a:hover {
@@ -66,7 +66,7 @@ h2 {
     font-size: 164%;
     line-height: 1.4em;
     font-weight: normal;
-    background: #1e5799;
+    background: #00A9B2;
     color: white;
     margin: 1.5em -80px;
     padding: 10px 80px;
@@ -90,7 +90,7 @@ h3 {
 }
 
 pre {
-    background: #1e5799;
+    background: #00A9B2;
     padding: 15px;
     color: white;
 }
@@ -103,9 +103,9 @@ pre {
 header {
     padding-top: 25px;
     padding-bottom: 15px;
-    border-bottom: 12px solid #1e5799;
-    border-top: 12px solid #1e5799;
-    background: #1e5799;
+    border-bottom: 12px solid #00A9B2;
+    border-top: 12px solid #00A9B2;
+    background: #00A9B2;
     color: white;
     position: relative;
 }
@@ -144,7 +144,7 @@ nav .active {
     text-align: center;
     line-height: 83px;
     display: inline-block;
-    background: #1e5799;
+    background: #00A9B2;
 }
 .social img {
     height: 40px;
