@@ -319,9 +319,11 @@ dt {
         margin: 1.7em -20px 1.1em;
         padding-left: 20px;
         padding-right: 20px;
+        visibility: visible !important;
     }
     .livetitle {
         top: 0;
+        display: none !important;
     }
     .profile {
         float: none;
