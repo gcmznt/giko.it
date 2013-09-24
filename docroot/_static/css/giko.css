@@ -316,13 +316,11 @@ dt {
     }
     h2 {
         margin: 1.7em -20px 1.1em;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .livetitle {
         top: 0;
-    }
-    .livetitle h2 {
-        padding-left: 20px;
-        padding-right: 20px;
     }
     .profile {
         float: none;
