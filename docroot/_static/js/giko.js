@@ -11,7 +11,7 @@
             };
         });
 
-        if (!window.matchMedia("(max-width: 679px)")) {
+        if (!window.matchMedia("(max-width: 679px)").matches) {
             $(window).scroll(function() {
                 var sel = 0;
                 $('.container h2').each(function(){
