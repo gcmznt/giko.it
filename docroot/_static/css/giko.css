@@ -312,6 +312,7 @@ dt {
         position: absolute;
         right: 10px;
         top: -10px;
+        -webkit-transform: translateZ(0);
     }
     .container h1 .btn[download],
     h2 small,
