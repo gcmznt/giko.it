@@ -40,8 +40,9 @@ header,
 
 .container {
     padding-top: 100px;
-    position: relative;
+    /* position: relative; */
     margin-bottom: 12px;
+    -webkit-transform: translate3d(0,0,0);
 }
 
 .geko {
@@ -54,6 +55,7 @@ header,
     left: 50%;
     margin-left: 490px;
     z-index: 1;
+    -webkit-transform: translate3d(490px,0,0);
 }
 
 h1 {
@@ -99,6 +101,7 @@ pre {
     position: fixed;
     width: 100%;
     z-index: 300;
+    -webkit-transform: translateZ(0);
 }
 header {
     padding-top: 25px;
@@ -163,7 +166,8 @@ nav .active {
 
 .livetitle {
     position: fixed;
-    top: 95px;
+    -webkit-transform: translate3d(0,95px,0);
+    /* top: 95px; */
     width: 100%;
     z-index: 150;
     display: none;
@@ -262,10 +266,10 @@ dt {
     }
     h2 {
         color: #333;
-        visibility: visible !important;
+        /*visibility: visible !important;*/
     }
     .livetitle {
-        display: none !important;
+        /*display: none !important;*/
     }
     .container {
         padding: 0 60px;
