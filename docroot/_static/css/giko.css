@@ -53,7 +53,6 @@ header,
     position: fixed;
     bottom: 0;
     left: 50%;
-    margin-left: 490px;
     z-index: 1;
     -webkit-transform: translate3d(490px,0,0);
 }
