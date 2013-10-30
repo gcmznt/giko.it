@@ -43,6 +43,10 @@ header,
     /* position: relative; */
     margin-bottom: 12px;
     -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .geko {
@@ -55,6 +59,10 @@ header,
     left: 50%;
     z-index: 1;
     -webkit-transform: translate3d(490px,0,0);
+    -moz-transform: translate3d(490px,0,0);
+    -ms-transform: translate3d(490px,0,0);
+    -o-transform: translate3d(490px,0,0);
+    transform: translate3d(490px,0,0);
 }
 
 h1 {
@@ -101,6 +109,10 @@ pre {
     width: 100%;
     z-index: 300;
     -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 header {
     padding-top: 25px;
@@ -166,6 +178,10 @@ nav .active {
 .livetitle {
     position: fixed;
     -webkit-transform: translate3d(0,95px,0);
+    -moz-transform: translate3d(0,95px,0);
+    -ms-transform: translate3d(0,95px,0);
+    -o-transform: translate3d(0,95px,0);
+    transform: translate3d(0,95px,0);
     /* top: 95px; */
     width: 100%;
     z-index: 150;
@@ -312,6 +328,10 @@ dt {
         right: 10px;
         top: -10px;
         -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
     }
     .container h1 .btn[download],
     h2 small,
