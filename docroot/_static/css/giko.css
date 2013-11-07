@@ -1,9 +1,20 @@
 body {
-    font-family: 'Tenor Sans', sans-serif;
+    font-family: 'Tenor Sans', 'tenor_sansregular', sans-serif;
     background: #00A9B2;
     margin: 0;
     color: #333;
     line-height: 150%;
+}
+
+@font-face {
+    font-family: 'tenor_sansregular';
+    src: url('../fonts/tenorsans-regular-webfont.eot');
+    src: url('../fonts/tenorsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tenorsans-regular-webfont.woff') format('woff'),
+         url('../fonts/tenorsans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/tenorsans-regular-webfont.svg#tenor_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 *::selection {

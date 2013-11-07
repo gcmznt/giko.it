@@ -3,21 +3,20 @@
 <head>
     <title>{% block title %}{% if title %}{{ title|striptags|raw }} &bull; {% endif %}Giko's{% endblock %}</title>
 
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block description %}A blog about web and tchoukball{% endblock %}" />
-    <meta name="keywords" content="giacomo zinetti, giko, blog, web, tchoukball{% block extrakeywords %}{% endblock %}" />
+    <meta name="description" content="{% block description %}A blog about web and tchoukball{% endblock %}">
+    <meta name="keywords" content="giacomo zinetti, giko, blog, web, tchoukball{% block extrakeywords %}{% endblock %}">
     <meta name="author" content="Giacomo Giko Zinetti">
-    <meta property="og:site_name" content="Giko" />
-    <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/profilo.jpg" />
-    <meta property="og:title" content="{% block ogtitle %}{% if title %}{{ title|striptags|raw }} &bull; {% endif %}Giko{% endblock %}" />
-    <meta property="og:description" content="{% block ogdescription %}A blog about web and tchoukball{% endblock %}" />
+    <meta property="og:site_name" content="Giko">
+    <meta property="og:image" content="http://www.giko.it{{ STATIC_URL }}img/profilo.jpg">
+    <meta property="og:title" content="{% block ogtitle %}{% if title %}{{ title|striptags|raw }} &bull; {% endif %}Giko{% endblock %}">
+    <meta property="og:description" content="{% block ogdescription %}A blog about web and tchoukball{% endblock %}">
 
-    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon-profilo.jpg" type="image/png" />
-    <link rel="icon" href="{{ STATIC_URL }}img/favicon-profilo.jpg" type="image/png" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon-profilo.jpg" type="image/png">
+    <link rel="icon" href="{{ STATIC_URL }}img/favicon-profilo.jpg" type="image/png">
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Tenor+Sans" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/giko.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/giko.css">
 
     {% if ga_account %}{% include 'inc/ga.html' %}{% endif %}
 
@@ -31,11 +30,11 @@
             <div class="title">Giko's</div>
 
             <div class="social">
-                <a href="https://github.com/giacomozinetti" title="github"><img src="{{ STATIC_URL }}img/github_square_b.png" alt="github" /></a>
-                <!-- <a href="https://plus.google.com/100345869905743197656?rel=author" title="google+"><img src="{{ STATIC_URL }}img/gplus.png" alt="googleplus" /></a> -->
-                <a href="http://it.linkedin.com/in/giacomozinetti" title="linkedin"><img src="{{ STATIC_URL }}img/linkedin_square_b.png" alt="linkedin" /></a>
-                <a href="http://twitter.com/giacomozinetti" title="twitter"><img src="{{ STATIC_URL }}img/twitter_square_b.png" alt="twitter" /></a>
-                <!-- <a href="http://careers.stackoverflow.com/giacomozinetti" title="stackoverflow careers"><img src="{{ STATIC_URL }}img/careers.png" alt="careers" /></a> -->
+                <a href="https://github.com/giacomozinetti" title="github"><img src="{{ STATIC_URL }}img/github_square_b.png" alt="github"></a>
+                <!-- <a href="https://plus.google.com/100345869905743197656?rel=author" title="google+"><img src="{{ STATIC_URL }}img/gplus.png" alt="googleplus"></a> -->
+                <a href="http://it.linkedin.com/in/giacomozinetti" title="linkedin"><img src="{{ STATIC_URL }}img/linkedin_square_b.png" alt="linkedin"></a>
+                <a href="http://twitter.com/giacomozinetti" title="twitter"><img src="{{ STATIC_URL }}img/twitter_square_b.png" alt="twitter"></a>
+                <!-- <a href="http://careers.stackoverflow.com/giacomozinetti" title="stackoverflow careers"><img src="{{ STATIC_URL }}img/careers.png" alt="careers"></a> -->
             </div>
             <nav>
                 <a href="/blog/"{% if section == 'blog' %} class="active"{% endif %}>blog</a>
@@ -54,8 +53,8 @@
     {% endblock %}
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-    <script src="{{ STATIC_URL }}js/giko.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/giko.js"></script>
 
 
     {% block extra_body %}{% endblock %}
