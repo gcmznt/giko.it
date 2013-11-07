@@ -11,7 +11,8 @@
             };
         });
 
-        if (!window.matchMedia("(max-width: 679px)").matches) {
+        if (window.matchMedia("(min-width: 680px)").matches) {
+            $('.header').after('<div class="livetitle"><h2></h2></div>');
             $(window).scroll(function() {
                 var sel = 0;
                 $('.container h2').each(function(){
