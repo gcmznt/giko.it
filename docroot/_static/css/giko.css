@@ -162,6 +162,7 @@ nav .active {
 }
 .social img {
     height: 40px;
+    width: 40px;
     vertical-align: middle;
     background: #fff;
     -webkit-transition: all 0.2s ease-in-out;
@@ -249,6 +250,7 @@ dt {
 }
 .profile {
     width: 160px;
+    height: 160px;
     float: left;
     margin: 0 20px 20px 0;
     box-shadow: 0 2px 5px #333;
