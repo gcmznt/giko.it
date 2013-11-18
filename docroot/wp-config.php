@@ -14,8 +14,8 @@
  * @package WordPress
  */
 
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+define('WP_SITEURL', '/wordpress');
+define('WP_HOME',    '/');
 
 // ** MySQL settings - You can get this info from your web host ** //
 require_once(__DIR__ . '/_includes/config.php');
