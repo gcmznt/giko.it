@@ -17,6 +17,8 @@
 define('WP_SITEURL', '/wordpress');
 define('WP_HOME',    '/');
 
+define('FS_METHOD', 'direct');
+
 // ** MySQL settings - You can get this info from your web host ** //
 require_once(__DIR__ . '/_includes/config.php');
 
