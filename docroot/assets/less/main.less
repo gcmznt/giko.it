@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background: url('../img/cover-lego.jpg') 80% 40%;
+  background: #2196F3 url('../img/cover-lego.jpg') 80% 40%;
   background-size: cover;
   min-height: 100vh;
   box-sizing: border-box;
@@ -51,6 +51,33 @@ header {
 
   aside {
     margin-bottom: 40px;
+  }
+}
+
+.lang {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  height: 38px;
+  padding: 0 20px 0 17px;
+  border: rgba(255,255,255,0.6) 1px solid;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 35px;
+  white-space: nowrap;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.1);
+  transition: all ease 0.3s;
+
+  &:hover {
+    color: #222;
+    border-color: #fff;
+    background: #fff;
+    transition: all 0.1s ease;
   }
 }
 
@@ -186,7 +213,10 @@ section {
 
     .profile {
       float: right;
-      
+    }
+
+    aside i {
+      font-size: 1.3em;
     }
   }
 }
