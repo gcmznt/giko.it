@@ -26,7 +26,11 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-28055358-1', 'giko.it');
+    ga('create', 'UA-28055358-1', {
+      'storage': 'none',
+      'clientId': localStorage.getItem('gaClientId')
+    });
+    ga(function(t) { localStorage.setItem('gaClientId',t.get('clientId')); });
     ga('send', 'pageview');
   </script>
 
