@@ -1,0 +1,262 @@
+mixin icon(name)
+    svg(class="icon icon--#{ name }" role="img" aria-label="#{ name }")
+        use(xlink:href="##{ name }")
+
+- var author = 'Giacomo Giko Zinetti'
+- var title = 'Giacomo Zinetti is Giko: a Nerd Frontend developer'
+- var description = 'Curriculum vitae di uno sviluppatore web. Dal server al client.'
+- var keywords = 'Giacomo, Zinetti, giko, curriculum vitae, web, developer, frontend'
+- var themeColor = '#2196F3'
+- var favicon = '/assets/img/favicon-profilo.jpg'
+- var gaCode = 'UA-28055358-1'
+
+doctype html
+head
+    title #{title}
+
+    meta(http-equiv="Content-Type" content="text/html;charset=utf-8")
+    meta(http-equiv="Accept-CH" content="DPR, Viewport-Width, Width")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    meta(name="description" content="#{description}")
+    meta(name="keywords" content="#{keywords}")
+    meta(name="author" content="#{author}")
+    meta(name="theme-color" content="#{themeColor}")
+    meta(name="apple-mobile-web-app-status-bar-style" content="#{themeColor}")
+
+    meta(property="og:site_name" content="#{title}")
+    meta(property="og:image" content="https://giko.it/assets/img/profilo.jpg")
+    meta(property="og:title" content="#{title}")
+    meta(property="og:description" content="#{description}")
+
+    link(rel="shortcut icon" href="#{favicon}" type="image/png")
+    link(rel="icon" href="#{favicon}" type="image/png")
+
+    link(rel="stylesheet" href="/assets/css/giko.css")
+
+    script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', '#{gaCode}', 'giko.it');ga('send', 'pageview');
+
+body(class="non-è-acqua 🖖")
+    .svgSprite
+        include assets/icons/sprite/icons.svg
+
+    .header
+        img.header__avatar(src="/assets/img/profilo.jpg" alt="Giacomo Zinetti Foto")
+        .header__title.
+            Giacomo Zinetti <span class="hide@print"><em>is</em> Giko</span>
+        .social
+            a.social__link(
+                href="https://github.com/giacomozinetti"
+                title="Github"
+            )
+                +icon('github')
+            a.social__link(
+                href="http://it.linkedin.com/in/giacomozinetti"
+                title="LinkedIn"
+            )
+                +icon('linkedin')
+            a.social__link(
+                href="http://twitter.com/giacomozinetti"
+                title="Twitter"
+            )
+                +icon('twitter')
+            a.social__link(
+                href="https://medium.com/@giacomozinetti"
+                title="Medium"
+            )
+                +icon('medium')
+            a.social__link(
+                href="mailto:giacomo.zinetti@giko.it"
+                title="email"
+            )
+                +icon('email')
+
+    .content
+        p.
+            Hello world! Sono un programmatore nato il 15 giugno 1984 e vivo a Bregnano, un paesino tranquillo in provincia di Como.<br>
+            La mia passione è il web e la coltivo ogni giorno costruendo siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le più recenti tecnologie. Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.<br>
+
+        div(class="hide@print")
+            a.btn(href="/assets/pdf/zinetti-giacomo-cv.pdf")
+                | Download the CV
+
+        h2
+            +icon('business')
+            | Esperienze lavorative
+
+        dl
+            dt <strong>Senior frontend developer</strong> in <a href="http://www.objectway.it/">Objectway</a> da Marzo 2015
+            dd Supporto specializzato per HTML, CSS, JS e UX a disposizione degli sviluppi dei prodotti aziendali.
+            dt <strong>Full-stack web developer</strong> in <a href="http://www.bryan.it/">Bryan</a> da Novembre 2013 a Marzo 2015
+            dd Sviluppo siti principalmente su piattaforma WordPress gestendo l'intero processo di sviluppo, dalla configurazione dei server alla realizzazione dei template, passando per lo sviluppo di plugin. Lavori per clienti come <a href="http://www.boggi.it">Boggi Milano</a> e <a href="http://www.atala.it">Atala</a>.
+            dt <strong>Frontend developer</strong> in <a href="http://www.sowre.com/">Sowre</a> da Aprile 2013 a Novembre 2013
+            dd Sviluppatore di temi (HTML, CSS e JS) su IBM WebSphere Portal per clienti come <a href="http://www.armani.it/">Giorgio Armani</a> e <a href="http://www.venturatravel.it/">Ventura</a>. Sviluppo dei template HTML per il sito mobile di <a href="http://www.moby.it/">Moby</a>.
+            dt <strong>Web developer</strong> in <a href="http://www.prodigys.it/">Prodigys Group</a> da Marzo 2010 ad Aprile 2013
+            dd Frontend di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/">Allianz</a> (sito mobile). Siti ottimizzati per sopportare grossi carichi di visite (<a href="http://offerte-adsl.vodafone.it/promozione/">Landing offerte ADSL Vodafone</a>). Diversi tool amministrativi sviluppati in PHP e Python.
+
+        h2
+            +icon('star')
+            | Competenze
+
+        table
+            tr
+                th JavaScript
+                td EcmaScript 5, ES2015 e ES2016 con Babel, Nodejs e npm, Express, task runners (Gulp e Grunt), Yeoman, Bower, template engine (Handlebars, Mustache), jQuery + plugins, Angular, Backbone, Underscore, Twitter Bootstrap, Moment e molte altre librerie
+            tr
+                th CSS
+                td CSS3, SASS e SCSS, LESS, BEM, cross browsing pixel perfect, media queries, responsive design, approccio mobile first, Twitter Bootstrap
+            tr
+                th HTML
+                td HTML4, HTML5, XHTML 1.1, preprocessori HTML (Jade, Haml), validazione W3C, markup semantico
+            tr
+                th Performance
+                td Ottimizzazione risorse, algoritimi di compressione immagini, protocollo HTTP, SPDY e HTTP2, client hints, New Relic
+            tr
+                th Server
+                td Unix, Nginx, Apache, configurazione SSL, Let's Encrypt, Amazon Web Services, Digital Ocean
+            tr
+                th PHP
+                td Wordpress, Silex, Twig
+            tr
+                th DBMS
+                td MySql, MongoDB
+            tr
+                th Python
+                td Django, Flask
+            tr
+                th Altre
+                td API (Google Maps, Twitter, Instagram, Facebook), Git, Mercurial, SVN, Sublime Text, Mac OS X, Windows, Photoshop, Illustrator, servizi REST
+
+        h2
+            +icon('school')
+            | Formazione
+
+        dl
+            dt <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/">Politecnico di Milano</a> dal 2004 al 2009
+            dd Studi interrotti per motivi di lavoro. Tra gli esami superati Informatica 1, 2 e 3, Applicazioni ipermediali, Basi di dati, Statistica, Fondamenti di ricerca operativa, Analisi 1 e 2.
+            dt <strong>Tirocinio</strong> in <a href="http://www.consoft.it/">Consoft Sistemi</a> da Maggio a Luglio 2008
+            dd
+            dt Certificazione <strong>TOEFL</strong> ottenuta il 5 Maggio 2007
+            dd
+            dt Scuola superiore al <a href="http://www.gbgrassi.it/"><strong>Liceo Scientifico</strong> G. B. Grassi</a> di Saronno dal 1998 al 2003
+            dd
+
+        h2
+            +icon('computer')
+            | Side-projects
+
+        dl
+            dt <a href="http://www.tchoukball.it/">Federazione TchoukBall Italia</a> dal 2002
+            dd Responsabile e sviluppatore del sito federale, dei tool gestionali interni e delle community della federazione nazionale di questo sport innovativo. [Wordpress, PHP, MySql]
+            dt <a href="http://www.saronnocomets.it/">Saronno TchoukBall Club</a> dal 2006
+            dd Sito istituzionale del club nel quale gioco, il primo club italiano di TchoukBall. [Wordpress, PHP]
+            dt <a href="http://www.youtchouk.com">YouTchouk</a> dal 2012
+            dd Frontend e pannello di amministrazione di un portale per video di tchoukball. [YouTube API, jQuery, Backbone, Underscore]
+            dt <a href="http://giacomozinetti.github.io/haralyzer/">Haralyzer</a> dal 2013
+            dd Tool per confrontare HAR files utile nelle analisi delle performance. [Angular]
+            dt <a href="http://www.tchouk.in/">Tchouk IN...</a> dal 2013
+            dd Social World Map di &quot;TchoukPoints&quot;. [Python, Django, Google Maps API]
+
+        p Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/">mia pagina <strong>Github #[+icon('github')]</strong></a>
+
+        h2
+            +icon('flight')
+            | Altro su di me
+
+        p.
+            Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.<br />
+            Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.org">TchoukBall</a>.
+
+    .modal(class="hide@print")
+        .content.content--alternative
+            h1.
+                This website is done with a lot of nerdy things!
+
+            h2
+                +icon('code')
+                | Sources
+
+            table
+                tr
+                    th Sass
+                    td The CSS preprocessor
+                tr
+                    th Autoprefixer
+                    td Add to the CSS the properties for old browsers
+                tr
+                    th Jade
+                    td HTML preprocessor and template system
+                tr
+                    th ES2015
+                    td EcmaScript 2015 transpiled to ES5 with Babel
+                tr
+                    th Gulp
+                    td Just the task runner
+                tr
+                    th Git
+                    td and Github for versioning
+                tr
+                    th Linters
+                    td for SCSS and JS
+                tr
+                    th .editorconfig
+                    td to setup the editor in the correct way
+                tr
+                    th BEM
+                    td as naming convention for CSS classes
+
+            h2
+                +icon('cloud')
+                | Server
+
+            table
+                tr
+                    th Nginx
+                    td The web server chosen is Nginx for its performances and easy of setup
+                tr
+                    th HTTP2
+                    td The new and faster version of the HTTP protocol
+                tr
+                    th Let's Encrypt
+                    td SSL free and automated certificate to make https working
+                tr
+                    th Client Hints
+                    td The server return the right image using the suggestions of your browser
+                tr
+                    th Webp
+                    td If your browser accept webp images is better for everyone
+                tr
+                    th New Relic
+                    td Analyze the performance of the server and the client
+
+            h2
+                +icon('client')
+                | Client
+
+            table
+                tr
+                    th Google Analytics
+                    td Just analytics...
+                tr
+                    th SVG icons
+                    td Just one big SVG sprite embedded in the page for the icons
+                tr
+                    th Print CSS
+                    td This CV is ready to be printed if you need it
+                tr
+                    th Responsive
+                    td Ok... It works also on your smartphone
+                tr
+                    th CSS Custom Props
+                    td I have played with the new CSS variables<span class="hide@nocp">, try to change this <input type="color" value="#2196f3" class="js-color-switcher"></span><span class="show@nocp">, come here with firefox >= 31 or chrome >= 49</span>
+
+    .overlay(class="hide@print")
+
+    .menu(class="hide@print")
+        a.button.button--outline(href="/assets/pdf/zinetti-giacomo-cv.pdf")
+            +icon('pdf')
+        a.button.button--rotate.js-toggler
+            +icon('settings')
+
+    script(src="/assets/js/giko.js")
