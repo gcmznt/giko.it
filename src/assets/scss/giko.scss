@@ -173,17 +173,9 @@ table {
     }
 }
 
-.hide\@nocp {
-    display: none;
-    display: var(--cp, initial);
-}
-
-.show\@nocp {
-    display: var(--cp, none);
-}
-
 .button {
     align-items: center;
+    background-color: $color-background;
     background-color: var(--color-primary);
     border-radius: 50%;
     box-sizing: border-box;
@@ -203,7 +195,7 @@ table {
     }
 
     &--outline {
-        background-color: transparent;
+        background-color: $color-background;
         border: 2px solid var(--color-primary);
         color: var(--color-primary);
 
@@ -220,7 +212,7 @@ table {
     color: $color-primary;
     color: var(--color-primary);
     display: inline-block;
-    padding: 3px 20px;
+    padding: 3px 18px;
     text-decoration: none;
 
     svg {
@@ -288,6 +280,15 @@ table {
     }
 }
 
+.hide\@nocp {
+    display: none;
+    display: var(--cp, initial);
+}
+
+.show\@nocp {
+    display: var(--cp, none);
+}
+
 @media print {
 
     body {
@@ -334,6 +335,7 @@ table {
         &__title {
             border-bottom: 1px solid currentColor;
             color: $color-primary;
+            color: var(--color-primary);
             filter: none;
             margin-bottom: 0.5em;
         }

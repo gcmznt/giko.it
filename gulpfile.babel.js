@@ -103,3 +103,15 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('build', ['images', 'templates', 'styles', 'scripts', 'pdf']);
+
+var rsync = require('gulp-rsync');
+gulp.task('deploy', ['build'], function() {
+    return gulp.src('dist/**')
+        .pipe(rsync({
+            root: 'dist',
+            hostname: 'giko',
+            destination: '/var/vhosts/giko.it/docroot',
+            incremental: true,
+            progress: true
+        }));
+});

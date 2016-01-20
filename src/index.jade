@@ -10,6 +10,37 @@ mixin icon(name)
 - var favicon = '/assets/img/favicon-profilo.jpg'
 - var gaCode = 'UA-28055358-1'
 
+//
+    Made with 💙 by Giko [@giacomozinetti] with
+
+    Sources
+    - Sass
+    - Autoprefixer
+    - Jade
+    - ES2015 and Babel
+    - npm
+    - Gulp
+    - Git and Github
+    - Linters
+    - .editorconfig
+    - BEM
+
+    Server
+    - Nginx
+    - HTTP2
+    - Let's Encrypt
+    - Client Hints
+    - Webp
+    - New Relic
+
+    Client
+    - Google Analytics
+    - SVG icons
+    - Print CSS
+    - Responsive
+    - CSS Custom Props
+
+    If you are here maybe we can meet on twitter http://twitter.com/giacomozinetti
 doctype html
 head
     title #{title}
@@ -87,7 +118,7 @@ body(class="non-è-acqua 🖖")
 
         dl
             dt <strong>Senior frontend developer</strong> in <a href="http://www.objectway.it/">Objectway</a> da Marzo 2015
-            dd Supporto specializzato per HTML, CSS, JS e UX a disposizione degli sviluppi dei prodotti aziendali.
+            dd Supporto specializzato per HTML, CSS, JS e UX a disposizione degli sviluppi dei prodotti aziendali. Definizione di styleguide di sviluppo condivise.
             dt <strong>Full-stack web developer</strong> in <a href="http://www.bryan.it/">Bryan</a> da Novembre 2013 a Marzo 2015
             dd Sviluppo siti principalmente su piattaforma WordPress gestendo l'intero processo di sviluppo, dalla configurazione dei server alla realizzazione dei template, passando per lo sviluppo di plugin. Lavori per clienti come <a href="http://www.boggi.it">Boggi Milano</a> e <a href="http://www.atala.it">Atala</a>.
             dt <strong>Frontend developer</strong> in <a href="http://www.sowre.com/">Sowre</a> da Aprile 2013 a Novembre 2013
@@ -102,7 +133,7 @@ body(class="non-è-acqua 🖖")
         table
             tr
                 th JavaScript
-                td EcmaScript 5, ES2015 e ES2016 con Babel, Nodejs e npm, Express, task runners (Gulp e Grunt), Yeoman, Bower, template engine (Handlebars, Mustache), jQuery + plugins, Angular, Backbone, Underscore, Twitter Bootstrap, Moment e molte altre librerie
+                td EcmaScript 5, ES2015 e ES2016, Babel, Nodejs e npm, Express, task runners (Gulp e Grunt), Yeoman, Bower, template engine (Handlebars, Mustache), jQuery + plugins, Angular, Backbone, Underscore, Twitter Bootstrap, Moment e molte altre librerie
             tr
                 th CSS
                 td CSS3, SASS e SCSS, LESS, BEM, cross browsing pixel perfect, media queries, responsive design, approccio mobile first, Twitter Bootstrap
@@ -155,8 +186,6 @@ body(class="non-è-acqua 🖖")
             dd Frontend e pannello di amministrazione di un portale per video di tchoukball. [YouTube API, jQuery, Backbone, Underscore]
             dt <a href="http://giacomozinetti.github.io/haralyzer/">Haralyzer</a> dal 2013
             dd Tool per confrontare HAR files utile nelle analisi delle performance. [Angular]
-            dt <a href="http://www.tchouk.in/">Tchouk IN...</a> dal 2013
-            dd Social World Map di &quot;TchoukPoints&quot;. [Python, Django, Google Maps API]
 
         p Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/">mia pagina <strong>Github #[+icon('github')]</strong></a>
 
@@ -190,6 +219,9 @@ body(class="non-è-acqua 🖖")
                 tr
                     th ES2015
                     td EcmaScript 2015 transpiled to ES5 with Babel
+                tr
+                    th npm
+                    td the package manager for dependencies
                 tr
                     th Gulp
                     td Just the task runner
@@ -249,13 +281,15 @@ body(class="non-è-acqua 🖖")
                     td Ok... It works also on your smartphone
                 tr
                     th CSS Custom Props
-                    td I have played with the new CSS variables<span class="hide@nocp">, try to change this <input type="color" value="#2196f3" class="js-color-switcher"></span><span class="show@nocp">, come here with firefox >= 31 or chrome >= 49</span>
+                    td I have played with the new CSS variables<span class="hide@nocp">, try to change this <input type="color" id="color-switcher" value="#2196f3" class="js-color-switcher"></span><span class="show@nocp">, come here with firefox >= 31 or chrome >= 49</span>
 
     .overlay(class="hide@print")
 
     .menu(class="hide@print")
         a.button.button--outline(href="/assets/pdf/zinetti-giacomo-cv.pdf")
             +icon('pdf')
+        label.button.button--outline(class="hide@nocp" for="color-switcher")
+            +icon('colorize')
         a.button.button--rotate.js-toggler
             +icon('settings')
 
