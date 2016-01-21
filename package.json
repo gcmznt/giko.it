@@ -2,10 +2,11 @@
   "name": "giko",
   "version": "1.0.0",
   "description": "My personal website and CV",
+  "repository": "http://github.com/giacomozinetti/giko.it",
   "main": "index.html",
   "scripts": {
+    "setup": "npm install",
     "dev": "gulp serve",
-    "build": "gulp build",
     "deploy": "gulp deploy"
   },
   "author": "Giko",
