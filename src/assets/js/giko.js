@@ -1,3 +1,4 @@
+/* global ga */
 let colorto;
 
 const setColor = function(value, color = 'primary') {
@@ -16,21 +17,21 @@ const changeColor = function(e) {
 };
 
 const toggleMode = function() {
-    let bodyClasses = document.querySelector('body').classList;
+    const bodyClasses = document.querySelector('body').classList;
     bodyClasses.toggle('is-nerdy');
     bodyClasses.contains('is-nerdy') && ga('send', 'event', 'modal', 'open');
 };
 
 const domReady = function() {
+    const savedColor = localStorage.getItem('--color-primary');
+    savedColor && setColor(savedColor, 'primary');
+
     document
         .querySelector('.js-color-switcher')
         .addEventListener('change', changeColor);
     document
         .querySelector('.js-toggler')
         .addEventListener('click', toggleMode);
-
-    var savedColor = localStorage.getItem('--color-primary');
-    savedColor && setColor(savedColor, 'primary');
 };
 
 document.addEventListener('DOMContentLoaded', domReady);
