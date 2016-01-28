@@ -94,6 +94,22 @@ gulp.task('clean', function(cb) {
     rimraf('./dist', cb);
 });
 
+import rev from 'gulp-rev';
+gulp.task('revision', ['build'], function() {
+  return gulp.src(['dist/**/*.css', 'dist/**/*.js'])
+    .pipe(rev())
+    .pipe(gulp.dest('dist/'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('./'))
+})
+
+import revReplace from 'gulp-rev-replace';
+gulp.task('revreplace', ['revision'], function() {
+  return gulp.src('./dist/index.html')
+    .pipe(revReplace({manifest: gulp.src('./rev-manifest.json')}))
+    .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('watch', ['build'], function() {
     gulp.watch(paths.jade, ['templates']);
     gulp.watch(paths.scss, ['styles']);
@@ -104,8 +120,8 @@ gulp.task('watch', ['build'], function() {
 
 gulp.task('build', ['images', 'templates', 'styles', 'scripts', 'pdf']);
 
-var rsync = require('gulp-rsync');
-gulp.task('deploy', ['build'], function() {
+import rsync from 'gulp-rsync';
+gulp.task('deploy', ['revreplace'], function() {
     return gulp.src('dist/**')
         .pipe(rsync({
             root: 'dist',
