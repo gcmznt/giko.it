@@ -6,7 +6,7 @@
   "main": "index.html",
   "scripts": {
     "setup": "npm install",
-    "dev": "gulp serve",
+    "dev": "gulp clean && gulp serve",
     "deploy": "gulp clean && gulp deploy"
   },
   "author": "Giko",
