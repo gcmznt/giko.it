@@ -51,6 +51,7 @@ gulp.task('styles', function() {
 import imagemin from 'gulp-imagemin';
 import imageminWebp from 'imagemin-webp';
 import pngquant from 'imagemin-pngquant';
+import rename from 'gulp-rename';
 gulp.task('images', function() {
     return gulp.src(paths.images)
         .pipe(imagemin({
@@ -58,6 +59,7 @@ gulp.task('images', function() {
             use: [pngquant()],
         }))
         .pipe(gulp.dest('dist/assets/img'))
+        .pipe(rename(function (path) { path.extname += ".webp"; }))
         .pipe(imageminWebp()())
         .pipe(gulp.dest('dist/assets/img'));
 });
