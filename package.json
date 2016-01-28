@@ -7,7 +7,7 @@
   "scripts": {
     "setup": "npm install",
     "dev": "gulp serve",
-    "deploy": "gulp deploy"
+    "deploy": "gulp clean && gulp deploy"
   },
   "author": "Giko",
   "license": "ISC",
