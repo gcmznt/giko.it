@@ -59,7 +59,7 @@ gulp.task('images', function() {
             use: [pngquant()],
         }))
         .pipe(gulp.dest('dist/assets/img'))
-        .pipe(rename(function (path) { path.extname += ".webp"; }))
+        .pipe(rename(function(path) { path.extname += '.webp'; }))
         .pipe(imageminWebp()())
         .pipe(gulp.dest('dist/assets/img'));
 });
