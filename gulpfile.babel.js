@@ -98,18 +98,18 @@ gulp.task('clean', function(cb) {
 
 import rev from 'gulp-rev';
 gulp.task('revision', ['build'], function() {
-  return gulp.src(['dist/**/*.css', 'dist/**/*.js'])
-    .pipe(rev())
-    .pipe(gulp.dest('dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('./'))
-})
+    return gulp.src(['dist/**/*.css', 'dist/**/*.js'])
+        .pipe(rev())
+        .pipe(gulp.dest('dist/'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./'));
+});
 
 import revReplace from 'gulp-rev-replace';
 gulp.task('revreplace', ['revision'], function() {
-  return gulp.src('./dist/index.html')
-    .pipe(revReplace({manifest: gulp.src('./rev-manifest.json')}))
-    .pipe(gulp.dest('./dist/'));
+    return gulp.src('./dist/index.html')
+        .pipe(revReplace({ manifest: gulp.src('./rev-manifest.json') }))
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', ['build'], function() {
@@ -130,6 +130,6 @@ gulp.task('deploy', ['revreplace'], function() {
             hostname: 'giko',
             destination: '/var/vhosts/giko.it/docroot',
             incremental: true,
-            progress: true
+            progress: true,
         }));
 });
