@@ -65,7 +65,7 @@ gulp.task('images', function() {
 });
 
 import babel from 'gulp-babel';
-import uglify from 'gulp-uglifyjs';
+import uglify from 'gulp-uglify';
 gulp.task('scripts', function() {
     return gulp.src(paths.js)
         .pipe(babel({ presets: ['es2015'] }))
