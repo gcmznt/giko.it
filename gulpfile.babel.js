@@ -5,6 +5,7 @@ const paths = {
     svg: './src/assets/icons/*.svg',
     images: 'src/assets/img/*',
     pdf: 'src/assets/pdf/*',
+    copy: 'src/{assets/pdf/*}',
 };
 import gulp from 'gulp';
 
@@ -73,9 +74,21 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/assets/js/'));
 });
 
-gulp.task('pdf', function() {
+gulp.task('copy', function() {
     return gulp.src(paths.pdf)
         .pipe(gulp.dest('dist/assets/pdf/'));
+});
+
+import replace from 'gulp-replace-task';
+gulp.task('version', function() {
+    return gulp.src('src/giko.appcache')
+        .pipe(replace({
+            patterns: [{
+                match: 'timestamp',
+                replacement: new Date().getTime(),
+            }],
+        }))
+        .pipe(gulp.dest('dist'));
 });
 
 const browserSync = require('browser-sync').create();
@@ -93,11 +106,12 @@ gulp.task('serve', ['watch'], function() {
 
 import rimraf from 'rimraf';
 gulp.task('clean', function(cb) {
-    rimraf('./dist', cb);
+    const fn = () => rimraf('./dist', cb);
+    rimraf('./rev-manifest.json', fn);
 });
 
 import rev from 'gulp-rev';
-gulp.task('revision', ['build'], function() {
+gulp.task('revision', ['build', 'version'], function() {
     return gulp.src(['dist/**/*.css', 'dist/**/*.js'])
         .pipe(rev())
         .pipe(gulp.dest('dist/'))
@@ -107,8 +121,11 @@ gulp.task('revision', ['build'], function() {
 
 import revReplace from 'gulp-rev-replace';
 gulp.task('revreplace', ['revision'], function() {
-    return gulp.src('./dist/index.html')
-        .pipe(revReplace({ manifest: gulp.src('./rev-manifest.json') }))
+    return gulp.src('./dist/*')
+        .pipe(revReplace({
+            replaceInExtensions: ['.html', '.appcache'],
+            manifest: gulp.src('./rev-manifest.json'),
+        }))
         .pipe(gulp.dest('./dist/'));
 });
 
@@ -117,10 +134,10 @@ gulp.task('watch', ['build'], function() {
     gulp.watch(paths.scss, ['styles']);
     gulp.watch(paths.svg, ['icons']);
     gulp.watch(paths.js, ['scripts']);
-    gulp.watch(paths.pdf, ['pdf']);
+    gulp.watch(paths.copy, ['copy']);
 });
 
-gulp.task('build', ['images', 'templates', 'styles', 'scripts', 'pdf']);
+gulp.task('build', ['images', 'templates', 'styles', 'scripts', 'copy']);
 
 import rsync from 'gulp-rsync';
 gulp.task('deploy', ['revreplace'], function() {
