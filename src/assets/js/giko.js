@@ -36,4 +36,11 @@ const domReady = function() {
 
 document.addEventListener('DOMContentLoaded', domReady);
 
-console.log('%cNice to meet you! I am %c@giacomozinetti%c [https://twitter.com/giacomozinetti]%c, welcome on my website', 'font-size: 12pt', 'color:blue; font-size: 12pt', '', 'font-size: 12pt');
+const msg = [
+    '%cNice to meet you!',
+    'I am %c@giacomozinetti%c [https://twitter.com/giacomozinetti]%c.',
+    'Welcome on my website'
+].join(' ');
+const style = 'font-size: 12pt';
+const highStyle = 'color:blue; font-size: 12pt';
+console.log(msg, style, highStyle, '', style);
