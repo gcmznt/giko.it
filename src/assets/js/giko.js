@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', domReady);
 const msg = [
     '%cNice to meet you 🍻!',
     'I am %c@giacomozinetti%c [https://twitter.com/giacomozinetti]%c.',
-    'Welcome on my website'
+    'Welcome on my website',
 ].join(' ');
 const style = 'font-size: 12pt';
 const highStyle = 'color:blue; font-size: 12pt';
