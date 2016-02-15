@@ -37,7 +37,7 @@ const domReady = function() {
 document.addEventListener('DOMContentLoaded', domReady);
 
 const msg = [
-    '%cNice to meet you!',
+    '%cNice to meet you 🍻!',
     'I am %c@giacomozinetti%c [https://twitter.com/giacomozinetti]%c.',
     'Welcome on my website'
 ].join(' ');
