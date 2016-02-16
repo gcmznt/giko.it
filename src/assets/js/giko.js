@@ -18,8 +18,8 @@ const changeColor = function(e) {
 
 const toggleMode = function() {
     const bodyClasses = document.querySelector('body').classList;
-    bodyClasses.toggle('is-nerdy');
-    if (bodyClasses.contains('is-nerdy') && ga) {
+    bodyClasses.toggle('🖖');
+    if (bodyClasses.contains('🖖') && ga) {
         ga('send', 'event', 'modal', 'open');
     }
 };

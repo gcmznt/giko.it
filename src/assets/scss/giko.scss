@@ -42,7 +42,7 @@ body {
     padding: 0;
     text-rendering: optimizelegibility;
 
-    &.is-nerdy {
+    &.🖖 {
         overflow: hidden;
     }
 }
@@ -107,7 +107,7 @@ body {
         transform: translateY(50px);
         transition: ($time-animation * 1.5) all ease-out ($time-animation / 2);
 
-        .is-nerdy & {
+        .🖖 & {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0;
@@ -200,7 +200,7 @@ table {
         border: 2px solid var(--color-primary);
         color: var(--color-primary);
 
-        .is-nerdy & {
+        .🖖 & {
             opacity: 0;
             visibility: hidden;
         }
@@ -244,7 +244,7 @@ table {
     width: 60px;
     z-index: 1;
 
-    .is-nerdy & {
+    .🖖 & {
         transform: scale(50);
     }
 }
@@ -276,7 +276,7 @@ table {
     width: 100%;
     z-index: 2;
 
-    .is-nerdy & {
+    .🖖 & {
         opacity: 1;
         visibility: visible;
     }
