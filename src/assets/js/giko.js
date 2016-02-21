@@ -32,9 +32,8 @@ const domReady = function() {
         .addEventListener('change', changeColor);
     document.querySelector('.js-toggler')
         .addEventListener('click', toggleMode);
-};
+}();
 
-document.addEventListener('DOMContentLoaded', domReady);
 
 const msg = [
     '%cNice to meet you 🍻!',
