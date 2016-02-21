@@ -7,7 +7,8 @@
   "scripts": {
     "setup": "npm install",
     "dev": "gulp clean && gulp serve",
-    "deploy": "gulp clean && gulp deploy"
+    "deploy": "gulp clean && gulp deploy",
+    "stylestats": "stylestats dist/assets/css/giko.css --format=json > stylestats/`date +%Y-%m-%d_%H:%M:%S`.json"
   },
   "author": "Giko",
   "license": "ISC",
@@ -38,6 +39,7 @@
     "imagemin-pngquant": "^4.2.0",
     "imagemin-webp": "^3.1.0",
     "remove-svg-properties": "^0.3.2",
-    "rimraf": "^2.5.0"
+    "rimraf": "^2.5.0",
+    "stylestats": "^6.3.0"
   }
 }
