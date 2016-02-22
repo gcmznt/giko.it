@@ -26,10 +26,45 @@ const domReady = function() {
 
 
 const msg = [
-    '%cNice to meet you 🍻!',
-    'I am %c@giacomozinetti%c [https://twitter.com/giacomozinetti]%c.',
-    'Welcome on my website',
-].join(' ');
+    '%cNice to meet you 🍻! Welcome on my website.',
+    'I am %c@giacomozinetti%c [https://twitter.com/giacomozinetti]',
+    '',
+    'This website is made with 💙, emoji and a lot of nerdy thing like:',
+    '',
+    '',
+    'Sources',
+    '- Sass',
+    '- Autoprefixer',
+    '- Jade',
+    '- ES2015 and Babel',
+    '- npm',
+    '- Gulp',
+    '- Git and Github',
+    '- Linters',
+    '- .editorconfig',
+    '- BEM',
+    '- Bithound.io',
+'',
+    'Server',
+    '- Nginx',
+    '- HTTP2',
+    '- Let\'s Encrypt',
+    '- Client Hints',
+    '- Webp',
+    '- New Relic',
+'',
+    'Client',
+    '- Google Analytics',
+    '- SVG icons',
+    '- Print CSS',
+    '- Responsive',
+    '- CSS Custom Props',
+    '- LocalStorage',
+    '- AppCache',
+
+    '',
+    '%c🖖 Live long and prosper',
+].join('\n');
 const style = 'font-size: 12pt';
 const highStyle = 'color:blue; font-size: 12pt';
 console.log(msg, style, highStyle, '', style);
