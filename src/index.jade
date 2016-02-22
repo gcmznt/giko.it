@@ -2,6 +2,13 @@ mixin icon(name)
     svg(class="icon icon--#{ name }" role="img" aria-label="#{ name }")
         use(xlink:href="##{ name }")
 
+mixin title(name)
+    h2(id="_#{name}")
+        a(href="#_#{name}")
+            +icon(name)
+        block
+
+
 - var author = 'Giacomo Giko Zinetti'
 - var title = 'Giacomo Zinetti is Giko: a Nerd Frontend developer'
 - var description = 'Curriculum vitae di uno sviluppatore web. Dal server al client.'
@@ -71,7 +78,7 @@ html(manifest="giko.appcache")
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', '#{gaCode}', 'giko.it');ga('send', 'pageview');
 
-    body(class="non-è-acqua")
+    body(class="non-è-acqua 🖖")
         .svgSprite
             include assets/icons/sprite/icons.svg
 
@@ -115,8 +122,7 @@ html(manifest="giko.appcache")
                 a.btn(href="/assets/pdf/zinetti-giacomo-cv.pdf")
                     | Download the CV
 
-            h2
-                +icon('business')
+            +title('business')
                 | Esperienze lavorative
 
             dl
@@ -129,8 +135,7 @@ html(manifest="giko.appcache")
                 dt <strong>Web developer</strong> in <a href="http://www.prodigys.it/">Prodigys Group</a> da Marzo 2010 ad Aprile 2013
                 dd Frontend di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/">Allianz</a> (sito mobile). Siti ottimizzati per sopportare grossi carichi di visite (<a href="http://offerte-adsl.vodafone.it/promozione/">Landing offerte ADSL Vodafone</a>). Diversi tool amministrativi sviluppati in PHP e Python.
 
-            h2
-                +icon('star')
+            +title('star')
                 | Competenze
 
             table
@@ -162,8 +167,7 @@ html(manifest="giko.appcache")
                     th Altre
                     td API (Google Maps, Twitter, Instagram, Facebook), Git, Mercurial, SVN, Sublime Text, Mac OS X, Windows, Photoshop, Illustrator, servizi REST
 
-            h2
-                +icon('school')
+            +title('school')
                 | Formazione
 
             dl
@@ -176,8 +180,7 @@ html(manifest="giko.appcache")
                 dt Scuola superiore al <a href="http://www.gbgrassi.it/"><strong>Liceo Scientifico</strong> G. B. Grassi</a> di Saronno dal 1998 al 2003
                 dd
 
-            h2
-                +icon('computer')
+            +title('computer')
                 | Side-projects
 
             dl
@@ -192,114 +195,18 @@ html(manifest="giko.appcache")
 
             p Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/">mia pagina <strong>Github #[+icon('github')]</strong></a>
 
-            h2
-                +icon('flight')
+            +title('flight')
                 | Altro su di me
 
             p.
                 Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.<br />
                 Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.org">TchoukBall</a>.
 
-        .modal(class="hide@print")
-            .content.content--alternative
-                h1.
-                    This website is done with a lot of nerdy things!
-
-                h2
-                    +icon('code')
-                    | Sources
-
-                table
-                    tr
-                        th Sass
-                        td The CSS preprocessor
-                    tr
-                        th Autoprefixer
-                        td Add to the CSS the properties for old browsers
-                    tr
-                        th Jade
-                        td HTML preprocessor and template system
-                    tr
-                        th ES2015
-                        td EcmaScript 2015 transpiled to ES5 with Babel
-                    tr
-                        th npm
-                        td the package manager for dependencies
-                    tr
-                        th Gulp
-                        td Just the task runner
-                    tr
-                        th Git
-                        td and Github for versioning
-                    tr
-                        th Linters
-                        td for SCSS and JS
-                    tr
-                        th .editorconfig
-                        td to setup the editor in the correct way
-                    tr
-                        th BEM
-                        td as naming convention for CSS classes
-
-                h2
-                    +icon('cloud')
-                    | Server
-
-                table
-                    tr
-                        th Nginx
-                        td The web server chosen is Nginx for its performances and easy of setup
-                    tr
-                        th HTTP2
-                        td The new and faster version of the HTTP protocol
-                    tr
-                        th Let's Encrypt
-                        td SSL free and automated certificate to make https working
-                    tr
-                        th Client Hints
-                        td The server return the right image using the suggestions of your browser
-                    tr
-                        th Webp
-                        td If your browser accept webp images is better for everyone
-                    tr
-                        th New Relic
-                        td Analyze the performance of the server and the client
-
-                h2
-                    +icon('client')
-                    | Client
-
-                table
-                    tr
-                        th Google Analytics
-                        td Just analytics...
-                    tr
-                        th SVG icons
-                        td Just one big SVG sprite embedded in the page for the icons
-                    tr
-                        th Print CSS
-                        td This CV is ready to be printed if you need it
-                    tr
-                        th Responsive
-                        td Ok... It works also on your smartphone
-                    tr
-                        th CSS Custom Props
-                        td I have played with the new CSS variables<span class="hide@nocp">, try to change this <input type="color" id="color-switcher" value="#2196f3" class="js-color-switcher"></span><span class="show@nocp">, come here with firefox >= 31 or chrome >= 49</span>
-                    tr
-                        th LocalStorage
-                        td To save your color for when you will come back
-                    tr
-                        th AppCache
-                        td For offline browsing
-
-        .overlay(class="hide@print")
-
         .menu(class="hide@print")
+            label.button.button--outline(class="hide@nocp")
+                +icon('colorize')
+                input(type="color" value="#2196f3" class="js-color-switcher")
             a.button.button--outline(href="/assets/pdf/zinetti-giacomo-cv.pdf")
                 +icon('pdf')
-            label.button.button--outline(class="hide@nocp" for="color-switcher")
-                +icon('colorize')
-            a.button.button--rotate.js-toggler
-                +icon('settings')
 
         script(src="/assets/js/giko.js" async)

@@ -16,22 +16,12 @@ const changeColor = function(e) {
     }, 1000);
 };
 
-const toggleMode = function() {
-    const bodyClasses = document.querySelector('body').classList;
-    bodyClasses.toggle('🖖');
-    if (bodyClasses.contains('🖖') && ga) {
-        ga('send', 'event', 'modal', 'open');
-    }
-};
-
 const domReady = function() {
     const savedColor = localStorage.getItem('--color-primary');
     savedColor && setColor(savedColor, 'primary');
 
     document.querySelector('.js-color-switcher')
         .addEventListener('change', changeColor);
-    document.querySelector('.js-toggler')
-        .addEventListener('click', toggleMode);
 }();
 
 
