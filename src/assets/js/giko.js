@@ -45,7 +45,7 @@ const msg = [
     '- Git and Github',
     '- Linters',
     '- .editorconfig',
-    '- BEM',
+    '- BEM + Emoji = BEMoji',
     '- Bithound.io',
 '',
     'Server',
