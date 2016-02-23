@@ -34,7 +34,7 @@ $time-animation: 600ms;
     width: 1em;
 }
 
-body {
+.non-è-acqua {
     color: $color-text;
     font: 300 1.1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.75;
@@ -97,19 +97,17 @@ body {
     margin: 0 auto;
     max-width: $width-body;
     padding: 2em 20px 100px;
-}
 
-p a,
-table a,
-dl a {
-    border-bottom: 1px dotted;
-    color: $color-text;
-    position: relative;
-    text-decoration: none;
-    transition: all ease-in-out 200ms;
+    &__link {
+        border-bottom: 1px dotted;
+        color: $color-text;
+        position: relative;
+        text-decoration: none;
+        transition: all ease-in-out 200ms;
 
-    &:hover {
-        color: var(--color-primary);
+        &:hover {
+            color: var(--color-primary);
+        }
     }
 }
 
@@ -121,7 +119,7 @@ dd {
     margin-bottom: 1em;
 }
 
-h2 {
+.title {
     align-items: center;
     border-bottom: 1px solid currentColor;
     color: $color-primary;
@@ -131,18 +129,10 @@ h2 {
     padding: 0.5em 0;
     position: relative;
 
-    a {
+    &__link {
         color: currentColor;
         display: flex;
-    }
-
-    svg {
         margin-right: 0.3em;
-    }
-
-    .content--alternative & {
-        color: $color-background;
-        color: var(--color-background);
     }
 }
 
@@ -164,31 +154,33 @@ table {
 }
 
 .button {
-    align-items: center;
     background-color: $color-background;
-    background-color: var(--color-primary);
-    border-radius: 50%;
+    background-color: var(--color-background);
+    border: 2px solid currentColor;
+    border-radius: 5px;
     box-sizing: border-box;
-    color: $color-text;
-    color: var(--color-background);
+    color: $color-primary;
+    color: var(--color-primary);
     cursor: pointer;
-    display: flex;
-    font-size: 30px;
-    height: 60px;
-    justify-content: center;
-    margin-left: 10px;
-    transition: all ease-in-out $time-animation;
-    width: 60px;
+    display: inline-block;
+    padding: 3px 23px;
+    text-decoration: none;
+    transition: all ease-in-out 100ms;
 
-    &--rotate {
-        animation: rotate 5s linear infinite;
-    }
+    &--icon {
+        align-items: center;
+        border-radius: 50%;
+        display: flex;
+        font-size: 30px;
+        height: 60px;
+        justify-content: center;
+        margin-left: 10px;
+        padding: 0;
+        width: 60px;
 
-    &--outline {
-        background-color: $color-background;
-        border: 2px solid currentColor;
-        color: $color-primary;
-        color: var(--color-primary);
+        &:hover {
+            border-width: 4px;
+        }
     }
 
     input {
@@ -200,40 +192,17 @@ table {
     }
 }
 
-.btn {
-    border: 2px solid currentColor;
-    border-radius: 5px;
-    color: $color-primary;
-    color: var(--color-primary);
-    display: inline-block;
-    padding: 3px 18px;
-    text-decoration: none;
-
-    svg {
-        margin-right: 0.3em;
-    }
-}
-
 .menu {
     bottom: 20px;
     display: flex;
-    height: 60px;
-    line-height: 60px;
     position: fixed;
     right: 20px;
-    text-align: center;
     will-change: transform;
-    z-index: 3;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0); }
-    to { transform: rotate(360deg); }
 }
 
 .hide\@nocp {
     display: none;
-    display: var(--cp, initial);
+    display: var(--cp, flex);
 }
 
 .show\@nocp {
@@ -242,7 +211,7 @@ table {
 
 @media print {
 
-    body {
+    .non-è-acqua {
         font-size: 1em;
         line-height: 1.5;
     }
@@ -251,12 +220,12 @@ table {
         display: none;
     }
 
-    [href]::after {
+    .content__link[href]::after {
         content: ' [' attr(href) ']';
         opacity: 0.5;
     }
 
-    h2 {
+    .title {
         margin: 1em 0;
         padding: 0.3em 0;
         page-break-inside: avoid;
@@ -291,33 +260,30 @@ table {
             margin-bottom: 0.5em;
         }
 
-        a {
-            color: $color-text;
-            display: block;
-            filter: none;
-            font-size: 0.8em;
-            height: 1.5em;
-            margin-bottom: 0;
-            text-decoration: none;
-            width: auto;
-
-            svg {
-                margin-right: 0.3em;
-            }
-        }
-
-        [href]::after {
-            content: ' ' attr(href);
-            opacity: 0.75;
-        }
-
         &__avatar {
             float: right;
             width: 160px;
         }
+    }
 
-        aside svg {
+    .social__link {
+        color: $color-text;
+        display: block;
+        filter: none;
+        font-size: 0.8em;
+        height: 1.5em;
+        margin-bottom: 0;
+        text-decoration: none;
+        width: auto;
+
+        &[href]::after {
+            content: ' ' attr(href);
+            opacity: 0.75;
+        }
+
+        .icon {
             font-size: 1.3em;
+            margin-right: 0.3em;
         }
     }
 }

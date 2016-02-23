@@ -3,8 +3,8 @@ mixin icon(name)
         use(xlink:href="##{ name }")
 
 mixin title(name)
-    h2(id="_#{name}")
-        a(href="#_#{name}")
+    h2.title(id="_#{name}")
+        a.title__link(href="#_#{name}")
             +icon(name)
         block
 
@@ -45,7 +45,7 @@ html(manifest="giko.appcache")
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', '#{gaCode}', 'giko.it');ga('send', 'pageview');
 
-    body(class="non-è-acqua 🖖")
+    body(class="non-è-acqua")
         .svgSprite
             include assets/icons/sprite/icons.svg
 
@@ -82,28 +82,36 @@ html(manifest="giko.appcache")
 
         .content
             p.
-                Hello world! Sono un programmatore nato il 15 giugno 1984 e vivo a Bregnano, un paesino tranquillo in provincia di Como.<br>
-                La mia passione è il web e la coltivo ogni giorno costruendo siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le più recenti tecnologie. Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.<br>
+                Hello world! Sono un programmatore nato il 15 giugno 1984 e vivo a Bregnano, un paesino tranquillo in provincia di Como.
+            p.
+                La mia passione è il web e la coltivo ogni giorno costruendo siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le più recenti tecnologie. Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze e la passione comune.
 
             div(class="hide@print")
-                a.btn(href="/assets/pdf/zinetti-giacomo-cv.pdf")
+                a.button(href="/assets/pdf/zinetti-giacomo-cv.pdf")
                     | Download the CV
+
+            //- +title('code') CV in Breve
+
+            //- p.
+            //-     Sono principalmente uno sviluppatore frontend con ottima conoscenza di <strong>JavaScript</strong>, <strong>CSS</strong> e <strong>HTML</strong>. Adoro spingere al limite le <strong>prestazioni</strong> di ogni sito ottimizzandone ogni aspetto. Sviluppo <strong>backend</strong> con Nodejs, PHP e Python.
+            //- p.
+            //-     Ho fatto esperienza in web agency
 
             +title('business')
                 | Esperienze lavorative
 
             dl
-                dt <strong>Senior frontend developer</strong> in <a href="http://www.objectway.it/">Objectway</a> da Marzo 2015
-                dd Supporto specializzato per HTML, CSS, JS e UX a disposizione degli sviluppi dei prodotti aziendali. Definizione di styleguide di sviluppo condivise.
-                dt <strong>Full-stack web developer</strong> in <a href="http://www.bryan.it/">Bryan</a> da Novembre 2013 a Marzo 2015
-                dd Sviluppo siti principalmente su piattaforma WordPress gestendo l'intero processo di sviluppo, dalla configurazione dei server alla realizzazione dei template, passando per lo sviluppo di plugin. Lavori per clienti come <a href="http://www.boggi.it">Boggi Milano</a> e <a href="http://www.atala.it">Atala</a>.
-                dt <strong>Frontend developer</strong> in <a href="http://www.sowre.com/">Sowre</a> da Aprile 2013 a Novembre 2013
-                dd Sviluppatore di temi (HTML, CSS e JS) su IBM WebSphere Portal per clienti come <a href="http://www.armani.it/">Giorgio Armani</a> e <a href="http://www.venturatravel.it/">Ventura</a>. Sviluppo dei template HTML per il sito mobile di <a href="http://www.moby.it/">Moby</a>.
-                dt <strong>Web developer</strong> in <a href="http://www.prodigys.it/">Prodigys Group</a> da Marzo 2010 ad Aprile 2013
-                dd Frontend di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/">Allianz</a> (sito mobile). Siti ottimizzati per sopportare grossi carichi di visite (<a href="http://offerte-adsl.vodafone.it/promozione/">Landing offerte ADSL Vodafone</a>). Diversi tool amministrativi sviluppati in PHP e Python.
+                dt <strong>Senior frontend developer</strong> in <a href="http://www.objectway.it/" class="content__link">Objectway</a> da Marzo 2015
+                dd Supporto specializzato per HTML, CSS, JS e UX a disposizione degli sviluppi dei prodotti aziendali. Definizione di <strong>styleguide</strong> di sviluppo condivise.
+                dt <strong>Full-stack web developer</strong> in <a href="http://www.bryan.it/" class="content__link">Bryan</a> da Novembre 2013 a Marzo 2015
+                dd Sviluppo siti principalmente su piattaforma <strong>WordPress</strong> gestendo l'intero processo di sviluppo, dalla configurazione dei server alla realizzazione dei template, passando per lo sviluppo di plugin. Lavori per clienti come <a href="http://www.boggi.it" class="content__link">Boggi Milano</a> e <a href="http://www.atala.it" class="content__link">Atala</a>.
+                dt <strong>Frontend developer</strong> in <a href="http://www.sowre.com/" class="content__link">Sowre</a> da Aprile 2013 a Novembre 2013
+                dd Sviluppatore di temi (HTML, CSS e JS) su IBM WebSphere Portal per clienti come <a href="http://www.armani.it/" class="content__link">Giorgio Armani</a> e <a href="http://www.venturatravel.it/" class="content__link">Ventura</a>. Sviluppo dei template HTML per il sito mobile di <a href="http://www.moby.it/" class="content__link">Moby</a>.
+                dt <strong>Web developer</strong> in <a href="http://www.prodigys.it/" class="content__link">Prodigys Group</a> da Marzo 2010 ad Aprile 2013
+                dd <strong>Frontend</strong> di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/" class="content__link">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/" class="content__link">Allianz</a> (sito mobile). Siti ottimizzati per sopportare grossi carichi di visite (<a href="http://offerte-adsl.vodafone.it/promozione/" class="content__link">Landing offerte ADSL Vodafone</a>). Diversi tool amministrativi sviluppati in PHP e Python.
 
             +title('star')
-                | Competenze
+                | Competenze tecniche
 
             table
                 tr
@@ -138,42 +146,43 @@ html(manifest="giko.appcache")
                 | Formazione
 
             dl
-                dt <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/">Politecnico di Milano</a> dal 2004 al 2009
+                dt <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/" class="content__link">Politecnico di Milano</a> dal 2004 al 2009
                 dd Studi interrotti per motivi di lavoro. Tra gli esami superati Informatica 1, 2 e 3, Applicazioni ipermediali, Basi di dati, Statistica, Fondamenti di ricerca operativa, Analisi 1 e 2.
-                dt <strong>Tirocinio</strong> in <a href="http://www.consoft.it/">Consoft Sistemi</a> da Maggio a Luglio 2008
+                dt <strong>Tirocinio J2EE</strong> in <a href="http://www.consoft.it/" class="content__link">Consoft Sistemi</a> da Maggio a Luglio 2008
                 dd
                 dt Certificazione <strong>TOEFL</strong> ottenuta il 5 Maggio 2007
                 dd
-                dt Scuola superiore al <a href="http://www.gbgrassi.it/"><strong>Liceo Scientifico</strong> G. B. Grassi</a> di Saronno dal 1998 al 2003
+                dt Scuola superiore al <a href="http://www.gbgrassi.it/" class="content__link"><strong>Liceo Scientifico</strong> G. B. Grassi</a> di Saronno dal 1998 al 2003
                 dd
 
             +title('computer')
                 | Side-projects
 
             dl
-                dt <a href="http://www.tchoukball.it/">Federazione TchoukBall Italia</a> dal 2002
+                dt <a href="http://www.tchoukball.it/" class="content__link">Federazione TchoukBall Italia</a> dal 2002
                 dd Responsabile e sviluppatore del sito federale, dei tool gestionali interni e delle community della federazione nazionale di questo sport innovativo. [Wordpress, PHP, MySql]
-                dt <a href="http://www.saronnocomets.it/">Saronno TchoukBall Club</a> dal 2006
+                dt <a href="http://www.saronnocomets.it/" class="content__link">Saronno TchoukBall Club</a> dal 2006
                 dd Sito istituzionale del club nel quale gioco, il primo club italiano di TchoukBall. [Wordpress, PHP]
-                dt <a href="http://www.youtchouk.com">YouTchouk</a> dal 2012
+                dt <a href="http://www.youtchouk.com" class="content__link">YouTchouk</a> dal 2012
                 dd Frontend e pannello di amministrazione di un portale per video di tchoukball. [YouTube API, jQuery, Backbone, Underscore]
-                dt <a href="http://giacomozinetti.github.io/haralyzer/">Haralyzer</a> dal 2013
+                dt <a href="http://giacomozinetti.github.io/haralyzer/" class="content__link">Haralyzer</a> dal 2013
                 dd Tool per confrontare HAR files utile nelle analisi delle performance. [Angular]
 
-            p Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/">mia pagina <strong>Github #[+icon('github')]</strong></a>
+            p Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/" class="content__link">mia pagina <strong>Github #[+icon('github')]</strong></a>
 
             +title('flight')
                 | Altro su di me
 
             p.
-                Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.<br />
-                Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.org">TchoukBall</a>.
+                Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.
+            p.
+                Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.it" class="content__link">TchoukBall</a>.
 
         .menu(class="hide@print")
-            label.button.button--outline(class="hide@nocp")
+            label.button.button--icon(class="hide@nocp")
                 +icon('colorize')
                 input(type="color" value="#2196f3" class="js-color-switcher")
-            a.button.button--outline(href="/assets/pdf/zinetti-giacomo-cv.pdf")
+            a.button.button--icon(href="/assets/pdf/zinetti-giacomo-cv.pdf")
                 +icon('pdf')
 
         script(src="/assets/js/giko.js" async)
