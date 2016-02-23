@@ -64,7 +64,9 @@ const msg = [
 
     '',
     '%c🖖 Live long and prosper',
+    '%cGiacomo Giko Zinetti - giacomo.zinetti@giko.it',
+    '',
 ].join('\n');
 const style = 'font-size: 12pt';
 const highStyle = 'color:blue; font-size: 12pt';
-console.log(msg, style, highStyle, '', style);
+console.log(msg, style, highStyle, '', style, '');
