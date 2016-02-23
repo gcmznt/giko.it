@@ -186,7 +186,8 @@ table {
 
     &--outline {
         background-color: $color-background;
-        border: 2px solid var(--color-primary);
+        border: 2px solid currentColor;
+        color: $color-primary;
         color: var(--color-primary);
     }
 
