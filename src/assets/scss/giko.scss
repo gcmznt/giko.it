@@ -220,7 +220,7 @@ table {
     transition: all ease-in-out 100ms;
 
     &:hover {
-        box-shadow: 0 0 10px #023b91;
+        box-shadow: 0 0 10px currentColor;
     }
 
     &--🃏 {
