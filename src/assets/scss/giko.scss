@@ -6,9 +6,24 @@ $color-shadow: #1f1f1f;
 $color-light: #eee;
 
 $width-body: 800px;
-
 $time-animation: 600ms;
 
+@mixin timeline($start, $end, $width) {
+    @for $i from 1 through length($width) {
+        $w: nth($width, $i);
+        dt:nth-of-type(#{length($width) - $i + 1})::after {
+            left: #{(nth($w, 1) - $start) / ($end - $start) * 100}%;
+            @if length($w) > 1 {
+                width: #{(nth($w, 2) - nth($w, 1)) / ($end - $start) * 100}%;
+            } @else {
+                border: 8px solid $color-secondary;
+                border-radius: 50%;
+                bottom: -5px;
+                width: 0;
+            }
+        }
+    }
+}
 
 :root {
     --color-background: $color-background;
@@ -77,15 +92,16 @@ $time-animation: 600ms;
         color: currentColor;
         display: inline-block;
         filter: drop-shadow(0 0 3px $color-shadow);
-        font-size: 1.75em;
-        height: 1.8em;
-        line-height: 1.8;
+        font-size: 2.275em;
+        height: 1.4em;
+        line-height: 1.4;
         transition: all ease 100ms;
-        width: 1.8em;
+        width: 1.4em;
         will-change: transform;
+        transform: scale(0.77);
 
         &:hover {
-            transform: scale(1.3);
+            transform: scale(1);
         }
 
         @media (pointer: coarse) {
@@ -120,9 +136,11 @@ dt {
 
 dd {
     margin-bottom: 1em;
+    font-size: 0.95em;
 }
 
-.🏢 {
+.🏢,
+.🎓 {
 
     dt::before,
     dt::after {
@@ -140,20 +158,14 @@ dd {
         left: 0;
         width: 100%;
     }
+}
 
-    $width: 37, 7, 16, 12;
-    $total: 0;
-    $sum: 0;
-    @each $w in $width {
-        $total: $total + $w;
-    }
-    @each $w in $width {
-        dt:nth-of-type(#{length($width) - index($width, $w) + 1})::after {
-            left: #{$sum / $total * 100}%;
-            width: #{$w / $total * 100}%;
-        }
-        $sum: $sum + $w;
-    }
+.🏢 {
+    @include timeline(0, 72, (0 37, 37 44, 44 60, 60 72));
+}
+
+.🎓 {
+    @include timeline(1998, 2016, (1998 2003, 2007.4, 2008.5, 2003 2010, 2010 2016));
 }
 
 .🎬 {
