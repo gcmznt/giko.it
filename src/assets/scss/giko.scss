@@ -204,6 +204,10 @@ table {
     text-decoration: none;
     transition: all ease-in-out 100ms;
 
+    &:hover {
+        box-shadow: 0 0 10px #023b91;
+    }
+
     &--🃏 {
         align-items: center;
         border-radius: 50%;
@@ -214,10 +218,6 @@ table {
         margin: 0 0 0 10px;
         padding: 0;
         width: 60px;
-
-        &:hover {
-            border-width: 4px;
-        }
     }
 
     input {
