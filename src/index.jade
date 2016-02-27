@@ -8,6 +8,11 @@ mixin title(name)
             +icon(name)
         block
 
+mixin social(name, link)
+    a(class="🌍__⚓️" href=link title=name)
+        +icon(name)
+
+
 
 - var author = 'Giacomo Giko Zinetti'
 - var title = 'Giacomo Zinetti 🎲 Giko: a Nerd Frontend developer'
@@ -58,36 +63,12 @@ html(manifest="giko.appcache")
             div(class="🔝__🎬").
                 Giacomo Zinetti <span class="🚫@🖨"><em>is</em> Giko</span>
             div(class="🌍")
-                a(
-                    class="🌍__⚓️"
-                    href="https://github.com/giacomozinetti"
-                    title="Github"
-                )
-                    +icon('github')
-                a(
-                    class="🌍__⚓️"
-                    href="http://it.linkedin.com/in/giacomozinetti"
-                    title="LinkedIn"
-                )
-                    +icon('linkedin')
-                a(
-                    class="🌍__⚓️"
-                    href="http://twitter.com/giacomozinetti"
-                    title="Twitter"
-                )
-                    +icon('twitter')
-                a(
-                    class="🌍__⚓️"
-                    href="https://medium.com/@giacomozinetti"
-                    title="Medium"
-                )
-                    +icon('medium')
-                a(
-                    class="🌍__⚓️"
-                    href="mailto:giacomo.zinetti@giko.it"
-                    title="email"
-                )
-                    +icon('email')
+                +social('github', 'https://github.com/giacomozinetti')
+                +social('codepen', 'http://codepen.io/giacomozinetti/')
+                +social('linkedin', 'http://it.linkedin.com/in/giacomozinetti')
+                +social('twitter', 'http://twitter.com/giacomozinetti')
+                +social('medium', 'https://medium.com/@giacomozinetti')
+                +social('email', 'mailto:giacomo.zinetti@giko.it')
 
         div(class="🖥")
             p.
@@ -111,7 +92,7 @@ html(manifest="giko.appcache")
 
             dl(class="🏢")
                 dt <strong>Senior frontend developer</strong> in <a href="http://www.objectway.it/" class="🖥__⚓️">Objectway</a> da Marzo 2015
-                dd Supporto specializzato per HTML, CSS, JS e UX a disposizione degli sviluppi dei prodotti aziendali. Definizione di <strong>styleguide</strong> di sviluppo condivise.
+                dd Supporto specializzato per <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong> e <strong>UX</strong> a disposizione degli sviluppi dei prodotti aziendali. Definizione di <strong>styleguide</strong> di sviluppo condivise.
                 dt <strong>Full-stack web developer</strong> in <a href="http://www.bryan.it/" class="🖥__⚓️">Bryan</a> da Novembre 2013 a Marzo 2015
                 dd Sviluppo siti principalmente su piattaforma <strong>WordPress</strong> gestendo l'intero processo di sviluppo, dalla configurazione dei server alla realizzazione dei template, passando per lo sviluppo di plugin. Lavori per clienti come <a href="http://www.boggi.it" class="🖥__⚓️">Boggi Milano</a> e <a href="http://www.atala.it" class="🖥__⚓️">Atala</a>.
                 dt <strong>Frontend developer</strong> in <a href="http://www.sowre.com/" class="🖥__⚓️">Sowre</a> da Aprile 2013 a Novembre 2013
@@ -128,56 +109,45 @@ html(manifest="giko.appcache")
                     td EcmaScript 5, ES2015 e ES2016, Babel, Nodejs e npm, Express, task runners (Gulp e Grunt), Yeoman, Bower, template engine (Handlebars, Mustache), jQuery + plugins, Angular, Backbone, Underscore, Twitter Bootstrap, Moment e molte altre librerie
                 tr
                     th CSS
-                    td CSS3, SASS e SCSS, LESS, BEM, cross browsing pixel perfect, media queries, responsive design, approccio mobile first, Twitter Bootstrap
+                    td CSS3, SASS e SCSS, PostCSS, LESS, BEM, cross browsing pixel perfect, media queries, responsive design, approccio mobile first, Twitter Bootstrap, Autoprefixer
                 tr
                     th HTML
-                    td HTML4, HTML5, XHTML 1.1, preprocessori HTML (Jade, Haml), validazione W3C, markup semantico
+                    td HTML4, HTML5, XHTML 1.1, preprocessori HTML (Pug/Jade, Haml), validazione W3C, markup semantico
                 tr
                     th Performance
-                    td Ottimizzazione risorse, algoritimi di compressione immagini, protocollo HTTP, SPDY e HTTP2, client hints, New Relic
+                    td Ottimizzazione risorse, AppCache, algoritimi di compressione immagini, WebP, protocollo HTTP, SPDY e HTTP2, client hints, New Relic
                 tr
                     th Server
                     td Unix, Nginx, Apache, configurazione SSL, Let's Encrypt, Amazon Web Services, Digital Ocean
                 tr
-                    th PHP
-                    td Wordpress, Silex, Twig
-                tr
-                    th DBMS
-                    td MySql, MongoDB
-                tr
-                    th Python
-                    td Django, Flask
+                    th Tools
+                    td Sublime Text, Atom Editor, .editorconfig, Linters (stylelint, scss-lint, eslint, jshint)
                 tr
                     th Altre
-                    td API (Google Maps, Twitter, Instagram, Facebook), Git, Mercurial, SVN, Sublime Text, Mac OS X, Windows, Photoshop, Illustrator, servizi REST
+                    td PHP (Wordpress, Silex, Twig), Python (Django, Flask), MySql, MongoDB, API (Google Maps, Twitter, Instagram, Facebook), Git, Mercurial, SVN, Sublime Text, Mac OS X, Windows, Photoshop, Illustrator, servizi REST
 
             +title('school')
                 | Formazione
 
-            dl
+            dl(class="🎓")
+                dt Continuo aggiornamento su piattaforme di <strong>e-learning</strong>. Tra queste <a href="https://www.coursera.org/" class="🖥__⚓️">Coursera</a>, <a href="https://www.udemy.com/" class="🖥__⚓️">Udemy</a> e <a href="https://www.udacity.com/" class="🖥__⚓️">Udacity</a>
                 dt <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/" class="🖥__⚓️">Politecnico di Milano</a> dal 2004 al 2009
                 dd Studi interrotti per motivi di lavoro. Tra gli esami superati Informatica 1, 2 e 3, Applicazioni ipermediali, Basi di dati, Statistica, Fondamenti di ricerca operativa, Analisi 1 e 2.
                 dt <strong>Tirocinio J2EE</strong> in <a href="http://www.consoft.it/" class="🖥__⚓️">Consoft Sistemi</a> da Maggio a Luglio 2008
-                dd
                 dt Certificazione <strong>TOEFL</strong> ottenuta il 5 Maggio 2007
-                dd
                 dt Scuola superiore al <a href="http://www.gbgrassi.it/" class="🖥__⚓️"><strong>Liceo Scientifico</strong> G. B. Grassi</a> di Saronno dal 1998 al 2003
-                dd
 
             +title('computer')
-                | Side-projects
+                | Extra time
 
-            dl
-                dt <a href="http://www.tchoukball.it/" class="🖥__⚓️">Federazione TchoukBall Italia</a> dal 2002
-                dd Responsabile e sviluppatore del sito federale, dei tool gestionali interni e delle community della federazione nazionale di questo sport innovativo. [Wordpress, PHP, MySql]
-                dt <a href="http://www.saronnocomets.it/" class="🖥__⚓️">Saronno TchoukBall Club</a> dal 2006
-                dd Sito istituzionale del club nel quale gioco, il primo club italiano di TchoukBall. [Wordpress, PHP]
-                dt <a href="http://www.youtchouk.com" class="🖥__⚓️">YouTchouk</a> dal 2012
-                dd Frontend e pannello di amministrazione di un portale per video di tchoukball. [YouTube API, jQuery, Backbone, Underscore]
-                dt <a href="http://giacomozinetti.github.io/haralyzer/" class="🖥__⚓️">Haralyzer</a> dal 2013
-                dd Tool per confrontare HAR files utile nelle analisi delle performance. [Angular]
+            p.
+                Nel tempo libero mi piace sperimentare nuove tecnologie sviluppando progetti personali o contribuendo a progetti <strong>open-source</strong>. Alcuni sorgenti e progetti sono sulla <a href="https://github.com/giacomozinetti/" class="🖥__⚓️">mia pagina Github</a> e su <a href="http://codepen.io/giacomozinetti/" class="🖥__⚓️">Codepen</a>. Mi piace anche tenermi aggiornato leggendo articoli, frequentando <strong>corsi online</strong> e partecipando a conferenze.
+            p.
+                Nell'ottobre 2015 ho contribuito alla fondazione del gruppo <a href="https://twitter.com/milanofrontend/" class="🖥__⚓️"><strong>Milano Front End</strong></a> organizzando meetup e preparando speech. Alcuni dei temi trattati diventano talk per <strong>conferenze</strong> (<a href="http://2016.cssday.it/#programma" class="🖥__⚓️">CSSDay 2016 Faenza</a>) o articoli sul <a href="https://medium.com/@giacomozinetti" class="🖥__⚓️">mio <strong>blog</strong></a>.
+            p.
+                Nel 2014 ho fatto da <strong>revisore</strong> al libro <a href="https://www.packtpub.com/web-development/learning-single-page-web-application-development" class="🖥__⚓️">Learning Single-page Web Application Development</a> pubblicato da <a href="https://www.packtpub.com/" class="🖥__⚓️">Packt Publishing</a>.
+            p.
 
-            p Sorgenti e altri progetti sulla <a href="https://github.com/giacomozinetti/" class="🖥__⚓️">mia pagina <strong>Github #[+icon('github')]</strong></a>
 
             +title('flight')
                 | Altro su di me
@@ -186,6 +156,10 @@ html(manifest="giko.appcache")
                 Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici.
             p.
                 Infine mi piace giocare ad un nuovo strano sport chiamato <a href="http://www.tchoukball.it" class="🖥__⚓️">TchoukBall</a>.
+
+            //- div(class="🔛 🚫@🖨")
+            //-     a(class="🔴" href="mailto:giacomo.zinetti@giko.it")
+            //-         | giacomo.zinetti@giko.it
 
         div(class="📋 🚫@🖨")
             label(class="🔴 🔴--🃏 ✅@💲")

@@ -1,0 +1,98 @@
+{
+  "published": "2016-02-27T20:28:27.751Z",
+  "paths": [
+    "dist/assets/css/giko.css"
+  ],
+  "stylesheets": 1,
+  "styleElements": 0,
+  "size": 5022,
+  "dataUriSize": 0,
+  "ratioOfDataUriSize": 0,
+  "gzippedSize": 1626,
+  "rules": 55,
+  "selectors": 62,
+  "declarations": 213,
+  "simplicity": 0.8870967741935484,
+  "averageOfIdentifier": 2.0806451612903225,
+  "mostIdentifier": 4,
+  "mostIdentifierSelector": ".🎓 dt:nth-of-type(4):after",
+  "averageOfCohesion": 3.8727272727272726,
+  "lowestCohesion": 18,
+  "lowestCohesionSelector": [
+    ".🔴--🃏"
+  ],
+  "totalUniqueFontSizes": 8,
+  "uniqueFontSizes": [
+    ".8em",
+    ".95em",
+    "1em",
+    "1.3em",
+    "2em",
+    "2.275em",
+    "2.3em",
+    "30px"
+  ],
+  "totalUniqueFontFamilies": 0,
+  "uniqueFontFamilies": [],
+  "totalUniqueColors": 5,
+  "uniqueColors": [
+    "#023B91",
+    "#1F1F1F",
+    "#FFFFFF",
+    "CURRENTCOLOR",
+    "VAR(--COLOR-PRIMARY)"
+  ],
+  "totalUniqueBackgroundImages": 1,
+  "uniqueBackgroundImages": [
+    "../img/cover-blue.jpg"
+  ],
+  "idSelectors": 0,
+  "universalSelectors": 0,
+  "unqualifiedAttributeSelectors": 0,
+  "javascriptSpecificSelectors": 0,
+  "importantKeywords": 0,
+  "floatProperties": 1,
+  "propertiesCount": [
+    {
+      "property": "display",
+      "count": 24
+    },
+    {
+      "property": "width",
+      "count": 16
+    },
+    {
+      "property": "color",
+      "count": 16
+    },
+    {
+      "property": "left",
+      "count": 10
+    },
+    {
+      "property": "margin",
+      "count": 10
+    },
+    {
+      "property": "padding",
+      "count": 9
+    },
+    {
+      "property": "font-size",
+      "count": 8
+    },
+    {
+      "property": "height",
+      "count": 6
+    },
+    {
+      "property": "position",
+      "count": 6
+    },
+    {
+      "property": "text-align",
+      "count": 4
+    }
+  ],
+  "mediaQueries": 2
+}

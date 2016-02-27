@@ -132,11 +132,14 @@ dt {
     margin: 1.5em 0 0.5em;
     position: relative;
     padding-bottom: 15px;
+    page-break-after: avoid;
 }
 
 dd {
     margin-bottom: 1em;
     font-size: 0.95em;
+    page-break-before: avoid;
+    page-break-inside: avoid;
 }
 
 .🏢,
@@ -306,7 +309,6 @@ table {
         text-shadow: none;
 
         &__🎬 {
-            border-bottom: 1px solid currentColor;
             color: $color-primary;
             color: var(--color-primary);
             filter: none;
@@ -327,6 +329,7 @@ table {
         height: 1.5em;
         margin-bottom: 0;
         text-decoration: none;
+        transform: none;
         width: auto;
 
         &[href]::after {
