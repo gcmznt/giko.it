@@ -62,6 +62,7 @@
         '- CSS Custom Props',
         '- LocalStorage',
         '- AppCache',
+        '- Humans.txt',
         '',
         '%c🖖 Live long and prosper',
         '%cGiacomo Giko Zinetti - giacomo.zinetti@giko.it',

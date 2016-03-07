@@ -7,8 +7,7 @@ const paths = {
     svg: './src/assets/icons/*.svg',
     svgSprite: './src/assets/icons/sprite/',
     images: 'src/assets/img/*',
-    pdf: 'src/assets/pdf/*',
-    copy: 'src/{assets/pdf/*}',
+    copy: 'src/{humans.txt,assets/pdf/*}',
     dest: './dist/',
     destStyles: './dist/assets/css',
     destImages: './dist/assets/img',
@@ -31,8 +30,8 @@ import scripts from './tasks/scripts.js';
 gulp.task('scripts', scripts(paths.js, paths.destScripts));
 
 gulp.task('copy', function() {
-    return gulp.src(paths.pdf)
-        .pipe(gulp.dest('dist/assets/pdf/'));
+    return gulp.src(paths.copy)
+        .pipe(gulp.dest(paths.dest));
 });
 
 import replace from 'gulp-replace';

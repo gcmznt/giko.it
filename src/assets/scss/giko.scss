@@ -150,10 +150,7 @@ dd {
         border-bottom: 5px solid $color-secondary;
         bottom: 0;
         content:  '';
-        display: block;
-        opacity: 0.75;
         position: absolute;
-        z-index: -1;
     }
 
     dt::before {
@@ -164,7 +161,7 @@ dd {
 }
 
 .🏢 {
-    @include timeline(0, 72, (0 37, 37 44, 44 60, 60 72));
+    @include timeline(0, 74, (0 37, 37 44, 44 60, 60 74));
 }
 
 .🎓 {
