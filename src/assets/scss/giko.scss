@@ -223,13 +223,23 @@ table {
     &--🃏 {
         align-items: center;
         border-radius: 50%;
+        bottom: 20px;
         display: flex;
         font-size: 30px;
         height: 60px;
         justify-content: center;
-        margin: 0 0 0 10px;
+        margin: 0;
         padding: 0;
+        position: fixed;
+        right: 20px;
+        transition: all ease-in 1000ms;
         width: 60px;
+        will-change: transform;
+
+        &.⬅️ {
+            right: calc(100vw - 80px);
+            transform: rotate(-720deg);
+        }
     }
 
     input {
