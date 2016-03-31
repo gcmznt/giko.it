@@ -40,6 +40,19 @@ gulp.task('version', function() {
         .pipe(replace('@@timestamp', new Date().getTime()))
         .pipe(gulp.dest('dist'));
 });
+gulp.task('sri-set', ['sri'], function() {
+    const sri = require('./sri.json');
+    return gulp.src(paths.dest + '*.html')
+        .pipe(replace(
+            'data-sri-css',
+            'integrity="' + sri['dist/assets/css/giko.css'] + '"'
+        ))
+        .pipe(replace(
+            'data-sri-js',
+            'integrity="' + sri['dist/assets/js/giko.js'] + '"'
+        ))
+        .pipe(gulp.dest('dist'));
+});
 
 const browserSync = require('browser-sync').create();
 gulp.task('serve', ['watch'], function() {
@@ -69,6 +82,13 @@ gulp.task('revision', ['build', 'version'], function() {
         .pipe(gulp.dest('./'));
 });
 
+import sri from 'gulp-sri';
+gulp.task('sri', ['build', 'version'], function() {
+    return gulp.src(['dist{/**/*.css,/**/*.js}'])
+        .pipe(sri())
+        .pipe(gulp.dest('./'));
+});
+
 import revReplace from 'gulp-rev-replace';
 gulp.task('revreplace', ['revision'], function() {
     return gulp.src('./dist/*')
@@ -88,9 +108,10 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('build', ['images', 'templates', 'styles', 'scripts', 'copy']);
+gulp.task('prepare', ['revreplace', 'sri-set']);
 
 import rsync from 'gulp-rsync';
-gulp.task('deploy', ['revreplace'], function() {
+gulp.task('deploy', ['prepare'], function() {
     return gulp.src('dist/**')
         .pipe(rsync({
             root: 'dist',
