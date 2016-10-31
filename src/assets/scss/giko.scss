@@ -162,7 +162,8 @@ dd {
 }
 
 .🏢 {
-    @include timeline(0, 74, (0 37, 37 44, 44 60, 60 74));
+    @include timeline(0, 81, (0 37, 37 44, 44 60, 60 77, 77 81));
+    // 81 = gennaio 2018
 }
 
 .🎓 {
@@ -278,6 +279,8 @@ table {
     .👾 {
         font-size: 1em;
         line-height: 1.5;
+        max-width: 700px;
+        margin: auto;
     }
 
     .🚫\@🖨 {
@@ -325,7 +328,8 @@ table {
 
         &__😀 {
             float: right;
-            width: 160px;
+            width: 180px;
+            height: 180px;
         }
     }
 
