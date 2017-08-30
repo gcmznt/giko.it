@@ -1,0 +1,47 @@
+.me,
+h1,
+h2 {
+  text-align: left;
+}
+
+header,
+section {
+  margin: 0 2rem 2rem;
+}
+
+.page {
+  box-shadow: 0 10px 50px 10px #eee;
+  grid-template-areas:
+    "header main"
+    "aside main"
+  ;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 0fr 1fr;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.title {
+  align-items: flex-start;
+
+  &--main {
+    align-items: center;
+  }
+
+  &__icon:not(&__icon--main) {
+    transform-origin: left bottom;
+
+    &::before {
+      box-suppress: discard;
+      display: none;
+    }
+  }
+}
+
+.hobby {
+  align-items: flex-start;
+}
+
+.name {
+  text-align: left;
+}

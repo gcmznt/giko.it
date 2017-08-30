@@ -11,4 +11,4 @@
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3, Sass, Autoprefixer, Pug (Jade), ES2015 and Babel, npm, Gulp, Git and Github, Linters, .editorconfig, BEM + Emoji = BEMoji, Bithound.io, Nginx, HTTP2, Let's Encrypt, Client Hints, Webp, New Relic, Google Analytics, SVG icons, Print CSS, Responsive, CSS Custom Props, LocalStorage, AppCache
+  HTML5, CSS3, Sass, Autoprefixer, Pug (Jade), ES2015 and Babel, npm, Gulp, Git and Github, Linters, .editorconfig, BEM + Emoji = BEMoji, Bithound.io, Nginx, HTTP2, Let's Encrypt, Client Hints, Webp, New Relic, Google Analytics, SVG icons, Print CSS, Responsive, CSS Custom Props, LocalStorage, Microdata, Service workers, PWA

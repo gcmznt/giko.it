@@ -1,0 +1,41 @@
+body {
+  align-items: flex-start;
+  font-size: 12px;
+
+  &::after {
+    display: block;
+    content: '';
+    position: fixed;
+    border: 25px solid transparent;
+    border-right-color: var(--main-color);
+    border-top-color: var(--main-color);
+    height: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+  }
+}
+
+.page {
+  box-shadow: none;
+}
+
+.title {
+  &__icon {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tech {
+  flex-basis: 120px;
+}
+
+.hobby {
+  flex-basis: 60px;
+}
+
+@page {
+  margin: 0;
+  size: A4;
+}

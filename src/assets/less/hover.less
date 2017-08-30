@@ -1,0 +1,23 @@
+.title {
+  &__icon {
+    section:hover &,
+    section:target & {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.tech:hover {
+  .tech__symbol {
+    border-width: 0;
+    transform: scale(1.75);
+    border-color: transparent;
+  }
+}
+
+.contact {
+  &:hover {
+    transform: translateX(1em);
+  }
+}

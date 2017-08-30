@@ -1,179 +1,188 @@
-mixin icon(name)
-    svg(class="🃏 🃏--#{ name }" role="img" aria-label="#{ name }")
-        use(xlink:href="##{ name }")
-
-mixin title(name)
-    h2(class="🎬" id="_#{name}")
-        a(class="🎬__⚓️" href="#_#{name}")
-            +icon(name)
-        block
-
-mixin social(name, link)
-    a(class="🌍__⚓️" href=link title=name)
-        +icon(name)
-
-
-
 - var author = 'Giacomo Giko Zinetti'
-- var title = 'Giacomo Zinetti 🎲 Giko: a Nerd Frontend developer'
+- var title = 'Giacomo Giko Zinetti 👾 Geek Frontend Developer'
 - var description = 'Curriculum vitae di uno sviluppatore web. Dal server al client.'
 - var keywords = 'Giacomo, Zinetti, giko, curriculum vitae, web, developer, frontend'
-- var themeColor = '#023B91'
-- var favicon = '/assets/img/favicon-profilo.jpg'
+- var themeColor = '#d40000'
 - var gaCode = 'UA-28055358-1'
 
+mixin icon(name)
+  div&attributes(attributes)
+    svg(role="img" aria-label="#{name}")
+      use(xlink:href="/assets/icons/icons.svg##{name}")
+
+mixin title(icon, link)
+  h1
+    a.title(href="##{link}")
+      +icon(icon)(class="title__icon")
+      block
+
+mixin mainTitle(icon, link)
+  h1
+    a.title.title--main(href="##{link}")
+      +icon(icon)(class="title__icon title__icon--main")
+      block
+
+mixin social(name, link)
+  - var text = link.replace(/^(mailto:|https?:\/\/)/i, "");
+  a(class="contact" href=link title=name)&attributes(attributes)
+    +icon(name)(class="contact__icon")
+    = text
+
+mixin work(name, url, logo, role, dates, tech)
+  li.work(itemscope itemtype="http://schema.org/Organization")
+    picture
+      source(srcset="/assets/img/logo-#{logo}.webp" type="image/webp")
+      img(
+        class="work__logo"
+        src="/assets/img/logo-#{logo}.png"
+        alt="#{name} Logo"
+        itemprop="logo"
+      )
+    div
+      .work__title
+        span #{dates} — <span>#{role}</span>
+        a(href=url itemprop="url")
+          | @<strong itemprop="name">#{name}</strong>
+      .work__tech #{tech}
+
+mixin tech(name, code)
+  .tech(class="tech--#{code}")
+    .tech__symbol
+      block
+    .tech__name= name
+
+mixin hobby(icon, name, alternative, color)
+  .hobby
+    +icon(icon)(class="hobby__icon" style=(color ? `color: ${color}` : false))
+    .hobby__name.name
+      .name__main= name
+      .name__alternative= alternative
+
 doctype html
-html(lang="it" manifest="giko.appcache")
-    head
-        title #{title}
+html(lang="it")
+  head
+    title #{title}
 
-        meta(http-equiv="Content-Type" content="text/html;charset=utf-8")
-        meta(http-equiv="Accept-CH" content="DPR, Viewport-Width, Width")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="Accept-CH" content="DPR, Viewport-Width, Width")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
-        meta(name="description" content="#{description}")
-        meta(name="keywords" content="#{keywords}")
-        meta(name="author" content="#{author}")
-        meta(name="theme-color" content="#{themeColor}")
-        meta(name="apple-mobile-web-app-status-bar-style" content="#{themeColor}")
+    meta(name="description" content="#{description}")
+    meta(name="keywords" content="#{keywords}")
+    meta(name="author" content="#{author}")
+    meta(name="theme-color" content="#{themeColor}")
+    meta(name="apple-mobile-web-app-status-bar-style" content="#{themeColor}")
 
-        meta(property="og:site_name" content="#{title}")
-        meta(property="og:image" content="https://giko.it/assets/img/profilo.jpg")
-        meta(property="og:title" content="#{title}")
-        meta(property="og:description" content="#{description}")
+    meta(property="og:site_name" content="#{title}")
+    meta(property="og:image" content="https://giko.it/assets/img/profilo-2017.jpg")
+    meta(property="og:title" content="#{title}")
+    meta(property="og:description" content="#{description}")
+    meta(name="msapplication-config" content="/browserconfig.xml")
 
-        link(rel="shortcut icon" href="#{favicon}" type="image/png")
-        link(rel="icon" href="#{favicon}" type="image/png")
+    link(rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png")
+    link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#d40000")
+    //- link(rel="shortcut icon" href="/favicon.ico")
 
-        link(type="text/plain" rel="author" href="/humans.txt")
+    link(rel="manifest" href="/manifest.json")
+    link(rel="author" href="/humans.txt" type="text/plain")
+    link(rel="author" href="https://plus.google.com/u/0/+GiacomoZinetti")
+    link(rel="stylesheet" href="/assets/css/critical.css" inline)
+    //- link(rel="preload" href="/assets/css/giko.css" as="style")
 
-        link(
-            rel="stylesheet"
-            href="/assets/css/giko.css"
-            data-sri-css
-        )
+  body#debug(class="non-è-acqua 👾")
+    .page(itemscope itemtype="http://schema.org/Person")
+      header.me
+        picture.me__avatar
+          source(srcset="/assets/img/profilo-2017.webp" type="image/webp")
+          img(
+            class="avatar"
+            src="/assets/img/profilo-2017.jpg"
+            alt="Giacomo Zinetti Foto"
+            itemprop="image"
+          )
 
-    body(class="non-è-acqua 👾")
-        div(class="🖼")
-            include assets/icons/sprite/icons.svg
+        h1.me__name(itemprop="name") Giacomo <strong>Zinetti</strong>
+        h2.me__title(itemprop="jobTitle") Geek Frontend Developer
 
-        div(class="🔝")
-            img(
-                class="🔝__😀"
-                src="/assets/img/profilo.jpg"
-                alt="Giacomo Zinetti Foto"
-            )
-            div(class="🔝__🎬").
-                Giacomo Zinetti <span class="🚫@🖨"><em>is</em> Giko</span>
-            div(class="🌍")
-                +social('github', 'https://github.com/giacomozinetti')
-                +social('codepen', 'http://codepen.io/giacomozinetti/')
-                +social('linkedin', 'http://it.linkedin.com/in/giacomozinetti')
-                +social('twitter', 'http://twitter.com/giacomozinetti')
-                +social('medium', 'https://medium.com/@giacomozinetti')
-                +social('email', 'mailto:giacomo.zinetti@giko.it')
+      main
+        section(id="🏢")
+          +mainTitle('business', '🏢') Esperienze
 
-        div(class="🖥")
-            p.
-                Hello world! Sono un programmatore nato il 15 giugno 1984 e vivo a Bregnano, un paesino tranquillo in provincia di Como.
-            p.
-                La mia passione è il web e la coltivo ogni giorno costruendo siti e applicazioni migliori con UX innovative, grafiche accattivanti e utilizzando le più recenti tecnologie. Adoro lavorare in team con altri fanatici del web con i quali condividere le esperienze, le conoscenze e gli ultimi aggiornamenti dal mondo tecnologico.
+          ol.works(reversed)
+            //- +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance')
+            +work('TheOutplay', 'http://www.theoutplay.com/', 'top', 'Frontend Developer', '2016', 'React, Redux, CSS in JS, GraphQL, Webpack')
+            +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Pug')
+            +work('Bryan', 'http://bryan.it/', 'bryan', 'Full-stack Developer', '2013', 'Wordpress, Nginx, Grunt, LESS, Tutoring')
+            +work('Sowre', 'http://www.sowre.com/', 'sowre', 'Frontend Developer', '2013', 'Websphere, CSS, Javascript, Json, API')
+            +work('Prodigys Group', 'http://www.prodigys.it/', 'prodigys', 'PHP Developer', '2010', 'Responsive, AWS, PHP, Python, Git')
 
-            div(class="🔛 🚫@🖨")
-                a(class="🔴" href="/assets/pdf/zinetti-giacomo-cv.pdf")
-                    | Download the CV
+        section(id="⭐️")
+          +mainTitle('star', '⭐️') Specialità
 
-            //- +title('code') CV in Breve
+          .techs
+            +tech('Javascript', 'js')
+              | (…)
+            +tech('CSS', 'css')
+              | {;}
+            +tech('HTML', 'html')
+              | &lt;/&gt;
+            +tech('Performance', 'perf')
+              +icon('lightning')
 
-            //- p.
-            //-     Sono principalmente uno sviluppatore frontend con ottima conoscenza di <strong>JavaScript</strong>, <strong>CSS</strong> e <strong>HTML</strong>. Adoro spingere al limite le <strong>prestazioni</strong> di ogni sito ottimizzandone ogni aspetto. Sviluppo <strong>backend</strong> con Nodejs, PHP e Python.
-            //- p.
-            //-     Ho fatto esperienza in web agency
+        section(id="🎓")
+          +mainTitle('school', '🎓') Formazione
 
-            +title('business')
-                | Esperienze lavorative
+          ol.education(reversed)
+            li Continuo aggiornamento su siti di <strong>e-learning</strong> come <a href="https://www.coursera.org/">Coursera</a>, <a href="https://www.udemy.com/">Udemy</a> e <a href="https://www.udacity.com/">Udacity</a>.
+            li Certificazione <strong><a href="https://www.ets.org/toefl">TOEFL</a></strong> 2007
+            li(itemscope itemtype="http://schema.org/EducationalOrganization")
+              | <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/" itemprop="url"><span itemprop="name">Politecnico di Milano</span></a>
+            li(itemscope itemtype="http://schema.org/EducationalOrganization")
+              | Scuola superiore al <a href="http://www.gbgrassi.it/" itemprop="url"><span itemprop="name"><strong>Liceo Scientifico</strong> G. B. Grassi</span></a> di Saronno
 
-            dl(class="🏢")
-                dt <strong>Senior frontend developer</strong> in <a href="http://www.theoutplay.com/" class="🖥__⚓️">The Outplay</a> da Agosto 2016
-                dd Sviluppo widget JS per la visualizzazione di video ed advertising su siti terzi. Creazione di una piattaforma gestionale per i contenuti.
-                dt <strong>Senior frontend developer</strong> in <a href="http://www.objectway.it/" class="🖥__⚓️">Objectway</a> da Marzo 2015 ad Agosto 2016
-                dd Supporto specializzato per <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong> e <strong>UX</strong> a disposizione degli sviluppi dei prodotti aziendali. Definizione di <strong>styleguide</strong> di sviluppo condivise.
-                dt <strong>Full-stack web developer</strong> in <a href="http://www.bryan.it/" class="🖥__⚓️">Bryan</a> da Novembre 2013 a Marzo 2015
-                dd Sviluppo siti principalmente su piattaforma <strong>WordPress</strong> gestendo l'intero processo di sviluppo, dalla configurazione dei server alla realizzazione dei template, passando per lo sviluppo di plugin. Lavori per clienti come <a href="http://www.boggi.it" class="🖥__⚓️">Boggi Milano</a> e <a href="http://www.atala.it" class="🖥__⚓️">Atala</a>.
-                dt <strong>Frontend developer</strong> in <a href="http://www.sowre.com/" class="🖥__⚓️">Sowre</a> da Aprile 2013 a Novembre 2013
-                dd Sviluppatore di temi (HTML, CSS e JS) su IBM WebSphere Portal per clienti come <a href="http://www.armani.it/" class="🖥__⚓️">Giorgio Armani</a> e <a href="http://www.venturatravel.it/" class="🖥__⚓️">Ventura</a>. Sviluppo dei template HTML per il sito mobile di <a href="http://www.moby.it/" class="🖥__⚓️">Moby</a>.
-                dt <strong>Web developer</strong> in <a href="http://www.prodigys.it/" class="🖥__⚓️">Prodigys Group</a> da Marzo 2010 ad Aprile 2013
-                dd <strong>Frontend</strong> di molti siti con particolare attenzione al crossbrowsing (ie6+) pixel perfect e siti responsive per clienti come <a href="http://www.vodafone.it/" class="🖥__⚓️">Vodafone Italia</a> (Home-page 2011 e SERP 2012) e <a href="http://www.allianz.it/" class="🖥__⚓️">Allianz</a> (sito mobile). Siti ottimizzati per sopportare grossi carichi di visite (<a href="http://offerte-adsl.vodafone.it/promozione/" class="🖥__⚓️">Landing offerte ADSL Vodafone</a>). Diversi <strong>tool amministrativi</strong> sviluppati in PHP e Python.
+        section(id="🤓")
+          +mainTitle('computer', '🤓') Extra time
 
-            +title('star')
-                | Competenze tecniche
+          p Nell'ottobre 2015 ho contribuito alla fondazione del gruppo <a href="https://twitter.com/milanofrontend/"><strong>Milano Front End</strong></a> organizzando meetup e preparando speech. Alcuni dei temi trattati diventano talk per <strong>conferenze</strong> (<a href="http://2016.cssday.it/#programma">CSSDay 2016 Faenza</a>) o articoli sul <a href="https://medium.com/@giacomozinetti">mio <strong>blog</strong></a>.
 
-            table
-                tr
-                    th(scope="row") JavaScript
-                    td EcmaScript 5, ES2015 e ES2016, Babel, Nodejs e npm, Express, task runners (Gulp e Grunt), Webpack, Yeoman, Bower, template engine (Handlebars, Mustache), jQuery + plugins, React, Flux, Angular, Backbone, Underscore, Twitter Bootstrap, Moment e molte altre librerie
-                tr
-                    th(scope="row") CSS
-                    td CSS3, SASS e SCSS, PostCSS, LESS, BEM, definizione di styleguide, cross browsing pixel perfect, media queries, responsive design, approccio mobile first, InuitCSS, Twitter Bootstrap, Autoprefixer, Stylestats, BackstopJS
-                tr
-                    th(scope="row") HTML
-                    td HTML4, HTML5, XHTML 1.1, preprocessori HTML (Pug/Jade, Haml), validazione W3C, markup semantico
-                tr
-                    th(scope="row") Performance
-                    td Ottimizzazione risorse, AppCache, algoritimi di compressione immagini, WebP, protocollo HTTP, SPDY e HTTP2, client hints, New Relic, FLIP animations
-                tr
-                    th(scope="row") Server
-                    td Unix, Nginx, Apache, configurazione SSL, Let's Encrypt, Amazon Web Services, Digital Ocean
-                tr
-                    th(scope="row") Tools
-                    td Sublime Text, Atom Editor, .editorconfig, Linters (stylelint, scss-lint, eslint, jshint)
-                tr
-                    th(scope="row") Altre
-                    td PHP (Wordpress, Silex, Twig), Python (Django, Flask), MySql, MongoDB, API (Google Maps, Twitter, Instagram, Facebook), Git, Mercurial, SVN, Sublime Text, Mac OS X, Windows, Photoshop, Illustrator, servizi REST
+          p Nel 2014 ho fatto da <strong>revisore</strong> al libro <a href="https://www.packtpub.com/web-development/learning-single-page-web-application-development">Learning Single-page Web Application Development</a> pubblicato da <a href="https://www.packtpub.com/">Packt Publishing</a>.
 
-            +title('school')
-                | Formazione
+      aside
+        section(id="✉️")
+          +title('place', '✉️') Contattami
 
-            dl(class="🎓")
-                dt Continuo aggiornamento su piattaforme di <strong>e-learning</strong>. Tra queste <a href="https://www.coursera.org/" class="🖥__⚓️">Coursera</a>, <a href="https://www.udemy.com/" class="🖥__⚓️">Udemy</a> e <a href="https://www.udacity.com/" class="🖥__⚓️">Udacity</a>
-                dd
-                dt <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/" class="🖥__⚓️">Politecnico di Milano</a> dal 2004 al 2009
-                dd Studi interrotti per motivi di lavoro. Tra gli esami superati Informatica 1, 2 e 3, Applicazioni ipermediali, Basi di dati, Statistica, Fondamenti di ricerca operativa, Analisi 1 e 2.
-                dt <strong>Tirocinio J2EE</strong> in <a href="http://www.consoft.it/" class="🖥__⚓️">Consoft Sistemi</a> da Maggio a Luglio 2008
-                dt Certificazione <strong>TOEFL</strong> ottenuta il 5 Maggio 2007
-                dd
-                dt Scuola superiore al <a href="http://www.gbgrassi.it/" class="🖥__⚓️"><strong>Liceo Scientifico</strong> G. B. Grassi</a> di Saronno dal 1998 al 2003
-                dd
+          .contacts
+            +social('email', 'mailto:42@giko.it')(itemprop="email")
+            +social('profile', 'https://giko.it')(itemprop="url" rel="me")
+            +social('twitter', 'http://twitter.giko.it')(itemprop="sameAs" rel="me")
+            +social('github', 'http://github.giko.it')(itemprop="sameAs" rel="me")
+            +social('codepen', 'http://codepen.giko.it')(itemprop="sameAs" rel="me")
+            +social('medium', 'http://medium.giko.it')(itemprop="sameAs" rel="me")
+            +social('linkedin', 'http://linkedin.giko.it')(itemprop="sameAs" rel="me")
 
-            +title('computer')
-                | Extra time
+        section(id="☀️")
+          +title('sun', '☀️') Interessi
 
-            p.
-                Nel tempo libero mi piace sperimentare nuove tecnologie sviluppando progetti personali o contribuendo a progetti <strong>open-source</strong>. Alcuni sorgenti e progetti sono sulla <a href="https://github.com/giacomozinetti/" class="🖥__⚓️">mia pagina Github</a> e su <a href="http://codepen.io/giacomozinetti/" class="🖥__⚓️">Codepen</a>. Mi piace anche tenermi aggiornato leggendo articoli, frequentando <strong>corsi online</strong> e partecipando a conferenze.
-            p.
-                Nell'ottobre 2015 ho contribuito alla fondazione del gruppo <a href="https://twitter.com/milanofrontend/" class="🖥__⚓️"><strong>Milano Front End</strong></a> organizzando meetup e preparando speech. Alcuni dei temi trattati diventano talk per <strong>conferenze</strong> (<a href="http://2016.cssday.it/#programma" class="🖥__⚓️">CSSDay 2016 Faenza</a>) o articoli sul <a href="https://medium.com/@giacomozinetti" class="🖥__⚓️">mio <strong>blog</strong></a>.
-            p.
-                Nel 2014 ho fatto da <strong>revisore</strong> al libro <a href="https://www.packtpub.com/web-development/learning-single-page-web-application-development" class="🖥__⚓️">Learning Single-page Web Application Development</a> pubblicato da <a href="https://www.packtpub.com/" class="🖥__⚓️">Packt Publishing</a>.
-            p.
+          .hobbies
+            +hobby('flight', 'Viaggi', 'Mondo')
+            +hobby('moto', 'Moto', 'Ducati', '#d40000')
+            +hobby('mountain', 'Montagna', 'Relax')
+            +hobby('boardgame', 'Boardgame', 'Strategia')
+            +hobby('lego', 'Lego', 'Costruzioni')
+            +hobby('juggle', 'Giocoleria', 'Divertimento')
+            +hobby('starwars', 'Star Wars', 'Cinema')
+            +hobby('escher', 'Escher', 'Impossibile')
+            +hobby('tchouk', 'TchoukBall', 'Sport')
 
+        section(id="💬")
+          blockquote
+            p Il tempo è una illusione. L'ora di pranzo è una doppia illusione.
 
-            +title('flight')
-                | Altro su di me
-
-            p.
-                Adoro vivere il nostro mondo non solo attraverso un monitor ma anche viaggiando, fotografando, facendo il giocoliere, guidando (moto in particolare), andando in snowboard, facendo giochi in scatola e stando con gli amici. Sono un appassionato di Lego e di Star Wars.
-            p.
-                Dal 2002 pratico un nuovo strano sport chiamato <a href="http://www.tchoukball.it" class="🖥__⚓️">TchoukBall</a>. Ho avuto il piacere di far parte della squadra nazionale italiana partecipando a campionati Mondiali ed Europei in veste di allenatore e di giocatore.
-
-            //- div(class="🔛 🚫@🖨")
-            //-     a(class="🔴" href="mailto:giacomo.zinetti@giko.it")
-            //-         | giacomo.zinetti@giko.it
-
-        //- div(class="📋 🚫@🖨")
-        label(class="🔴 🔴--🃏 ✅@💲 🚫@🖨")
-            +icon('colorize')
-            input(type="color" value="#2196f3" class="js-color-switcher")
-            //- a(class="🔴 🔴--🃏" href="/assets/pdf/zinetti-giacomo-cv.pdf")
-            //-     +icon('pdf')
-
-        script(src="/assets/js/giko.js" async data-sri-js)
+    script(src="/assets/js/giko.js" async)
+    noscript(id="deferred-styles")
+      link(rel="stylesheet" href="/assets/css/giko.css")
+      link(rel="stylesheet" href="/assets/css/hover.css" media="(hover: hover)")
+      link(rel="stylesheet" href="/assets/css/touch.css" media="(hover: none)")
+      link(rel="stylesheet" href="/assets/css/large.css" media="print, (min-width: 840px)")
+      link(rel="stylesheet" href="/assets/css/print.css" media="print")

@@ -1,0 +1,17 @@
+{
+  "name": "Geek Frontend Developer",
+  "short_name": "Giko.it",
+  "icons": [{
+    "src": "/assets/img/icons/android-chrome-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "/assets/img/icons/android-chrome-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/index.html",
+  "theme_color": "#d40000",
+  "background_color": "#d40000",
+  "display": "standalone"
+}
