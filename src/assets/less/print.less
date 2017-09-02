@@ -1,6 +1,7 @@
 body {
   align-items: flex-start;
   font-size: 12px;
+  background-color: #fff;
 
   &::after {
     display: block;
@@ -16,8 +17,23 @@ body {
   }
 }
 
+main {
+  align-self: end;
+}
+
 .page {
   box-shadow: none;
+  box-sizing: border-box;
+  grid-gap: 2rem;
+  min-height: 100vh;
+  padding: 2rem;
+  
+  &::before {
+    content: '';
+    background: #fafafa;
+    grid-area: header / header / aside;
+    margin: -2rem -1rem -2rem -2rem;
+  }
 }
 
 .title {
@@ -33,6 +49,10 @@ body {
 
 .hobby {
   flex-basis: 60px;
+}
+
+#👇 {
+  display: none;
 }
 
 @page {

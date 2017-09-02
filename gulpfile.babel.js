@@ -138,7 +138,7 @@ gulp.task('deploy', ['build'], () => gulp
   .pipe(rsync({
     root: 'dist',
     hostname: 'giko-new',
-    destination: '/var/www/giko.it/html',
+    destination: '/var/www/cv.giko.it/html',
     incremental: true,
     progress: true,
     chmod: 'Du=rwx,Dgo=rx,Fu=rw,Fog=r',
