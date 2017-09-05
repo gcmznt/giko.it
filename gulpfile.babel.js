@@ -81,18 +81,18 @@ gulp.task('copyMap', () => gulp
 );
 
 gulp.task('bundle-sw', () => {
-  return wbBuild.generateSW({
-    globDirectory: './dist/',
-    swDest: './dist/sw.js',
-    globPatterns: ['**\/*.{html,js,css,webp,jpg,png,svg}'],
-    globIgnores: [],
-  })
-  .then(() => {
-    console.log('Service worker generated.');
-  })
-  .catch((err) => {
-    console.log('[ERROR] This happened: ' + err);
-  });
+  // return wbBuild.generateSW({
+  //   globDirectory: './dist/',
+  //   swDest: './dist/sw.js',
+  //   globPatterns: ['**\/*.{html,js,css,webp,jpg,png,svg}'],
+  //   globIgnores: [],
+  // })
+  // .then(() => {
+  //   console.log('Service worker generated.');
+  // })
+  // .catch((err) => {
+  //   console.log('[ERROR] This happened: ' + err);
+  // });
 });
 
 gulp.task('gzip', () => gulp
@@ -137,8 +137,8 @@ gulp.task('deploy', ['build'], () => gulp
   .src('dist/**')
   .pipe(rsync({
     root: 'dist',
-    hostname: 'giko-new',
-    destination: '/var/www/cv.giko.it/html',
+    hostname: 'giko',
+    destination: '/var/vhosts/giko.it/docroot',
     incremental: true,
     progress: true,
     chmod: 'Du=rwx,Dgo=rx,Fu=rw,Fog=r',

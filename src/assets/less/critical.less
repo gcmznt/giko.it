@@ -1,152 +1,130 @@
-:root {
-  --main-color: #d40000;
-  --fg-color: #333;
-}
-
-body,
-html {
-  background-color: #fafafa;
-  font-size: 10px;
+html,
+body {
+  background: #fafafa;
+  font-size: 16px;
   margin: 0;
   padding: 0;
+  color: #d40000;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 body {
-  align-items: center;
   display: flex;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.3rem;
+  align-items: center;
   justify-content: center;
-  line-height: 2rem;
-  min-height: 100vh;
 }
 
-header,
-section {
-  margin: 0 1rem;
+#logo {
+  width: 100%;
+  max-width: 350px;
+  transition: all ease var(--animation-time);
+  transform-origin: 49.6% 56.2%;
+  overflow: visible;
+  margin: 2em;
+}
+
+#logo path {
+  transition: all ease var(--animation-time);
+}
+
+#wrapper {
+  display: flex;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+  transition: all ease var(--animation-time);
+  background: #fff;
 }
 
 h1 {
-  color: var(--main-color);
-  font-size: 2rem;
-  line-height: 2.4rem;
-  padding: 0.6rem 0;
+  font-size: 3rem;
+  order: -1;
+}
+
+h2 {
+  font-size: 1.6rem;
 }
 
 h1, h2 {
-  font-weight: normal;
-  letter-spacing: 0.2em;
-  margin: 2rem 0;
-  text-align: center;
   text-transform: uppercase;
-}
-
-strong {
-  line-height: 0;
-}
-
-svg {
-  fill: currentColor;
-  height: 1em;
-  width: 1em;
-}
-
-.page {
-  background-color: #fff;
-  box-shadow: 0 10px 50px 10px #eee;
-  box-sizing: border-box;
-  display: grid;
-  max-width: 84rem;
-  padding: 1rem;
-}
-
-.me {
+  letter-spacing: 0.2em;  
   text-align: center;
-
-  &__avatar {
-    margin: 2rem 0;
-  }
-
-  &__name {
-    font-size: 2.8rem;
-    line-height: 2.9rem;
-  }
-}
-
-.avatar {
-  background: var(--main-color);
-  border-radius: 50%;
-  color: white;
-  display: inline-block;
-  height: 18rem;
-  line-height: 18rem;
-  margin-top: 2rem;
-  max-width: 18rem;
-  vertical-align: bottom;
-  width: 100%;
-}
-
-.title {
-  align-items: center;
-  color: currentColor;
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  text-decoration: none;
-
-  &--main {
-    font-size: 2.4rem;
-  }
-
-  &__icon {
-    font-size: 2rem;
-    line-height: 2rem;
-    opacity: 0;
-    padding-top: 2px;
-    transform: scale(0);
-
-    &::before,
-    &::after {
-      transform: scaleX(0);
-      content: '';
-    }
-  }
-}
-
-.works {
-  list-style: none;
   margin: 0;
-  padding: 0;
+  transition: all ease var(--animation-time);
 }
 
-.work {
-  margin-bottom: 2rem;
-
-  &__title {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-
-    span {
-      display: inline-block;
-      margin-right: 0.4em;
-    }
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-    }
-  }
-
-  &__tech {
-    display: inline-block;
-  }
-
-  &__logo {
-    float: left;
-    height: 4rem;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
-    width: 4rem;
-    background: var(--main-color);
-  }
+.button {
+  color: #fff;
+  background: #d40000;
+  border: 3px solid #d40000;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin: 1rem 0 0;
+  transition: all ease var(--animation-time);
+  text-decoration: none;
 }
+
+.button:hover {
+  background: #fff;
+  color: #d40000;
+}
+
+#wrapper.active {
+  box-shadow: 0 10px 50px 10px #eee;
+  max-width: 840px;
+  padding: 2rem;
+}
+
+#wrapper.active > h1,
+#wrapper.active > h2,
+#wrapper.active > .button {
+  opacity: 0;
+}
+
+#wrapper.active > #logo {
+  transform: rotate(360deg);
+}
+
+.css-wrap,
+.js-wrap,
+.html-wrap {
+  transition: all ease var(--animation-time);
+}
+
+.css-wrap { fill: #0075B6 }
+.js-wrap { fill: #E8A232 }
+.html-wrap { fill: #E6522B }
+
+:root {
+  --zoom: 1.2;
+  --animation-time: 400ms;
+}
+#logo:hover .html-wrap { transform: translate(calc(var(--zoom) * 10px), 0) }
+#logo:hover .css-wrap { transform: translate(calc(var(--zoom) * -5px), calc(var(--zoom) * 8.66px)) }
+#logo:hover .js-wrap { transform: translate(calc(var(--zoom) * -5px), calc(var(--zoom) * -8.66px)) }
+
+.css-text,
+.js-text,
+.html-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 9px;
+  transition: all ease var(--animation-time);
+  transform-origin: center center;
+}
+
+.css-text { transform: skew(30deg) }
+.html-text { transform: rotate(60deg) skew(30deg) }
+.js-text { transform: rotate(-60deg) skew(30deg) }
