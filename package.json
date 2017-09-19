@@ -8,8 +8,7 @@
     "setup": "npm install",
     "dev": "gulp serve",
     "build": "gulp build",
-    "deploy": "gulp clean && gulp deploy && npm run stylestats",
-    "deploy-new": "gulp clean && gulp deploy-new && npm run stylestats",
+    "deploy": "gulp deploy",
     "stylestats": "stylestats dist/assets/css/giko.css --format=json > stylestats/`date +%Y-%m-%d_%H:%M:%S`.json"
   },
   "author": "Giko",
