@@ -186,28 +186,10 @@ blockquote {
   width: 100%;
   text-align: center;
 
-  &__main {
-    transition: all ease 200ms;
-
-    .hobby:hover & {
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-  }
-
   &__alternative {
     opacity: 0;
     position: absolute;
-    transition: all ease 200ms;
-    transform: translateY(-10px);
-    width: 100%;
     visibility: hidden;
-
-    .hobby:hover & {
-      opacity: 1;
-      transform: translateY(-20px);
-      visibility: visible;
-    }
   }
 }
 

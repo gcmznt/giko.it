@@ -21,3 +21,29 @@
     transform: translateX(0.5em);
   }
 }
+
+.name {
+
+  &__main {
+    transition: all ease 200ms;
+    will-change: transform;
+
+    .hobby:hover & {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+
+  &__alternative {
+    transition: all ease 200ms;
+    transform: translateY(-10px);
+    width: 100%;
+    will-change: transform;
+
+    .hobby:hover & {
+      opacity: 1;
+      transform: translateY(-20px);
+      visibility: visible;
+    }
+  }
+}
