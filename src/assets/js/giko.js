@@ -83,7 +83,7 @@ if ('serviceWorker' in navigator) {
     const msg = `
 
 %cNice to meet you 🍻!
-I am @giacomozinetti%c [https://twitter.com/giacomozinetti]
+I am @giacomozinetti%c [https://twitter.com/gcmznt]
 
 This website is coded with 💙, emoji and a lot of nerdy thing like:
 
@@ -126,7 +126,7 @@ Client
 - Microdata
 
 %c🖖 Live long and prosper
-%cGiacomo Giko Zinetti - giacomo.zinetti@giko.it
+%cGiacomo Giko Zinetti - 42@giko.it
 
 `;
 
