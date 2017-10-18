@@ -41,23 +41,18 @@ html(lang="it")
 
   body(class="non-è-acqua 👾")
     #wrapper
-      svg(id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80")
-        g(fill-rule="evenodd" clip-rule="evenodd")
-          g.css-wrap
-            text.css-text(x="16" y="56") Css
-          g.html-wrap
-            text.html-text(x="42" y="-16") Html
-          g.js-wrap
-            text.js-text(x="-78" y="53.2") Js
-          g.css-wrap
-            path.css(d="M72.5 58.151H29.437a.76.76 0 0 1-.663-1.134l-.001-.003 9.72-17.276-4.232-6.799-2.496 4.305-17.866 30.822h53.578l5.023-9.915z")
-          g.js-wrap
-            path.js(d="M7.5 57.415l5.112 9.83 20.964-36.17a.765.765 0 0 1 .643-.38c.27-.029.515.128.659.351l.005.009h.001l.013.022 10.268 16.014h9.712l-20.64-34.435L7.5 57.415z")
-          g.html-wrap
-            path.html(d="M72.387 56.626L45.246 11.934h-9.663l21.295 35.527a.764.764 0 0 1-.653 1.156H35.467l-4.699 8.01h41.619z")
-
-      h1 Giko
-      h2 👾 Geek Frontend Developer
-      a.button(href="https://cv.giko.it") CV
+      img.avatar(src="/assets/img/profilo-2017.jpg")
+      .content
+        svg(id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80")
+          g(fill-rule="evenodd" clip-rule="evenodd")
+            g.css-wrap
+              path.css(d="M72.5 58.151H29.437a.76.76 0 0 1-.663-1.134l-.001-.003 9.72-17.276-4.232-6.799-2.496 4.305-17.866 30.822h53.578l5.023-9.915z")
+            g.js-wrap
+              path.js(d="M7.5 57.415l5.112 9.83 20.964-36.17a.765.765 0 0 1 .643-.38c.27-.029.515.128.659.351l.005.009h.001l.013.022 10.268 16.014h9.712l-20.64-34.435L7.5 57.415z")
+            g.html-wrap
+              path.html(d="M72.387 56.626L45.246 11.934h-9.663l21.295 35.527a.764.764 0 0 1-.653 1.156H35.467l-4.699 8.01h41.619z")
+        h1 Giko
+        h2 Geek Frontend Developer
+      //- a.button(href="https://cv.giko.it") CV
 
     script(src="/assets/js/giko.js" async)

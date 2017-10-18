@@ -1,7 +1,8 @@
 html,
 body {
-  background: #fafafa;
-  font-size: 16px;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
+  background-color: #4A4A4A;
+  font-size: 10px;
   margin: 0;
   padding: 0;
   color: #d40000;
@@ -12,15 +13,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 #logo {
-  width: 100%;
-  max-width: 350px;
+  width: 60px;
   transition: all ease var(--animation-time);
   transform-origin: 49.6% 56.2%;
-  overflow: visible;
-  margin: 2em;
 }
 
 #logo path {
@@ -29,33 +29,84 @@ body {
 
 #wrapper {
   display: flex;
-  width: 100vw;
-  max-width: 100vw;
-  min-height: 100vh;
+  width: 330px;
+  height: 510px;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   box-sizing: border-box;
   flex-direction: column;
   transition: all ease var(--animation-time);
-  background: #fff;
+  background: #2C2C2C;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0,0,0,.5), -1px 1px 0 rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+  transform: rotate(-5deg);
+  transition: transform ease 500ms;
+
+  &:hover {
+    transform: rotate(0) scale(1.05);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+  }
 }
 
-h1 {
-  font-size: 3rem;
-  order: -1;
+.avatar {
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  height: 55%;
 }
 
-h2 {
-  font-size: 1.6rem;
+.content {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 160px;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    background: linear-gradient(to top, transparent, #323232, transparent)
+  }
 }
 
 h1, h2 {
-  text-transform: uppercase;
   letter-spacing: 0.2em;  
   text-align: center;
   margin: 0;
   transition: all ease var(--animation-time);
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: 5px;
 }
 
 .button {
@@ -95,36 +146,6 @@ h1, h2 {
   transform: rotate(360deg);
 }
 
-.css-wrap,
-.js-wrap,
-.html-wrap {
-  transition: all ease var(--animation-time);
-}
-
 .css-wrap { fill: #0075B6 }
 .js-wrap { fill: #E8A232 }
 .html-wrap { fill: #E6522B }
-
-:root {
-  --zoom: 1.2;
-  --animation-time: 400ms;
-}
-#logo:hover .html-wrap { transform: translate(calc(var(--zoom) * 10px), 0) }
-#logo:hover .css-wrap { transform: translate(calc(var(--zoom) * -5px), calc(var(--zoom) * 8.66px)) }
-#logo:hover .js-wrap { transform: translate(calc(var(--zoom) * -5px), calc(var(--zoom) * -8.66px)) }
-
-.css-text,
-.js-text,
-.html-text {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 9px;
-  transition: all ease var(--animation-time);
-  transform-origin: center center;
-}
-
-.css-text { transform: skew(30deg) }
-.html-text { transform: rotate(60deg) skew(30deg) }
-.js-text { transform: rotate(-60deg) skew(30deg) }
