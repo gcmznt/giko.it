@@ -1,0 +1,163 @@
+<template id="business-card">
+  <style>
+    .wrapper {
+      perspective: 1000px;
+      width: 100%;
+      height: 0;
+      padding-bottom: 154.545%;
+    }
+    
+    .card {
+      --transition-time: var(--card-transition-time, 500ms);
+      font-size: var(--card-font-size, 10px);
+      font-family: var(--card-font-family, Helvetica Neue, Helvetica, Arial, sans-serif);
+      background: var(--card-bg-color, #000);
+      color: var(--card-fg-color, #fff);
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      transition: all ease var(--transition-time);
+      border-radius: var(--card-border-radius, 20px);
+      box-shadow: 0 0 50px -5px rgba(0,0,0,.5), -1px 1px 0 rgba(255, 255, 255, 0.3);
+      overflow: hidden;
+      position: absolute;
+      transform: rotateY(0) rotate(-2deg);
+    }
+
+    .card:hover {
+      transform: rotateY(-5deg) rotateX(-5deg) scale(1.05);
+      box-shadow: 0 0 50px 0 rgba(0,0,0,.5), -1px 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .card:hover::after {
+      transform: translateX(-10%);
+    }
+
+    .card::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--card-border-radius, 20px);
+      z-index: 5;
+    }
+
+    .card::after {
+      content: '';
+      display: block;
+      width: 140%;
+      height: 140%;
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      background: linear-gradient(60deg, transparent 30%, rgba(255, 255, 255, 0.1), transparent 70%);
+      background-position: center center;
+      background-size: 140%;
+      transform: translateX(10%);
+      transition: all ease var(--transition-time);
+    }
+    
+    .avatar {
+      width: 100%;
+      object-fit: cover;
+      object-position: 50% 20%;
+      height: 55%;
+      filter: grayscale(0.25);
+      transition: all ease var(--transition-time);
+    }
+
+    .card:hover .avatar {
+      filter: grayscale(0);
+    }
+
+    .content {
+      flex-grow: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .content::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 160px;
+      position: absolute;
+      top: -80px;
+      left: 0;
+      background: linear-gradient(to top, transparent, rgba(0, 0, 0, .25), transparent)  
+    }
+    
+    .content::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background: linear-gradient(to top, var(--card-bg-color, #000), transparent)  
+    }
+    
+    .logo {
+      width: 70px;
+      transition: all ease var(--transition-time);
+      transform-origin: 49.6% 56.2%;
+      margin: 10px;
+    }
+    
+    h1, h2 {
+      letter-spacing: 0.2em;  
+      text-align: center;
+      margin: 0;
+      transition: all ease var(--transition-time);
+    }
+    
+    h1 {
+      font-size: 2.4em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      font-weight: normal;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+  </style>
+
+  <div class="wrapper">
+    <div class="card">
+      <img class="avatar" alt="Avatar">
+      <div class="content">
+        <img class="logo" alt="Logo">
+        <h1 class="name"></h1>
+        <h2 class="title"></h2>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  customElements.define('business-card', class extends HTMLElement {
+    constructor() {
+      super();
+      let shadowRoot = this.attachShadow({mode: 'open'});
+      const t = document.currentScript.ownerDocument.querySelector('#business-card');
+      t.content.querySelector('.avatar').src = this.getAttribute('avatar');
+      t.content.querySelector('.logo').src = this.getAttribute('logo');
+      t.content.querySelector('.name').innerHTML = this.getAttribute('name');
+      t.content.querySelector('.title').innerHTML = this.getAttribute('job-title');
+      shadowRoot.appendChild(document.currentScript.ownerDocument.importNode(t.content, true));
+    }
+  });
+</script>
