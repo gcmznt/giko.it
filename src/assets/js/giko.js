@@ -117,6 +117,7 @@ Client
 - SVG icons
 - Print CSS
 - Responsive
+- Vertical rhythm
 - CSS Custom Props
 - CSS Grid
 - Humans.txt
