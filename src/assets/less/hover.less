@@ -1,9 +1,10 @@
 .title {
   &__icon {
-    section:hover &,
-    section:target & {
-      transform: scale(1);
-      opacity: 1;
+    &::before,
+    &::after {
+      section:hover & {
+        transform: scaleX(2);
+      }
     }
   }
 }
@@ -23,7 +24,6 @@
 }
 
 .name {
-
   &__main {
     transition: all ease 200ms;
     will-change: transform;

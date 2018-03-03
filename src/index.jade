@@ -110,7 +110,7 @@ html(lang="it")
           +mainTitle('business', '🏢') Esperienze
 
           ol.works(reversed)
-            +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid')
+            +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid, PWA')
             +work('TheOutplay', 'http://www.theoutplay.com/', 'top', 'Frontend Developer', '2016', 'React, Redux, CSS in JS, GraphQL, Webpack')
             +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Pug')
             +work('Bryan', 'http://bryan.it/', 'bryan', 'Full-stack Developer', '2013', 'Wordpress, Nginx, Grunt, LESS, Tutoring')
@@ -158,19 +158,21 @@ html(lang="it")
           .contacts
             +social('email', 'mailto:giacomo.zinetti@giko.it')(itemprop="email")
             +social('profile', 'https://giko.it')(itemprop="url" rel="me")
-            +social('twitter', 'http://twitter.giko.it')(itemprop="sameAs" rel="me")
-            +social('github', 'http://github.giko.it')(itemprop="sameAs" rel="me")
-            +social('codepen', 'http://codepen.giko.it')(itemprop="sameAs" rel="me")
-            +social('medium', 'http://medium.giko.it')(itemprop="sameAs" rel="me")
-            +social('linkedin', 'http://linkedin.giko.it')(itemprop="sameAs" rel="me")
+            +social('twitter', 'https://twitter.com/gcmznt')(itemprop="sameAs" rel="me")
+            +social('github', 'https://github.com/gcmznt')(itemprop="sameAs" rel="me")
+            +social('codepen', 'https://codepen.io/gcmznt')(itemprop="sameAs" rel="me")
+            +social('medium', 'https://medium.com/@gcmznt')(itemprop="sameAs" rel="me")
+            +social('linkedin', 'https://linkedin.com/in/gcmznt')(itemprop="sameAs" rel="me")
+            +social('instagram', 'https://instagram.com/gcmznt')(itemprop="sameAs" rel="me")
 
         section(id="☀️")
           +title('sun', '☀️') Interessi
 
           .hobbies
-            +hobby('flight', 'Viaggi', 'Mondo')
-            +hobby('moto', 'Moto', 'Ducati', '#d40000')
+            //- +hobby('flight', 'Viaggi', 'Mondo')
+            +hobby('moto', 'Viaggi', 'Ducati', '#d40000')
             +hobby('mountain', 'Montagna', 'Relax')
+            +hobby('bbq', 'Barbecue', 'Cucina')
             +hobby('boardgame', 'Boardgame', 'Strategia')
             +hobby('lego', 'Lego', 'Costruzioni')
             +hobby('juggle', 'Giocoleria', 'Divertimento')

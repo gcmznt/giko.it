@@ -32,13 +32,17 @@ if ('serviceWorker' in navigator) {
     // navigator.vibrate = navigator.vibrate|| navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     // let setColorTimeOut;
 
-    // const setColor = function(value, color = 'primary') {
+    // const setColor = function(event) {
+    //     const col = getComputedStyle(event.target).getPropertyValue('--tech-color');
     //     const style = document.querySelector('body').style;
-    //     style.removeProperty(`--color-${color}`);
-    //     style.setProperty(`--color-${color}`, value);
-    //     localStorage.setItem(`--color-${color}`, value);
-    //     navigator.vibrate(200);
+    //     style.removeProperty('--main-color');
+    //     style.setProperty('--main-color', col);
+    //     // navigator.vibrate(200);
     // };
+
+    // Array.from(document.querySelectorAll('.tech')).map(
+    //   e => e.addEventListener('mouseenter', setColor)
+    // )
 
     // const changeColor = function(e) {
     //     clearTimeout(setColorTimeOut);

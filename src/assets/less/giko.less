@@ -51,13 +51,23 @@ blockquote {
   color: ~"color(currentColor alpha(75%))";
 }
 
+.me {
+  &__name {
+    transition: all ease 200ms;    
+  }
+}
+
 .title {
+  transition: all ease 200ms;
+
   &__icon {
     position: relative;
     transition: all ease 200ms;
+    display: none;
 
     &--main {
       transform-origin: center bottom;
+      display: block;
     }
 
     &::before,
