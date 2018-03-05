@@ -64,6 +64,7 @@ blockquote {
     position: relative;
     transition: all ease 200ms;
     display: none;
+    color: var(--main-color);
 
     &--main {
       transform-origin: center bottom;
@@ -73,7 +74,7 @@ blockquote {
     &::before,
     &::after {
       content: '';
-      border-bottom: 2px solid currentColor;
+      border-bottom: 2px solid var(--main-color);
       display: block;
       position: absolute;
       top: calc(50% - 1px);
@@ -100,7 +101,7 @@ blockquote {
 
 .contacts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
 .contact {

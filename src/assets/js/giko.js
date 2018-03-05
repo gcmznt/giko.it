@@ -29,60 +29,25 @@ if ('serviceWorker' in navigator) {
 }
 
 (function() {
-    // navigator.vibrate = navigator.vibrate|| navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-    // let setColorTimeOut;
+    
+    const setColor = function(col) {
+      const style = document.querySelector('body').style;
+      style.removeProperty('--main-color');
+      style.setProperty('--main-color', col);
+      localStorage.setItem('--main-color', col);
+      ga && ga('send', 'event', 'color', 'change', col);
+    };
 
-    // const setColor = function(event) {
-    //     const col = getComputedStyle(event.target).getPropertyValue('--tech-color');
-    //     const style = document.querySelector('body').style;
-    //     style.removeProperty('--main-color');
-    //     style.setProperty('--main-color', col);
-    //     // navigator.vibrate(200);
-    // };
+    Array.from(document.querySelectorAll('.tech')).map(
+      e => e.addEventListener('mouseenter', e => setColor(getComputedStyle(e.target).getPropertyValue('--tech-color')))
+    )
 
-    // Array.from(document.querySelectorAll('.tech')).map(
-    //   e => e.addEventListener('mouseenter', setColor)
-    // )
+    const savedColor = localStorage.getItem('--main-color');
+    savedColor && setColor(savedColor);
 
-    // const changeColor = function(e) {
-    //     clearTimeout(setColorTimeOut);
-    //     setColor(e.target.value, 'primary');
-    //     setColorTimeOut = setTimeout(function() {
-    //         ga && ga('send', 'event', 'color', 'change', e.target.value);
-    //     }, 1000);
-    // };
-
-    // const savedColor = localStorage.getItem('--color-primary');
-    // savedColor && setColor(savedColor, 'primary');
-
-    // document.querySelector('.js-color-switcher')
-    //     .addEventListener('change', changeColor);
-
-    // const picker = document.querySelector('.🔴--🃏');
-
-    // window.addEventListener("deviceorientation", function (event) {
-    //     // const alpha = event.alpha;
-    //     // const beta = event.beta;
-    //     const gamma = event.gamma;
-    //     const center = 0;
-    //     const offset = 30;
-    //     const animationLength = 1000;
-
-    //     if (gamma > (center + offset) && picker.classList.contains('⬅️')) {
-    //         picker.classList.remove('⬅️');
-    //     }
-
-    //     if (gamma < (center - offset) && !picker.classList.contains('⬅️')) {
-    //         picker.classList.add('⬅️');
-    //     }
-    // });
-
-    // picker.addEventListener("transitionend", function (event) {
-    //     const vibrationLength = 200;
-    //     if (event.propertyName === 'transform') {
-    //         navigator.vibrate(200);
-    //     }
-    // });
+    document.querySelector('[download]').addEventListener('click', () => {
+      ga && ga('send', 'event', 'download', localStorage.getItem('--main-color'));
+    })
 
     const msg = `
 
