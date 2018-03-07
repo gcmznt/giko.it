@@ -9,8 +9,6 @@ import revReplace from 'gulp-rev-replace';
 import rsync from 'gulp-rsync';
 import browserSync from 'browser-sync';
 import wbBuild from 'workbox-build';
-import brotli from 'gulp-brotli';
-import gzip from 'gulp-gzip';
 
 import jade from './tasks/templates.js';
 import icons from './tasks/icons.js';
@@ -95,24 +93,6 @@ gulp.task('bundle-sw', () => {
   });
 });
 
-gulp.task('gzip', () => gulp
-  .src('./dist/assets/**/*', { base: './dist' })
-  .pipe(gzip({
-    gzipOptions: {
-      level: 9,
-    },
-  }))
-  .pipe(gulp.dest(paths.dest))
-);
-
-gulp.task('brotli', () => gulp
-  .src('./dist/assets/**/*', { base: './dist' })
-  .pipe(brotli.compress({
-    quality: 11,
-  }))
-  .pipe(gulp.dest(paths.dest))
-);
-
 gulp.task('watch', ['build'], () => {
   gulp.watch(paths.jade, ['fullTemplates']);
   gulp.watch(paths.less, ['fullStyles']);
@@ -158,7 +138,7 @@ gulp.task('fullImages', run('images', 'post'));
 gulp.task('fullScripts', run('scripts', 'post'));
 gulp.task('fullCopy', run('copy', 'post'));
 
-gulp.task('build', run('clean', 'compile', 'post', ['gzip', 'brotli']));
+gulp.task('build', run('clean', 'compile', 'post'));
 
 // 'serve'
 // 'deploy'
