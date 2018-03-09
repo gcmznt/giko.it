@@ -96,7 +96,7 @@ Client
 - Microdata
 
 %c🖖 Live long and prosper
-%cGiacomo Giko Zinetti - 42@giko.it
+%cGiacomo Giko Zinetti - giacomo.zinetti@gmail.com
 
 `;
 
