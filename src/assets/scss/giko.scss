@@ -12,9 +12,9 @@ $time-animation: 600ms;
     @for $i from 1 through length($width) {
         $w: nth($width, $i);
         dt:nth-of-type(#{length($width) - $i + 1})::after {
-            left: #{(nth($w, 1) - $start) / ($end - $start) * 100}%;
+            left: #{(nth($w, 1) - $start) / ($end - $start) * 100 + '%'};
             @if length($w) > 1 {
-                width: #{(nth($w, 2) - nth($w, 1)) / ($end - $start) * 100}%;
+                width: #{(nth($w, 2) - nth($w, 1)) / ($end - $start) * 100 + '%'};
             } @else {
                 border: 8px solid $color-secondary;
                 border-radius: 50%;
