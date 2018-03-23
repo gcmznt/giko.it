@@ -1,2 +1,6 @@
 /assets/*
   Cache-Control: no-cache, public, max-age=2548322
+/sw.js
+  Cache-Control: no-cache, public, max-age=2548322
+/workbox-sw*
+  Cache-Control: no-cache, public, max-age=2548322
