@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/gcmznt/giko.it/issues"
     },
-    "homepage": "https://github.com/gcmznt/giko.it#readme"
+    "homepage": "https://github.com/gcmznt/giko.it#readme",
+    "dependencies": {
+        "http-server": "^0.11.1"
+    }
 }
