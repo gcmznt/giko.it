@@ -26,7 +26,7 @@ const paths = {
   jade: './src/**/*.jade',
   icons: './src/assets/icons/*.svg',
   images: './src/assets/img/**/*.*',
-  copy: './src/{humans.txt,manifest.json,sw.js,assets/pdf/*,browserconfig.xml,favicon.ico,safari-pinned-tab.svg}',
+  copy: './src/{_headers,humans.txt,manifest.json,sw.js,assets/pdf/*,browserconfig.xml,favicon.ico,safari-pinned-tab.svg}',
   dest: './dist/',
   temp: './.tmp/',
   destTemplates: './.tmp/',

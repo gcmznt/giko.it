@@ -92,13 +92,13 @@ html(lang="it")
 
   body#debug(class="non-è-acqua 👾")
     .page(itemscope itemtype="http://schema.org/Person")
-      header.me
+      header.me(id="🤓")
         picture.me__avatar
           source(srcset="/assets/img/profilo-2017.webp" type="image/webp")
           img(
             class="avatar"
             src="/assets/img/profilo-2017.jpg"
-            alt="Giacomo Zinetti Foto"
+            alt="Giacomo Zinetti Picture"
             itemprop="image"
           )
 
@@ -107,18 +107,18 @@ html(lang="it")
 
       main
         section(id="🏢")
-          +mainTitle('business', '🏢') Esperienze
+          +mainTitle('business', '🏢') Experience 
 
           ol.works(reversed)
-            +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid, PWA')
+            +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid, PWA, GatsbyJs')
             +work('TheOutplay', 'http://www.theoutplay.com/', 'top', 'Frontend Developer', '2016', 'React, Redux, CSS in JS, GraphQL, Webpack')
-            +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Pug')
+            +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Teaching')
             +work('Bryan', 'http://bryan.it/', 'bryan', 'Full-stack Developer', '2013', 'Wordpress, Nginx, Grunt, LESS, Tutoring')
             +work('Sowre', 'http://www.sowre.com/', 'sowre', 'Frontend Developer', '2013', 'Websphere, CSS, Javascript, Json, API')
             +work('Prodigys Group', 'http://www.prodigys.it/', 'prodigys', 'PHP Developer', '2010', 'Responsive, AWS, PHP, Python, Git')
 
         section(id="⭐️")
-          +mainTitle('star', '⭐️') Specialità
+          +mainTitle('star', '⭐️') Skills
 
           .techs
             +tech('Javascript', 'js')
@@ -131,29 +131,29 @@ html(lang="it")
               +icon('lightning')
 
         section(id="🎓")
-          +mainTitle('school', '🎓') Formazione
+          +mainTitle('school', '🎓') Education
 
           ol.education(reversed)
-            li Continuo aggiornamento su siti di <strong>e-learning</strong> come <a href="https://www.coursera.org/">Coursera</a>, <a href="https://www.udemy.com/">Udemy</a> e <a href="https://www.udacity.com/">Udacity</a>.
-            li Certificazione <strong><a href="https://www.ets.org/toefl">TOEFL</a></strong> 2007
+            li Continuous improving on <strong>e-learning</strong> platforms like <a href="https://www.coursera.org/">Coursera</a>, <a href="https://www.udemy.com/">Udemy</a> and <a href="https://www.udacity.com/">Udacity</a>.
+            li <strong><a href="https://www.ets.org/toefl">TOEFL</a></strong> certification in 2007
             li(itemscope itemtype="http://schema.org/EducationalOrganization")
-              | <strong>Ingegneria informatica</strong> al <a href="http://www.polimi.it/" itemprop="url"><span itemprop="name">Politecnico di Milano</span></a>
+              | <strong>Computer Engineering</strong> at <a href="http://www.polimi.it/" itemprop="url"><span itemprop="name">Politecnico di Milano</span></a>
             li(itemscope itemtype="http://schema.org/EducationalOrganization")
-              | Scuola superiore al <a href="http://www.gbgrassi.it/" itemprop="url"><span itemprop="name"><strong>Liceo Scientifico</strong> G. B. Grassi</span></a> di Saronno
+              | High school at <a href="http://www.gbgrassi.it/" itemprop="url"><span itemprop="name"><strong>Liceo Scientifico</strong> G. B. Grassi</span></a> in Saronno
 
         section(id="🤓")
           +mainTitle('computer', '🤓') Extra time
 
-          p Nell'ottobre 2015 ho contribuito alla fondazione del gruppo <a href="https://twitter.com/milanofrontend/"><strong>Milano Front End</strong></a> organizzando meetup e preparando speech. Alcuni dei temi trattati diventano talk per <strong>conferenze</strong> (<a href="http://2016.cssday.it/#programma">CSSDay 2016 Faenza</a>) o articoli sul <a href="http://medium.giko.it">mio <strong>blog</strong></a>.
+          p In 2015 I have contributed to the foundation of the <a href="https://twitter.com/milanofrontend/"><strong>Milano Frontend</strong></a> group, organizing meetups and preparing speeches. Some topics has been presented also in <strong>conferences</strong> as <a href="http://cssday.it/">CSSDay</a> <a href="https://vimeo.com/164491531">2016</a> and 2018 in Faenza, or published on <a href="http://medium.giko.it">my <strong>blog</strong></a>.
 
-          p Nel 2014 ho fatto da <strong>revisore</strong> al libro <a href="https://www.packtpub.com/web-development/learning-single-page-web-application-development">Learning Single-page Web Application Development</a> pubblicato da <a href="https://www.packtpub.com/">Packt Publishing</a>.
+          p In 2014 I have done a <strong>review</strong> of the book <a href="https://www.packtpub.com/web-development/learning-single-page-web-application-development">Learning Single-page Web Application Development</a> published by <a href="https://www.packtpub.com/">Packt Publishing</a>.
         
         section(id="👇")
           a.download(href="/assets/pdf/zinetti-giacomo-cv.pdf" download) Download me!
 
       aside
         section(id="✉️")
-          +title('place', '✉️') Contattami
+          +title('place', '✉️') Contact me
 
           .contacts
             +social('email', 'mailto:giacomo.zinetti@gmail.com')(itemprop="email")
@@ -166,24 +166,24 @@ html(lang="it")
             +social('instagram', 'https://instagram.com/gcmznt')(itemprop="sameAs" rel="me")
 
         section(id="☀️")
-          +title('sun', '☀️') Interessi
+          +title('sun', '☀️') Hobbies
 
           .hobbies
-            //- +hobby('flight', 'Viaggi', 'Mondo')
-            //- +hobby('camera', 'Fotografia', 'Colori')
-            +hobby('mountain', 'Montagna', 'Relax')
-            +hobby('moto', 'Viaggi', 'Ducati', '#d40000')
-            +hobby('bbq', 'Barbecue', 'Cucina')
-            +hobby('boardgame', 'Boardgame', 'Strategia')
-            +hobby('lego', 'Lego', 'Costruzioni')
-            +hobby('juggle', 'Giocoleria', 'Divertimento')
+            //- +hobby('flight', 'Travels', 'World')
+            //- +hobby('camera', 'Photography', 'Colors')
+            +hobby('mountain', 'Mountain', 'Relax')
+            +hobby('moto', 'Travels', 'Ducati', '#d40000')
+            +hobby('bbq', 'Barbecue', 'Cook')
+            +hobby('boardgame', 'Boardgame', 'Strategy')
+            +hobby('lego', 'Lego', 'Building')
+            +hobby('juggle', 'Juggling', 'Fun')
             +hobby('starwars', 'Star Wars', 'Cinema')
-            +hobby('escher', 'Escher', 'Impossibile')
+            +hobby('escher', 'Escher', 'Impossible')
             +hobby('tchouk', 'TchoukBall', 'Sport')
 
         section(id="💬")
           blockquote
-            p Il tempo è una illusione. L'ora di pranzo è una doppia illusione.
+            p “Forty-two,” said Deep Thought, with infinite majesty and calm.
 
     script(src="/assets/js/giko.js" async)
     noscript(id="deferred-styles")
