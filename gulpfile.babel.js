@@ -35,11 +35,6 @@ gulp.task('copy', function() {
 });
 
 import replace from 'gulp-replace';
-gulp.task('version', function() {
-    return gulp.src('src/giko.appcache')
-        .pipe(replace('@@timestamp', new Date().getTime()))
-        .pipe(gulp.dest('dist'));
-});
 gulp.task('sri-set', ['sri'], function() {
     const sri = require('./sri.json');
     return gulp.src(paths.dest + '*.html')
@@ -74,7 +69,7 @@ gulp.task('clean', function(cb) {
 });
 
 import rev from 'gulp-rev';
-gulp.task('revision', ['build', 'version'], function() {
+gulp.task('revision', ['build'], function() {
     return gulp.src(['dist/**/*.css', 'dist/**/*.js'])
         .pipe(rev())
         .pipe(gulp.dest('dist/'))
@@ -83,7 +78,7 @@ gulp.task('revision', ['build', 'version'], function() {
 });
 
 import sri from 'gulp-sri';
-gulp.task('sri', ['build', 'version'], function() {
+gulp.task('sri', ['build'], function() {
     return gulp.src(['dist{/**/*.css,/**/*.js}'])
         .pipe(sri())
         .pipe(gulp.dest('./'));

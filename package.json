@@ -7,6 +7,7 @@
   "scripts": {
     "setup": "npm install",
     "dev": "gulp clean && gulp serve",
+    "build": "gulp clean && gulp prepare",
     "deploy": "gulp clean && gulp deploy && npm run stylestats",
     "stylestats": "stylestats dist/assets/css/giko.css --format=json > stylestats/`date +%Y-%m-%d_%H:%M:%S`.json"
   },
