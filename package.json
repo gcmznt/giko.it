@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "echo \"Nothing to do\" && exit 1"
+        "build": ""
     },
     "repository": {
         "type": "git",
