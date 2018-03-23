@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'tenor_sansregular';
+    src: url('../fonts/tenorsans-regular-webfont.eot');
+    src: url('../fonts/tenorsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tenorsans-regular-webfont.woff') format('woff'),
+         url('../fonts/tenorsans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/tenorsans-regular-webfont.svg#tenor_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Tenor Sans', 'tenor_sansregular', sans-serif;
+    background: #00A9B2;
+    margin: 0;
+    color: #333;
+    line-height: 150%;
+}
+
+h1 {
+    margin: 1.4em 0 1.1em;
+    font-size: 218%;
+    line-height: 1.2em;
+    font-weight: normal;
+}
+h2 {
+    font-size: 164%;
+    line-height: 1.4em;
+    font-weight: normal;
+    background: #00A9B2;
+    color: white;
+    margin: 1.7em -20px 1.1em;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 200;
+    overflow: hidden;
+}
+.container h2 a {
+    color: white;
+}
+h2 small {
+    float: right;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+.container a {
+    color: #00A9B2;
+    border-bottom: 1px dotted #00A9B2;
+    padding-bottom: 1px;
+}
+.container a:hover {
+    color: #f60;
+    border-color: #f60;
+}
+
+small {
+    color: #818C99;
+}
+
+header,
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding-top: 2px;
+    margin-bottom: 12px;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+header {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 12px solid #00A9B2;
+    border-top: 12px solid #00A9B2;
+    background: #00A9B2;
+    color: white;
+    position: relative;
+}
+header .title {
+    display: inline-block;
+    margin: 0;
+    margin-right: 20px;
+    line-height: 40px;
+    font-size: 218%;
+}
+nav {
+    line-height: 34px;
+    display: inline-block;
+    padding-top: 6px;
+}
+nav a {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0 5px;
+    position: relative;
+    font-size: 140%;
+    color: white;
+}
+nav .active {
+    border-bottom: 4px solid white;
+}
+
+.contacts {
+    display: none;
+}
+
+.profile {
+    width: 160px;
+    height: 160px;
+    box-shadow: 0 2px 5px #333;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.container .btn {
+    background: #f60;
+    color: #fff;
+    border: 0 none;
+    line-height: 2.5em;
+    padding: 0 15px;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.container h1 .btn {
+    float: right;
+    font-size: 50%;
+    width: 20px;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+@media only screen and (min-width: 680px) {
+    header,
+    .container {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .container {
+        padding-top: 100px;
+    }
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 300;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    .social {
+        position: absolute;
+        top: 0;
+        right: 80px;
+    }
+    .social a {
+        height: 83px;
+        width: 50px;
+        text-align: center;
+        line-height: 83px;
+        display: inline-block;
+        background: #00A9B2;
+    }
+    .social img {
+        height: 40px;
+        width: 40px;
+        vertical-align: middle;
+        background: #fff;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    .social a:hover img {
+        margin-bottom: 20px;
+        background: #f60;
+    }
+    .profile {
+        margin: 0 20px 20px 0;
+        float: left;
+    }
+    h2 {
+        margin: 1.5em -80px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .container h1 .btn[download]:hover {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 679px) {
+    .container h1 .btn[download],
+    h2 small,
+    .printme,
+    .social {
+        display: none;
+    }
+    .header,
+    h1,
+    h2 {
+        text-align: center;
+    }
+    .container h1 .btn {
+        position: absolute;
+        right: 10px;
+        top: -10px;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}

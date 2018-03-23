@@ -1,0 +1,19 @@
+{
+    "name": "cv.giko.it",
+    "version": "3.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "echo \"Nothing to do\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gcmznt/giko.it.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/gcmznt/giko.it/issues"
+    },
+    "homepage": "https://github.com/gcmznt/giko.it#readme"
+}
