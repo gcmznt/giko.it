@@ -59,44 +59,6 @@ blockquote {
 
 .title {
   transition: all ease 200ms;
-
-  &__icon {
-    position: relative;
-    transition: all ease 200ms;
-    display: none;
-    color: var(--main-color);
-
-    &--main {
-      transform-origin: center bottom;
-      display: block;
-    }
-
-    &::before,
-    &::after {
-      content: '';
-      border-bottom: 2px solid var(--main-color);
-      display: block;
-      position: absolute;
-      top: calc(50% - 1px);
-      transition: all ease 200ms;
-      width: 30px;
-      transform: scaleX(1);
-
-      section:target & {
-        transform: scaleX(2);
-      }
-    }
-
-    &::before {
-      right: calc(50% + 20px);
-      transform-origin: right center;
-    }
-
-    &::after {
-      left: calc(50% + 20px);
-      transform-origin: left center;
-    }
-  }
 }
 
 .contacts {

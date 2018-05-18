@@ -13,13 +13,11 @@ mixin icon(name)
 mixin title(icon, link)
   h1
     a.title(href="##{link}")
-      +icon(icon)(class="title__icon")
       block
 
 mixin mainTitle(icon, link)
   h1
     a.title.title--main(href="##{link}")
-      +icon(icon)(class="title__icon title__icon--main")
       block
 
 mixin social(name, link)
@@ -111,6 +109,7 @@ html(lang="en")
           +mainTitle('business', '🏢') Experience 
 
           ol.works(reversed)
+            +work('Liferay', 'https://www.liferay.com/', 'liferay', 'Frontend Engineer', '2018', 'Liferay, OSS, Metal.js, Clay UI')
             +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid, PWA, GatsbyJs')
             +work('TheOutplay', 'http://www.theoutplay.com/', 'top', 'Frontend Developer', '2016', 'React, Redux, CSS in JS, GraphQL, Webpack')
             +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Teaching')
@@ -159,6 +158,7 @@ html(lang="en")
           .contacts
             +social('email', 'mailto:giacomo.zinetti@gmail.com')(itemprop="email")
             +social('profile', 'https://giko.it')(itemprop="url" rel="me")
+            +social('talks', 'https://talks.giko.it')(itemprop="sameAs" rel="me")
             +social('twitter', 'https://twitter.com/gcmznt')(itemprop="sameAs" rel="me")
             +social('github', 'https://github.com/gcmznt')(itemprop="sameAs" rel="me")
             +social('codepen', 'https://codepen.io/gcmznt')(itemprop="sameAs" rel="me")

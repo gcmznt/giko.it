@@ -13,7 +13,7 @@ ga('send', 'pageview');
     const addStylesNode = document.getElementById('deferred-styles');
     const replacement = document.createElement('div');
     replacement.innerHTML = addStylesNode.textContent;
-    document.body.appendChild(replacement)
+    document.body.appendChild(replacement);
     addStylesNode.parentElement.removeChild(addStylesNode);
   };
   if (requestAnimationFrame) {
@@ -29,30 +29,29 @@ if ('serviceWorker' in navigator) {
 }
 
 (function() {
-    
-    const setColor = function(col) {
-      const style = document.querySelector('body').style;
-      style.removeProperty('--main-color');
-      style.setProperty('--main-color', col);
-      localStorage.setItem('--main-color', col);
-      ga && ga('send', 'event', 'color', 'change', col);
-    };
+  const setColor = function(col) {
+    const style = document.querySelector('body').style;
+    style.removeProperty('--main-color');
+    style.setProperty('--main-color', col);
+    localStorage.setItem('--main-color', col);
+    ga && ga('send', 'event', 'color', 'change', col);
+  };
 
-    Array.from(document.querySelectorAll('.tech')).map(
-      e => e.addEventListener('mouseenter', e => setColor(getComputedStyle(e.target).getPropertyValue('--tech-color')))
-    )
+  Array.from(document.querySelectorAll('.tech')).map(
+    el => el.addEventListener('mouseenter', e => setColor(getComputedStyle(e.target).getPropertyValue('--tech-color')))
+  );
 
-    const savedColor = localStorage.getItem('--main-color');
-    savedColor && setColor(savedColor);
+  const savedColor = localStorage.getItem('--main-color');
+  savedColor && setColor(savedColor);
 
-    document.querySelector('[download]').addEventListener('click', () => {
-      ga && ga('send', 'event', 'download', localStorage.getItem('--main-color'));
-    })
+  document.querySelector('[download]').addEventListener('click', () => {
+    ga && ga('send', 'event', 'download', localStorage.getItem('--main-color'));
+  });
 
-    const msg = `
+  console.info(`
 
-%cNice to meet you 🍻!
-I am @giacomozinetti%c [https://twitter.com/gcmznt]
+Nice to meet you 🍻!
+I am @gcmznt [https://twitter.com/gcmznt]
 
 This website is coded with 💙, emoji and a lot of nerdy thing like:
 
@@ -95,11 +94,8 @@ Client
 - PWA
 - Microdata
 
-%c🖖 Live long and prosper
-%cGiacomo Giko Zinetti - giacomo.zinetti@gmail.com
+🖖 Live long and prosper
+Giacomo Giko Zinetti - giacomo.zinetti@gmail.com
 
-`;
-
-    const style = 'font-size: 12pt';
-    console.log(msg, style, '', style, '');
+  `);
 })();

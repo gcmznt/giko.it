@@ -1,14 +1,3 @@
-.title {
-  &__icon {
-    &::before,
-    &::after {
-      section:hover & {
-        transform: scaleX(2);
-      }
-    }
-  }
-}
-
 .tech:hover {
   .tech__symbol {
     border-width: 0;
@@ -45,5 +34,12 @@
       transform: translateY(-20px);
       visibility: visible;
     }
+  }
+}
+
+
+.work {
+  &__logo:hover {
+    filter: grayscale(0);
   }
 }
