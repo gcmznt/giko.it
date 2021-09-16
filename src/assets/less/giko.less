@@ -1,6 +1,5 @@
-
-::selection{
-  background:#ff0;
+::selection {
+  background: #ff0;
 }
 
 body {
@@ -25,13 +24,18 @@ body {
   grid-template-areas:
     "header"
     "main"
-    "aside"
-  ;
+    "aside";
 }
 
-header { grid-area: header }
-aside { grid-area: aside }
-main { grid-area: main }
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: aside;
+}
+main {
+  grid-area: main;
+}
 
 a {
   color: currentColor;
@@ -53,7 +57,7 @@ blockquote {
 
 .me {
   &__name {
-    transition: all ease 200ms;    
+    transition: all ease 200ms;
   }
 }
 
@@ -102,7 +106,7 @@ blockquote {
     border: 0.1em solid currentColor;
     border-radius: 50%;
     display: flex;
-    font-family: 'Fira Mono', monospace;
+    font-family: "Fira Mono", monospace;
     font-size: 25px;
     height: 70px;
     justify-content: center;
@@ -117,10 +121,18 @@ blockquote {
     margin-top: 10px;
   }
 
-  &--css { --tech-color: #0075B6 }
-  &--html { --tech-color: #d40000 }  // #E6522B
-  &--js { --tech-color: #a26300 }  // #E8A232
-  &--perf { --tech-color: #007d21 }  // #27ae60
+  &--css {
+    --tech-color: #0069de; // #0075B6
+  }
+  &--html {
+    --tech-color: #d40000; // #E6522B
+  }
+  &--js {
+    --tech-color: #a26300; // #E8A232
+  }
+  &--perf {
+    --tech-color: #007d21; // #27ae60
+  }
 }
 
 .education {

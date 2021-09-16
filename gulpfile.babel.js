@@ -17,7 +17,7 @@ import images from "./tasks/images.js";
 import scripts from "./tasks/scripts.js";
 
 const run = (...args) =>
-  function(cb) {
+  function (cb) {
     sequence(...args)(cb);
   };
 
@@ -27,18 +27,17 @@ const paths = {
   jade: "./src/**/*.jade",
   icons: "./src/assets/icons/*.svg",
   images: "./src/assets/img/**/*.*",
-  copy:
-    "./src/{google308f83a1c21f3a07.html,_headers,humans.txt,manifest.json,sw.js,assets/pdf/*,browserconfig.xml,favicon.ico,safari-pinned-tab.svg}",
+  copy: "./src/{google308f83a1c21f3a07.html,_headers,humans.txt,manifest.json,sw.js,assets/pdf/*,browserconfig.xml,favicon.ico,safari-pinned-tab.svg}",
   dest: "./dist/",
   temp: "./.tmp/",
   destTemplates: "./.tmp/",
   destStyles: "./.tmp/assets/css",
   destImages: "./.tmp/assets/img",
   destIcons: "./.tmp/assets/icons",
-  destScripts: "./.tmp/assets/js"
+  destScripts: "./.tmp/assets/js",
 };
 
-gulp.task("clean", cb => rimraf("{./.tmp,./dist}", cb));
+gulp.task("clean", (cb) => rimraf("{./.tmp,./dist}", cb));
 
 gulp.task("templates", jade(paths.jade, paths.destTemplates));
 gulp.task("styles", less(paths.less, paths.destStyles));
@@ -48,10 +47,7 @@ gulp.task("scripts", scripts(paths.js, paths.destScripts));
 gulp.task("copy", () => gulp.src(paths.copy).pipe(gulp.dest(paths.dest)));
 
 gulp.task("inlinesource", () =>
-  gulp
-    .src("./.tmp/*.html")
-    .pipe(inlinesource())
-    .pipe(gulp.dest(paths.dest))
+  gulp.src("./.tmp/*.html").pipe(inlinesource()).pipe(gulp.dest(paths.dest))
 );
 gulp.task("revision", () =>
   gulp
@@ -67,7 +63,7 @@ gulp.task("revreplace", () =>
     .pipe(
       revReplace({
         manifest: gulp.src("./.tmp/rev-manifest.json"),
-        replaceInExtensions: [".js", ".css", ".html", ".json", ".xml"]
+        replaceInExtensions: [".js", ".css", ".html", ".json", ".xml"],
       })
     )
     .pipe(gulp.dest(paths.dest))
@@ -88,12 +84,12 @@ gulp.task("bundle-sw", () => {
       globDirectory: "./dist/",
       swDest: "./dist/sw.js",
       globPatterns: ["**/*.{html,js,css,webp,jpg,png,svg}"],
-      globIgnores: []
+      globIgnores: [],
     })
     .then(() => {
       console.log("Service worker generated.");
     })
-    .catch(err => {
+    .catch((err) => {
       console.log("[ERROR] This happened: " + err);
     });
 });
@@ -113,7 +109,7 @@ gulp.task("serve", ["watch"], () => {
     open: false,
     ui: false,
     notify: false,
-    server: { baseDir: paths.dest }
+    server: { baseDir: paths.dest },
   });
   bs.watch("./dist/**/*[!.map]").on("change", bs.reload);
 });
@@ -126,7 +122,7 @@ gulp.task("deploy", ["build"], () =>
       destination: "/var/www/cv.giko.it/html",
       incremental: true,
       progress: true,
-      chmod: "Du=rwx,Dgo=rx,Fu=rw,Fog=r"
+      chmod: "Du=rwx,Dgo=rx,Fu=rw,Fog=r",
     })
   )
 );
@@ -137,9 +133,9 @@ gulp.task("compile", [
   "images",
   "templates",
   "scripts",
-  "styles"
+  "styles",
 ]);
-gulp.task("post", function(callback) {
+gulp.task("post", function (callback) {
   sequence(
     "inlinesource",
     "revision",

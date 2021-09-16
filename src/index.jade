@@ -16,7 +16,7 @@ mixin title(icon, link)
       block
 
 mixin mainTitle(icon, link)
-  h1
+  h1&attributes(attributes)
     a.title.title--main(href="##{link}")
       block
 
@@ -93,7 +93,7 @@ html(lang="en")
     .page(itemscope itemtype="http://schema.org/Person")
       header.me(id="🤓")
         picture.me__avatar
-          source(srcset="/assets/img/profilo-2017.webp" type="image/webp")
+          source(srcset="/assets/img/profilo-2019.webp" type="image/webp")
           img(
             class="avatar"
             src="/assets/img/profilo-2017.jpg"
@@ -102,23 +102,13 @@ html(lang="en")
           )
 
         h1.me__name(itemprop="name") Giacomo <strong>Zinetti</strong>
-        h2.me__title(itemprop="jobTitle") Geek Frontend Developer
+
+        blockquote
+          p “Forty-two,” said Deep Thought, with infinite majesty and calm.
 
       main
-        section(id="🏢")
-          +mainTitle('business', '🏢') Experience 
-
-          ol.works(reversed)
-            +work('Liferay', 'https://www.liferay.com/', 'liferay', 'Frontend Engineer', '2018', 'Liferay, OSS, Metal.js, Clay UI')
-            +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid, PWA, GatsbyJs')
-            +work('TheOutplay', 'http://www.theoutplay.com/', 'top', 'Frontend Developer', '2016', 'React, Redux, CSS in JS, GraphQL, Webpack')
-            +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Teaching')
-            +work('Bryan', 'http://bryan.it/', 'bryan', 'Full-stack Developer', '2013', 'Wordpress, Nginx, Grunt, LESS, Tutoring')
-            +work('Sowre', 'http://www.sowre.com/', 'sowre', 'Frontend Developer', '2013', 'Websphere, CSS, Javascript, Json, API')
-            +work('Prodigys Group', 'http://www.prodigys.it/', 'prodigys', 'PHP Developer', '2010', 'Responsive, AWS, PHP, Python, Git')
-
         section(id="⭐️")
-          +mainTitle('star', '⭐️') Skills
+          +mainTitle('star', '⭐️')(itemprop="jobTitle") Geek Frontend Developer
 
           .techs
             +tech('Javascript', 'js')
@@ -130,61 +120,71 @@ html(lang="en")
             +tech('Performance', 'perf')
               +icon('lightning')
 
-        section(id="🎓")
-          +mainTitle('school', '🎓') Education
-
-          ol.education(reversed)
-            li Continuous improving on <strong>e-learning</strong> platforms like <a href="https://www.coursera.org/">Coursera</a>, <a href="https://www.udemy.com/">Udemy</a> and <a href="https://www.udacity.com/">Udacity</a>.
-            li <strong><a href="https://www.ets.org/toefl">TOEFL</a></strong> certification in 2007
-            li(itemscope itemtype="http://schema.org/EducationalOrganization")
-              | <strong>Computer Engineering</strong> at <a href="http://www.polimi.it/" itemprop="url"><span itemprop="name">Politecnico di Milano</span></a>
-            li(itemscope itemtype="http://schema.org/EducationalOrganization")
-              | High school at <a href="http://www.gbgrassi.it/" itemprop="url"><span itemprop="name"><strong>Liceo Scientifico</strong> G. B. Grassi</span></a> in Saronno
-
         section(id="🌈")
-          +mainTitle('computer', '🌈') Extra time
+          +mainTitle('computer', '🌈') Hello, world!
 
-          p In 2015 I have contributed to the foundation of the <a href="https://twitter.com/milanofrontend/"><strong>Milano Frontend</strong></a> group, organizing meetups and preparing speeches. Some topics has been presented also in <strong>conferences</strong> as <a href="http://cssday.it/">CSSDay</a> <a href="https://vimeo.com/164491531">2016</a> and 2018 in Faenza, or published on <a href="http://medium.giko.it">my <strong>blog</strong></a>.
+          p I am Giacomo, a developer from Como (Italy) born in the eighties and father of 2.
+          p My job and skills are about web developing, building every day better websites and applications with innovative user experience, cool graphics interface and using the latest technologies. I love working with a team of web enthusiasts with whom to share our experiences, knowledge and every update about technologies. I am passionate about performances and I want to contribute to creating a super fast and user-centric Internet.
 
-          p In 2014 I have done a <strong>review</strong> of the book <a href="https://www.packtpub.com/web-development/learning-single-page-web-application-development">Learning Single-page Web Application Development</a> published by <a href="https://www.packtpub.com/">Packt Publishing</a>.
+          p In my free time, I like to play with new technologies, developing <a href="https://github.com/gcmznt"><strong>personal projects</strong></a> or contributing to OSS. I read articles and books to keep myself updated, I join online courses and <a href="https://talks.giko.it"><strong>actively participate</strong></a> in conferences and local meetups as a speaker. In October 2015 I have co-founded the <a href="https://twitter.com/milanofrontend/"><strong>Milano Frontend</strong></a> Meetup and in 2018 the <a href="https://como.cafe"><strong>Como and FrontEnd</strong></a> user group.
         
+        section(id="🏢")
+          +mainTitle('business', '🏢') Experience 
+
+          ol.works(reversed)
+            +work('Liberacta', 'https://liberacta.com/', 'liberacta', 'Frontend Developer', '2020', 'React, Headless, White-label product, Material-UI')
+            +work('Liferay', 'https://www.liferay.com/', 'liferay', 'Frontend Engineer', '2018', 'Liferay, OSS, Github, Metal.js, Clay UI')
+            +work('Kframe Interactive', 'http://kframeinteractive.com/', 'kframe', 'Frontend Developer', '2017', 'Microdata, Performance, CSS Grid, PWA, GatsbyJs')
+            +work('TheOutplay', 'http://www.theoutplay.com/', 'top', 'Frontend Developer', '2016', 'React, Redux, CSS in JS, GraphQL, Webpack')
+            +work('Objectway', 'http://www.objectway.it/', 'ow', 'Frontend Developer', '2015', 'Sass, Gulp, BEM, ES2015, Teaching')
+            +work('Bryan', 'http://bryan.it/', 'bryan', 'Full-stack Developer', '2013', 'Wordpress, Nginx, Grunt, LESS, Tutoring')
+            +work('Sowre', 'http://www.sowre.com/', 'sowre', 'Frontend Developer', '2013', 'Websphere, CSS, Javascript, Json, API')
+            +work('Prodigys Group', 'http://www.prodigys.it/', 'prodigys', 'PHP Developer', '2010', 'Responsive, AWS, PHP, Python, Git')
+
         section(id="👇")
-          a.download(href="/assets/pdf/zinetti-giacomo-cv.pdf" download) Download me!
+          a.download(href="/assets/pdf/zinetti-giacomo-cv-2021.pdf" download) Download me!
 
       aside
+        //- section(id="💬")
+        //-   blockquote
+        //-     p “Forty-two,” said Deep Thought, with infinite majesty and calm.
+
         section(id="✉️")
           +title('place', '✉️') Contact me
 
           .contacts
-            +social('email', 'mailto:giacomo.zinetti@gmail.com')(itemprop="email")
-            +social('profile', 'https://giko.it')(itemprop="url" rel="me")
+            +social('email', 'mailto:giacomo.zinetti@giko.it')(itemprop="email")
+            //- +social('profile', 'https://giko.it')(itemprop="url" rel="me")
             +social('talks', 'https://talks.giko.it')(itemprop="sameAs" rel="me")
-            +social('twitter', 'https://twitter.com/gcmznt')(itemprop="sameAs" rel="me")
+            //- +social('twitter', 'https://twitter.com/gcmznt')(itemprop="sameAs" rel="me")
             +social('github', 'https://github.com/gcmznt')(itemprop="sameAs" rel="me")
-            +social('codepen', 'https://codepen.io/gcmznt')(itemprop="sameAs" rel="me")
-            +social('medium', 'https://medium.com/@gcmznt')(itemprop="sameAs" rel="me")
+            //- +social('codepen', 'https://codepen.io/gcmznt')(itemprop="sameAs" rel="me")
+            //- +social('medium', 'https://medium.com/@gcmznt')(itemprop="sameAs" rel="me")
             +social('linkedin', 'https://linkedin.com/in/gcmznt')(itemprop="sameAs" rel="me")
             +social('instagram', 'https://instagram.com/gcmznt')(itemprop="sameAs" rel="me")
 
         section(id="☀️")
-          +title('sun', '☀️') Hobbies
+          +title('sun', '☀️') My Profile
 
           .hobbies
-            //- +hobby('flight', 'Travels', 'World')
-            //- +hobby('camera', 'Photography', 'Colors')
-            +hobby('mountain', 'Mountain', 'Relax')
-            +hobby('moto', 'Travels', 'Ducati', '#d40000')
-            +hobby('bbq', 'Barbecue', 'Cook')
-            +hobby('boardgame', 'Boardgame', 'Strategy')
-            +hobby('lego', 'Lego', 'Building')
-            +hobby('juggle', 'Juggling', 'Fun')
-            +hobby('starwars', 'Star Wars', 'Cinema')
-            +hobby('escher', 'Escher', 'Impossible')
-            +hobby('tchouk', 'TchoukBall', 'Sport')
+            +hobby('mountain', 'Peace', 'Mountain')
+            +hobby('flight', 'Discover', 'Travels')
+            +hobby('starwars', 'Adventure', 'Star Wars')
+            +hobby('boardgame', 'Strategy', 'Boardgame')
+            +hobby('lego', 'Building', 'Lego')
+            +hobby('escher', 'Challenges', 'Escher')
+            +hobby('bbq', 'Food', 'Barbecue')
+            +hobby('juggle', 'Fun', 'Juggling')
+            +hobby('tchouk', 'Fitness', 'Sport')
 
-        section(id="💬")
-          blockquote
-            p “Forty-two,” said Deep Thought, with infinite majesty and calm.
+        section(id="🎓")
+          +title('school', '🎓') Education
+
+          ol.education(reversed)
+            li(itemscope itemtype="http://schema.org/EducationalOrganization")
+              | <strong>Computer Engineering</strong> at <a href="http://www.polimi.it/" itemprop="url"><span itemprop="name">Politecnico di Milano</span></a>
+            li(itemscope itemtype="http://schema.org/EducationalOrganization")
+              | High school at <a href="http://www.gbgrassi.it/" itemprop="url"><span itemprop="name"><strong>Liceo Scientifico</strong> G. B. Grassi</span></a> in Saronno
 
     script(src="/assets/js/giko.js" async)
     noscript(id="deferred-styles")

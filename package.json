@@ -11,6 +11,9 @@
     "deploy": "gulp deploy",
     "stylestats": "stylestats dist/assets/css/giko.css --format=json > stylestats/`date +%Y-%m-%d_%H:%M:%S`.json"
   },
+  "engines": {
+    "node": ">=0.12 <=8"
+  },
   "author": "Giko",
   "license": "ISC",
   "devDependencies": {
