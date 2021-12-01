@@ -1,11 +1,18 @@
 :root {
   --main-color: #d40000;
   --fg-color: #333;
+  --bg-color: #fafafa;
+  --page-color: #fff;
+  --shadow-color: #eee;
+  --css-color: #0069de; // #0075B6
+  --html-color: #d40000; // #E6522B
+  --js-color: #a26300; // #E8A232
+  --perf-color: #007d21; // #27ae60
 }
 
 body,
 html {
-  background-color: #fafafa;
+  background-color: var(--bg-color);
   font-size: 10px;
   margin: 0;
   padding: 0;
@@ -53,8 +60,8 @@ svg {
 }
 
 .page {
-  background-color: #fff;
-  box-shadow: 0 10px 50px 10px #eee;
+  background-color: var(--page-color);
+  box-shadow: 0 10px 50px 10px var(--shadow-color);
   box-sizing: border-box;
   display: grid;
   max-width: 84rem;
@@ -78,7 +85,6 @@ svg {
 .avatar {
   background: var(--main-color);
   border-radius: 50%;
-  color: white;
   display: inline-block;
   height: 18rem;
   line-height: 18rem;
@@ -137,5 +143,19 @@ svg {
     background: var(--main-color);
     filter: grayscale(1);
     transition: all ease 200ms;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: #fd7853;
+    --fg-color: #eee;
+    --bg-color: #333;
+    --page-color: #121212;
+    --shadow-color: #222;
+    --css-color: #4dc1ff;
+    --html-color: #fd7853;
+    --js-color: #e8a232;
+    --perf-color: #39db7c;
   }
 }

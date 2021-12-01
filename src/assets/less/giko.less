@@ -51,8 +51,10 @@ blockquote {
   border-left: 3px solid var(--main-color);
   padding-left: 8px;
   margin: 2rem 0;
-  color: #666;
-  color: ~"color(currentColor alpha(75%))";
+
+  p {
+    opacity: 0.75;
+  }
 }
 
 .me {
@@ -122,16 +124,16 @@ blockquote {
   }
 
   &--css {
-    --tech-color: #0069de; // #0075B6
+    --tech-color: var(--css-color);
   }
   &--html {
-    --tech-color: #d40000; // #E6522B
+    --tech-color: var(--html-color);
   }
   &--js {
-    --tech-color: #a26300; // #E8A232
+    --tech-color: var(--js-color);
   }
   &--perf {
-    --tech-color: #007d21; // #27ae60
+    --tech-color: var(--perf-color);
   }
 }
 
@@ -185,7 +187,7 @@ blockquote {
 .download {
   background: var(--main-color);
   border: 3px solid var(--main-color);
-  color: #fafafa;
+  color: var(--page-color);
   display: inline-block;
   letter-spacing: 0.2em;
   margin: 4rem 0;
@@ -195,7 +197,7 @@ blockquote {
   transition: all ease 200ms;
 
   &:hover {
-    background-color: #fff;
+    background-color: var(--page-color);
     color: var(--main-color);
   }
 }
